@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InstructionsComponent } from './instructions/instructions.component';
 import { IntroComponent } from './intro/intro.component';
-import {MatCardModule, MatStepperModule, MatToolbarModule} from '@angular/material';
+import {MatCardModule, MatRadioModule, MatStepperModule, MatTableModule, MatToolbarModule} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { PreventabilityComponent } from './preventability/preventability.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     InstructionsComponent,
-    IntroComponent
+    IntroComponent,
+    PreventabilityComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,11 @@ import {MatCardModule, MatStepperModule, MatToolbarModule} from '@angular/materi
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
-    MatStepperModule
+    MatStepperModule,
+    FlexLayoutModule,
+    MatRadioModule,
+    FormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
