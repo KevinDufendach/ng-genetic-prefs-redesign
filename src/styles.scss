@@ -30,3 +30,20 @@ $ng-gen-prefs-redesign-theme: mat-light-theme($ng-gen-prefs-redesign-primary, $n
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.youtube-container {
+  // https://benmarshall.me/responsive-iframes/
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.youtube-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

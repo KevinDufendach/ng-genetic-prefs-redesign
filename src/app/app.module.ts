@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InstructionsComponent } from './instructions/instructions.component';
 import { IntroComponent } from './intro/intro.component';
-import {MatCardModule, MatRadioModule, MatStepperModule, MatTableModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatRadioModule, MatStepperModule, MatTableModule, MatToolbarModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { PreventabilityComponent } from './preventability/preventability.component';
 import {FormsModule} from '@angular/forms';
@@ -28,7 +28,8 @@ import {FormsModule} from '@angular/forms';
     FlexLayoutModule,
     MatRadioModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
