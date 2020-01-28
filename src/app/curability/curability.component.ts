@@ -10,6 +10,7 @@ export class CurabilityComponent implements OnInit {
   preventabilitySelection = -1;
   displayedColumns: string[] = ['preventable', 'name'];
   dataSource = CONDITION_DATA;
+  notSureAllowed = false;
 
   constructor() { }
 

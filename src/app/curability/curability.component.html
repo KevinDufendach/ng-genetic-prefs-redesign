@@ -9,12 +9,17 @@
   <div fxFlex="50" fxLayout="column">
     <h3>All diseases are treatable. Some treatable diseases can be cured. Some treatable diseases can’t be cured, but
       symptoms can be reduced or managed. Would you want to receive results about diseases that cannot be cured?</h3>
-    <mat-radio-group fxLayout="column"  class="app-wrap" [(ngModel)]="preventabilitySelection">
+    <div fxLayout="row">
+      <span fxFlex></span>
+      <button mat-button (click)="preventabilitySelection=-1" class="mat-accent" [disabled]="preventabilitySelection == -1">reset selection</button>
+    </div>
+    <mat-radio-group fxLayout="column" class="app-wrap" [(ngModel)]="preventabilitySelection">
       <mat-radio-button [value]="1">Yes, both curable AND not curable</mat-radio-button>
       <mat-radio-button [value]="0">No, curable ONLY</mat-radio-button>
+      <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span></mat-radio-button>
     </mat-radio-group>
     <mat-expansion-panel>
-      <mat-expansion-panel-header>I need more information</mat-expansion-panel-header>
+      <mat-expansion-panel-header  (click)="notSureAllowed = true">I need more information</mat-expansion-panel-header>
       <p>Using this tool may help you decide if you want to learn any genetic results. If you answer, “Yes, I want the
         chance to learn my/my child’s genetic results,” you will be asked 4 more questions. You will be able to see the
         type of diseases you could learn about based on your answers to the 4 questions. If you do not want to learn any
