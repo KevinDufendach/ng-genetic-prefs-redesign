@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {InstructionsComponent} from './instructions/instructions.component';
-import {IntroComponent} from './intro/intro.component';
-
+import {SurveyComponent} from './survey/survey.component';
 
 const routes: Routes = [
   {
@@ -15,8 +14,8 @@ const routes: Routes = [
     component: InstructionsComponent
   },
   {
-    path: 'intro',
-    component: IntroComponent
+    path: 'survey',
+    component: SurveyComponent
   }
 ];
 

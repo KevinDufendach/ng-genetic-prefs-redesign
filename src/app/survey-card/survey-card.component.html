@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>{{title}}</mat-card-title>
+  <mat-card-content>
+    <ng-content></ng-content>
+  </mat-card-content>
+  <mat-card-actions fxLayoutGap="15">
+    <span fxFlex></span>
+    <button mat-raised-button matStepperPrevious>Back</button>
+    <button mat-raised-button class="mat-primary" matStepperNext>Next</button>
+  </mat-card-actions>
+</mat-card>

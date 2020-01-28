@@ -51,3 +51,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .strikethru {
   text-decoration: line-through;
 }
+
+.app-wrap label.mat-radio-label,
+.app-wrap label.mat-checkbox-layout {
+  white-space: normal;
+}

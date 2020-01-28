@@ -5,19 +5,22 @@
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     </div>
-    <p>Preventable conditions have some treatment, therapy, or lifestyle change that can be made to help prevent or
-      avoid symptoms. Non-preventable conditions have no known interventions that will help to prevent them.</p>
-    <p>Cystic Fibrosis is an example of a condition that is not preventable. While there are treatments that may help
-      reduce symptoms, there is no medical intervention that will completely prevent the disease from occurring.</p>
-    <p>Other diseases in this category include osteopetrosis, immunodeficiency syndromes, and certain cancers</p>
   </div>
   <div fxFlex="50" fxLayout="column">
-    <h3>If genetic testing can reveal you are at risk for preventable and not preventable conditions, which types would
-      you want to be told about?</h3>
-    <mat-radio-group fxLayout="column" class="app-wrap" [(ngModel)]="preventabilitySelection">
-      <mat-radio-button [value]="0">Preventable ONLY</mat-radio-button>
-      <mat-radio-button [value]="1">Preventable AND not preventable</mat-radio-button>
+    <h3>All diseases are treatable. Some treatable diseases can be cured. Some treatable diseases can’t be cured, but
+      symptoms can be reduced or managed. Would you want to receive results about diseases that cannot be cured?</h3>
+    <mat-radio-group fxLayout="column"  class="app-wrap" [(ngModel)]="preventabilitySelection">
+      <mat-radio-button [value]="1">Yes, both curable AND not curable</mat-radio-button>
+      <mat-radio-button [value]="0">No, curable ONLY</mat-radio-button>
     </mat-radio-group>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>I need more information</mat-expansion-panel-header>
+      <p>Using this tool may help you decide if you want to learn any genetic results. If you answer, “Yes, I want the
+        chance to learn my/my child’s genetic results,” you will be asked 4 more questions. You will be able to see the
+        type of diseases you could learn about based on your answers to the 4 questions. If you do not want to learn any
+        results, you can come back to this question and answer, “No, I do not want to receive any genetic results.”</p>
+      <button mat-raised-button>I'm still not sure</button>
+    </mat-expansion-panel>
 
     <h4>Based on your selection, these are some conditions that would be reported:</h4>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
