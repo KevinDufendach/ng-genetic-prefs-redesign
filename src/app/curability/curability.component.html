@@ -13,7 +13,7 @@
       <span fxFlex></span>
       <button mat-button (click)="preventabilitySelection=-1" class="mat-accent" [disabled]="preventabilitySelection == -1">reset selection</button>
     </div>
-    <mat-radio-group fxLayout="column" class="app-wrap" [(ngModel)]="preventabilitySelection">
+    <mat-radio-group fxLayout="column" class="survey-radio app-wrap" [(ngModel)]="preventabilitySelection">
       <mat-radio-button [value]="1">Yes, both curable AND not curable</mat-radio-button>
       <mat-radio-button [value]="0">No, curable ONLY</mat-radio-button>
       <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span></mat-radio-button>

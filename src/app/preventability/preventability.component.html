@@ -14,9 +14,10 @@
   <div fxFlex="50" fxLayout="column">
     <h3>If genetic testing can reveal you are at risk for preventable and not preventable conditions, which types would
       you want to be told about?</h3>
-    <mat-radio-group fxLayout="column" class="app-wrap" [(ngModel)]="preventabilitySelection">
+    <mat-radio-group fxLayout="column" class="survey-radio app-wrap" [(ngModel)]="preventabilitySelection">
       <mat-radio-button [value]="0">Preventable ONLY</mat-radio-button>
       <mat-radio-button [value]="1">Preventable AND not preventable</mat-radio-button>
+      <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span></mat-radio-button>
     </mat-radio-group>
 
     <h4>Based on your selection, these are some conditions that would be reported:</h4>
