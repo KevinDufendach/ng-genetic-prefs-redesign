@@ -1,15 +1,21 @@
 <div fxHide fxShow.gt-sm>
   <span fxFlex></span>
   <div id="horizontal-content">
-    <mat-horizontal-stepper>
+    <mat-horizontal-stepper [selectedIndex]="step">
       <mat-step label="General Intro">
-        <app-survey-card title="General Information"><app-intro></app-intro></app-survey-card>
+        <app-survey-card title="General Information">
+          <app-intro></app-intro>
+        </app-survey-card>
       </mat-step>
       <mat-step label="Curable">
-        <app-survey-card title="Curability"><app-curability></app-curability></app-survey-card>
+        <app-survey-card title="Curability">
+          <app-curability></app-curability>
+        </app-survey-card>
       </mat-step>
       <mat-step label="Preventable">
-        <app-survey-card title="Preventability"><app-preventability></app-preventability></app-survey-card>
+        <app-survey-card title="Preventability">
+          <app-preventability></app-preventability>
+        </app-survey-card>
       </mat-step>
       <mat-step label="Adult Onset">
         Content 4
