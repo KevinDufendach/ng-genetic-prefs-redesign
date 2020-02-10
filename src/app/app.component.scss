@@ -1,0 +1,5 @@
+@import "~@angular/material/theming";
+
+.app-body {
+  background-color: mat-color($mat-blue-gray);
+}

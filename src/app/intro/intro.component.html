@@ -11,10 +11,6 @@
   <div fxFlex="50" fxLayout="column">
     <h3>Some people do not want to learn results from genetic studies. Would you like to learn your (or your child's)
       genetic results?</h3>
-    <div fxLayout="row">
-      <span fxFlex></span>
-      <button mat-button (click)="preventabilitySelection=-1" class="mat-accent" [disabled]="preventabilitySelection == -1">reset selection</button>
-    </div>
     <mat-radio-group fxLayout="column" class="survey-radio app-wrap" [(ngModel)]="preventabilitySelection">
       <mat-radio-button [value]="1">Yes, I want the chance to learn from my/my child's genetic results
       </mat-radio-button>
