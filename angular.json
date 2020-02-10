@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-gen-prefs-redesign"
+    }
+  },
+  "defaultProject": "ng-gen-prefs-redesign",
+  "cli": {
+    "analytics": false
+  }
 }
