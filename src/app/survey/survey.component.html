@@ -1,7 +1,7 @@
 <div fxHide fxShow.gt-sm>
   <span fxFlex></span>
   <div id="horizontal-content">
-    <mat-horizontal-stepper [selectedIndex]="step">
+    <mat-horizontal-stepper [selectedIndex]="step" (selectionChange)="selectionChanged($event)">
       <mat-step label="General Intro">
         <app-survey-card title="General Information">
           <app-intro></app-intro>

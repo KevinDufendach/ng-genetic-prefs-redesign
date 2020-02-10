@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {StepperSelectionEvent} from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-survey',
@@ -7,7 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./survey.component.scss']
 })
 export class SurveyComponent implements OnInit {
-  step: number;
+  private step: number;
 
   constructor(private route: ActivatedRoute, private router: Router) {
   }
@@ -15,9 +16,19 @@ export class SurveyComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.step = +params.step || 0;
-
-      console.log(this.step);
     });
   }
 
+  selectionChanged($event: StepperSelectionEvent) {
+    this.step = $event.selectedIndex;
+
+    this.router.navigate(
+      [],
+      {
+        relativeTo: this.route,
+        queryParams: { step: this.step},
+        queryParamsHandling: 'merge'
+      }
+    );
+  }
 }
