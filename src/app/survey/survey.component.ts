@@ -8,7 +8,7 @@ import {StepperSelectionEvent} from '@angular/cdk/stepper';
   styleUrls: ['./survey.component.scss']
 })
 export class SurveyComponent implements OnInit {
-  private step: number;
+  step: number;
 
   constructor(private route: ActivatedRoute, private router: Router) {
   }
