@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+	 height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<g id="Base">
+	<circle fill="#4D4D4D" cx="12" cy="12" r="12"/>
+</g>
+<g id="Curable_1_" display="none">
+	<defs>
+		<circle id="SVGID_1_" cx="12" cy="12" r="12"/>
+	</defs>
+	<clipPath id="SVGID_2_" display="inline">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	
+		<line display="inline" clip-path="url(#SVGID_2_)" fill="none" stroke="#666666" stroke-width="2" stroke-miterlimit="10" x1="0" y1="12" x2="24" y2="12"/>
+	
+		<line display="inline" clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="8" y1="12" x2="17" y2="12"/>
+	
+		<line display="inline" clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="16" y1="7" x2="16" y2="17"/>
+	<circle display="inline" clip-path="url(#SVGID_2_)" fill="#FFFFFF" cx="8" cy="12" r="3"/>
+</g>
+<g id="Preventable" display="none">
+	<defs>
+		<circle id="SVGID_3_" cx="12" cy="12" r="12"/>
+	</defs>
+	<clipPath id="SVGID_4_" display="inline">
+		<use xlink:href="#SVGID_3_"  overflow="visible"/>
+	</clipPath>
+	
+		<line display="inline" clip-path="url(#SVGID_4_)" fill="none" stroke="#808080" stroke-width="2" stroke-miterlimit="10" x1="0" y1="12" x2="24" y2="12"/>
+	
+		<line display="inline" clip-path="url(#SVGID_4_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="7" y1="7" x2="7" y2="17"/>
+	<circle display="inline" clip-path="url(#SVGID_4_)" fill="#808080" cx="16" cy="12" r="3"/>
+</g>
+<g id="Adult_Onset" display="none">
+	<defs>
+		<circle id="SVGID_5_" cx="12" cy="12" r="12"/>
+	</defs>
+	<clipPath id="SVGID_6_" display="inline">
+		<use xlink:href="#SVGID_5_"  overflow="visible"/>
+	</clipPath>
+	
+		<line display="inline" opacity="0.5" clip-path="url(#SVGID_6_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="0" y1="12" x2="24" y2="12"/>
+	
+		<line display="inline" clip-path="url(#SVGID_6_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="17" y1="12" x2="24" y2="12"/>
+	<circle display="inline" clip-path="url(#SVGID_6_)" fill="#FFFFFF" cx="17" cy="12" r="3"/>
+</g>
+<g id="Carrier_1_">
+	<defs>
+		<circle id="SVGID_7_" cx="12" cy="12" r="12"/>
+	</defs>
+	<clipPath id="SVGID_8_">
+		<use xlink:href="#SVGID_7_"  overflow="visible"/>
+	</clipPath>
+	
+		<line clip-path="url(#SVGID_8_)" fill="none" stroke="#808080" stroke-width="2" stroke-miterlimit="10" x1="0" y1="12" x2="24" y2="12"/>
+	<polyline clip-path="url(#SVGID_8_)" fill="none" stroke="#808080" stroke-width="2" stroke-miterlimit="10" points="12,12 12,18 
+		24,18 	"/>
+	
+		<line clip-path="url(#SVGID_8_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="17" y1="18" x2="24" y2="18"/>
+	<circle clip-path="url(#SVGID_8_)" fill="#FFFFFF" cx="17" cy="18" r="3"/>
+</g>
+</svg>
