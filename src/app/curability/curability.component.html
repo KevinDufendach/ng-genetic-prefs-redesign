@@ -7,7 +7,7 @@
     </div>
     <h3>All diseases are treatable. Some treatable diseases can be cured. Some treatable diseases can’t be cured, but
       symptoms can be reduced or managed. Would you want to receive results about diseases that cannot be cured?</h3>
-    <mat-radio-group fxLayout="column" class="survey-radio app-wrap" [(ngModel)]="preventabilitySelection">
+    <mat-radio-group fxLayout="column" class="survey-radio app-wrap" [(ngModel)]="prev">
       <mat-radio-button [value]="1">Yes, both curable AND not curable</mat-radio-button>
       <mat-radio-button [value]="0">No, curable ONLY</mat-radio-button>
       <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span>
@@ -28,28 +28,6 @@
   </div>
   <div fxFlex="50" fxLayout="column">
     <h4>Based on your selection, these are some conditions that would be reported:</h4>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-
-      <!-- Position Column -->
-      <ng-container matColumnDef="preventable">
-        <th mat-header-cell *matHeaderCellDef> Preventable</th>
-        <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
-          <mat-icon *ngIf="condition.preventable">check</mat-icon>
-        </td>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name</th>
-        <td mat-cell *matCellDef="let condition"
-            [ngClass]="{'strikethru': !condition.preventable && preventabilitySelection == 0}"> {{condition.condition}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+    <app-condition-table></app-condition-table>
   </div>
 </div>

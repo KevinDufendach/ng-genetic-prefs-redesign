@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CONDITION_DATA} from '../model/condition';
+import {SurveyService} from '../survey.service';
 
 @Component({
   selector: 'app-curability',
@@ -7,14 +8,18 @@ import {CONDITION_DATA} from '../model/condition';
   styleUrls: ['./curability.component.scss']
 })
 export class CurabilityComponent implements OnInit {
-  preventabilitySelection = -1;
-  displayedColumns: string[] = ['preventable', 'name'];
-  dataSource = CONDITION_DATA;
   notSureAllowed = false;
 
-  constructor() { }
+  constructor(private survey: SurveyService) { }
 
   ngOnInit() {
   }
 
+  get prev(): number {
+    return this.survey.selections.preventability;
+  }
+
+  set prev(value: number) {
+    this.survey.selections.preventability = value;
+  }
 }

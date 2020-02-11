@@ -22,6 +22,7 @@ import {PreventabilityComponent} from './preventability/preventability.component
 import {IntroComponent} from './intro/intro.component';
 import { CurabilityComponent } from './curability/curability.component';
 import { SurveyCardComponent } from './survey-card/survey-card.component';
+import { ConditionTableComponent } from './condition-table/condition-table.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SurveyCardComponent } from './survey-card/survey-card.component';
     IntroComponent,
     CurabilityComponent,
     SurveyCardComponent,
+    ConditionTableComponent,
   ],
     imports: [
         BrowserModule,
