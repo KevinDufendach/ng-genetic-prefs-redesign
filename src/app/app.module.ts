@@ -24,6 +24,7 @@ import {CurabilityComponent} from './curability/curability.component';
 import {SurveyCardComponent} from './survey-card/survey-card.component';
 import {ConditionTableComponent} from './condition-table/condition-table.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,8 @@ import {HttpClientModule} from '@angular/common/http';
     CurabilityComponent,
     SurveyCardComponent,
     ConditionTableComponent,
+    ToggleButtonComponent,
+    ToggleButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import {HttpClientModule} from '@angular/common/http';
     MatButtonModule,
     MatIconModule,
     MatExpansionModule,
-    MatDividerModule
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

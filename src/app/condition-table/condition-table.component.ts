@@ -15,7 +15,6 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class ConditionTableComponent implements OnInit {
   displayedColumns: string[] = ['curable', 'preventable', 'name'];
-  // dataSource = CONDITION_DATA;
 
   conditions: Condition2[] = (data as any).default;
 
@@ -28,6 +27,16 @@ export class ConditionTableComponent implements OnInit {
     iconRegistry.addSvgIcon(
       'curable',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable.svg')
+    );
+
+    iconRegistry.addSvgIcon(
+      'adultOnset',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset.svg')
+    );
+
+    iconRegistry.addSvgIcon(
+      'carrier',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier.svg')
     );
   }
 

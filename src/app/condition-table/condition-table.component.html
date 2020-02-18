@@ -1,9 +1,29 @@
 <div fxLayout="column">
-  <div fxLayout="row" fxLayoutGap="15" class="table-buttons">
-    <button mat-raised-button [ngClass]="{'mat-primary': survey.selections.curability == 0}">
+  <div fxLayout="row" fxLayoutGap="15px" class="table-buttons">
+    <app-toggle-button [(ngModel)]="survey.curability">
+      <mat-icon svgIcon="curable" aria-hidden="false" aria-label="Curable"></mat-icon>
+      Curable
+    </app-toggle-button>
+
+    <app-toggle-button [(ngModel)]="survey.preventability">
       <mat-icon svgIcon="preventable" aria-hidden="false" aria-label="Preventable"></mat-icon>
       Preventable
-    </button>
+    </app-toggle-button>
+
+    <app-toggle-button [(ngModel)]="survey.adultOnset">
+      <mat-icon svgIcon="adultOnset" aria-hidden="false" aria-label="Adult Onset"></mat-icon>
+      Adult Onset
+    </app-toggle-button>
+
+    <app-toggle-button [(ngModel)]="survey.carrierStatus">
+      <mat-icon svgIcon="carrier" aria-hidden="false" aria-label="Carrier Status"></mat-icon>
+      Carrier Status
+    </app-toggle-button>
+  </div>
+
+  <div>
+    Curability: {{survey.curability}} |
+    Preventability: {{survey.preventability}}
   </div>
 
   <table mat-table [dataSource]="conditions" class="mat-elevation-z8" fxFlex>
