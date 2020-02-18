@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 // import {CONDITION_DATA} from '../model/condition';
 import {SurveyService} from '../survey.service';
-
 // @ts-ignore
 import * as data from '../model/condition_list.json';
 import {Condition2} from '../model/condition2';
@@ -42,4 +41,12 @@ export class ConditionTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  wouldReturnCondition(c: Condition2): boolean {
+    return (
+      ((c.curable || this.survey.curability) &&
+      (c.preventable || this.survey.preventability) &&
+      (!c.adultOnset || this.survey.adultOnset)) ||
+      (c.carrier && this.survey.carrierStatus)
+    );
+  }
 }
