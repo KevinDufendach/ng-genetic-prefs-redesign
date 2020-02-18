@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="24px"
-     height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-  <g id="Base">
-    <circle cx="12" cy="12" r="12"/>
-  </g>
-  <g id="Curable">
-    <defs>
-      <circle id="SVGID_1_" cx="12" cy="12" r="12"/>
-    </defs>
-      <clipPath id="SVGID_2_">
-      <use xlink:href="#SVGID_1_" overflow="visible"/>
-    </clipPath>
-    <line clip-path="url(#SVGID_2_)" fill="none" stroke="#999999" stroke-width="2" stroke-miterlimit="10" x1="0" y1="12"
-          x2="24" y2="12"/>
-
-    <line clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="8" y1="12"
-          x2="17" y2="12"/>
-
-    <line clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="16" y1="7"
-          x2="16" y2="17"/>
-    <circle clip-path="url(#SVGID_2_)" fill="#FFFFFF" cx="8" cy="12" r="3"/>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+	 height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<g id="Curable">
+	<g>
+		<path d="M5.184,11C5.597,9.837,6.695,9,8,9s2.403,0.837,2.816,2H15V7h2v4h6.949C23.44,4.842,18.289,0,12,0
+			C5.71,0,0.56,4.842,0.05,11H5.184z"/>
+		<path d="M17,13v4h-2v-4h-4.184C10.403,14.163,9.305,15,8,15s-2.403-0.837-2.816-2H0.05C0.56,19.158,5.71,24,12,24
+			c6.289,0,11.44-4.842,11.949-11H17z"/>
+	</g>
+	<path opacity="0.6" d="M5.184,13C5.072,12.686,5,12.353,5,12s0.072-0.686,0.184-1H0.05C0.023,11.331,0,11.663,0,12
+		s0.023,0.669,0.05,1H5.184z"/>
+	<path opacity="0.6" d="M17,11v2h6.949C23.977,12.669,24,12.337,24,12s-0.023-0.669-0.051-1H17z"/>
 </g>
 </svg>

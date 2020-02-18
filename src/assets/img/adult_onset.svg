@@ -3,18 +3,12 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
 	 height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-<g id="Base">
-	<circle cx="12" cy="12" r="12"/>
-</g>
 <g id="Adult_Onset">
-	<defs>
-		<circle id="SVGID_5_" cx="12" cy="12" r="12"/>
-	</defs>
-	<clipPath id="SVGID_6_">
-		<use xlink:href="#SVGID_5_"  overflow="visible"/>
-	</clipPath>
-		<line clip-path="url(#SVGID_6_)" fill="none" stroke="#999999" stroke-width="2" stroke-miterlimit="10" x1="0" y1="12" x2="24" y2="12"/>
-		<line clip-path="url(#SVGID_6_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="17" y1="12" x2="24" y2="12"/>
-	<circle clip-path="url(#SVGID_6_)" fill="#FFFFFF" cx="17" cy="12" r="3"/>
+	<path d="M14.184,11L14.184,11C14.597,9.837,15.695,9,17,9s2.403,0.837,2.816,2h4.133C23.44,4.842,18.289,0,12,0
+		C5.71,0,0.56,4.842,0.05,11H14.184z"/>
+	<path d="M17,15c-1.305,0-2.403-0.838-2.816-2l0,0H0.05C0.56,19.158,5.71,24,12,24c6.289,0,11.44-4.842,11.949-11h-4.133
+		C19.403,14.163,18.305,15,17,15z"/>
+	<path opacity="0.6" d="M14.184,13C14.072,12.686,14,12.353,14,12s0.072-0.686,0.184-1H0.05C0.023,11.331,0,11.663,0,12
+		s0.023,0.669,0.05,1H14.184z"/>
 </g>
 </svg>
