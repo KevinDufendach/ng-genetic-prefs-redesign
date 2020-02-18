@@ -21,16 +21,14 @@
     </app-toggle-button>
   </div>
 
-  <div>
-    Curability: {{survey.curability}} |
-    Preventability: {{survey.preventability}}
-  </div>
+  <h3>Based on your selection, these are some conditions that would be reported:</h3>
 
   <table mat-table [dataSource]="conditions" class="mat-elevation-z8" fxFlex>
     <!-- Curable Column -->
     <ng-container matColumnDef="curable">
       <th mat-header-cell *matHeaderCellDef>
-        <mat-icon svgIcon="curable" aria-hidden="false" class="mat-primary" aria-label="Curable"></mat-icon>
+        <mat-icon svgIcon="curable" aria-hidden="false" aria-label="Curable"
+                  [ngClass]="{'mat-primary': survey.curability}"></mat-icon>
       </th>
       <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
         <mat-icon *ngIf="condition.curable">check</mat-icon>
@@ -40,10 +38,33 @@
     <!-- Preventable Column -->
     <ng-container matColumnDef="preventable">
       <th mat-header-cell *matHeaderCellDef>
-        <mat-icon svgIcon="preventable" aria-hidden="false" class="mat-primary" aria-label="Preventable"></mat-icon>
+        <mat-icon svgIcon="preventable" aria-hidden="false" class="mat-primary" aria-label="Preventable"
+                  [ngClass]="{'mat-primary': survey.preventability}"></mat-icon>
       </th>
       <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
         <mat-icon *ngIf="condition.preventable">check</mat-icon>
+      </td>
+    </ng-container>
+
+    <!-- Adult Onset Column -->
+    <ng-container matColumnDef="adultOnset">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-icon svgIcon="adultOnset" aria-hidden="false" class="mat-primary" aria-label="Adult Onset"
+                  [ngClass]="{'mat-primary': survey.adultOnset}"></mat-icon>
+      </th>
+      <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
+        <mat-icon *ngIf="condition.adultOnset">check</mat-icon>
+      </td>
+    </ng-container>
+
+    <!-- Carrier Status Column -->
+    <ng-container matColumnDef="carrier">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-icon svgIcon="carrier" aria-hidden="false" class="mat-primary" aria-label="Carrier Status"
+                  [ngClass]="{'mat-primary': survey.carrierStatus}"></mat-icon>
+      </th>
+      <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
+        <mat-icon *ngIf="condition.carrier">check</mat-icon>
       </td>
     </ng-container>
 

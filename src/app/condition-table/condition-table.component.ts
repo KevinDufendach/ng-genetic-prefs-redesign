@@ -14,8 +14,7 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./condition-table.component.scss']
 })
 export class ConditionTableComponent implements OnInit {
-  displayedColumns: string[] = ['curable', 'preventable', 'name'];
-
+  displayedColumns: string[] = ['curable', 'preventable', 'adultOnset', 'carrier', 'name'];
   conditions: Condition2[] = (data as any).default;
 
   constructor(public survey: SurveyService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
