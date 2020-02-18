@@ -5,6 +5,8 @@ import {SurveyService} from '../survey.service';
 // @ts-ignore
 import * as data from '../model/condition_list.json';
 import {Condition2} from '../model/condition2';
+import {MatIconRegistry} from '@angular/material/icon';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-condition-table',
@@ -12,16 +14,24 @@ import {Condition2} from '../model/condition2';
   styleUrls: ['./condition-table.component.scss']
 })
 export class ConditionTableComponent implements OnInit {
-  displayedColumns: string[] = ['preventable', 'name'];
+  displayedColumns: string[] = ['curable', 'preventable', 'name'];
   // dataSource = CONDITION_DATA;
 
   conditions: Condition2[] = (data as any).default;
 
-  constructor(public survey: SurveyService) {
+  constructor(public survey: SurveyService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon(
+      'preventable',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable.svg')
+    );
+
+    iconRegistry.addSvgIcon(
+      'curable',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable.svg')
+    );
   }
 
   ngOnInit(): void {
-    console.log(this.conditions);
   }
 
 }
