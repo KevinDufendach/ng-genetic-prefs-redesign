@@ -23,7 +23,8 @@
 
   <h3>Based on your selection, these are some conditions that would be reported:</h3>
 
-  <table mat-table [dataSource]="conditions" class="mat-elevation-z8" fxFlex>
+  <div class="fixed-height-container">
+  <table mat-table [dataSource]="(conditions | slice : 0 : displayedCount)" class="mat-elevation-z8" fxFlex>
     <!-- Curable Column -->
     <ng-container matColumnDef="curable">
       <th mat-header-cell *matHeaderCellDef>
@@ -31,7 +32,7 @@
                   [ngClass]="{'mat-primary': survey.curability}"></mat-icon>
       </th>
       <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
-        <mat-icon *ngIf="condition.curable">check</mat-icon>
+        <mat-icon svgIcon="curable" aria-hidden="false" aria-label="Curable" *ngIf="condition.curable"></mat-icon>
       </td>
     </ng-container>
 
@@ -42,7 +43,7 @@
                   [ngClass]="{'mat-primary': survey.preventability}"></mat-icon>
       </th>
       <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
-        <mat-icon *ngIf="condition.preventable">check</mat-icon>
+        <mat-icon svgIcon="preventable" aria-hidden="false" aria-label="Preventable" *ngIf="condition.preventable"></mat-icon>
       </td>
     </ng-container>
 
@@ -53,7 +54,7 @@
                   [ngClass]="{'mat-primary': survey.adultOnset}"></mat-icon>
       </th>
       <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
-        <mat-icon *ngIf="condition.adultOnset">check</mat-icon>
+        <mat-icon svgIcon="adultOnset" aria-hidden="false" aria-label="Adult Onset" *ngIf="condition.adultOnset"></mat-icon>
       </td>
     </ng-container>
 
@@ -64,7 +65,7 @@
                   [ngClass]="{'mat-primary': survey.carrierStatus}"></mat-icon>
       </th>
       <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
-        <mat-icon *ngIf="condition.carrier">check</mat-icon>
+        <mat-icon svgIcon="carrier" aria-hidden="false" aria-label="Carrier" *ngIf="condition.carrier"></mat-icon>
       </td>
     </ng-container>
 
@@ -72,10 +73,12 @@
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Conditions</th>
       <td mat-cell *matCellDef="let condition"
-          [ngClass]="{'strikethru': !wouldReturnCondition(condition)}"> {{condition.conditions}} </td>
+          [ngClass]="{'conditionNotDisplayed': !wouldReturnCondition(condition)}"> {{condition.conditions}} </td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  </div>
+  <button mat-button (click)="displayedCount = displayedCount + 5">Display More Examples</button>
 </div>

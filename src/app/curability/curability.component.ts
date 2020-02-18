@@ -10,7 +10,7 @@ import {SurveyService} from '../survey.service';
 export class CurabilityComponent implements OnInit {
   notSureAllowed = false;
 
-  constructor(private survey: SurveyService) { }
+  constructor(public survey: SurveyService) { }
 
   ngOnInit() {
   }

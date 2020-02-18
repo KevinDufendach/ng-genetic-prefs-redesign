@@ -1,3 +1,14 @@
 .table-buttons {
   padding: 15px;
 }
+
+.conditionNotDisplayed {
+  text-decoration: line-through;
+  opacity: 0.7;
+  color: red;
+}
+
+.fixed-height-container {
+  max-height: 400px;
+  overflow: auto;
+}
