@@ -9,7 +9,11 @@ $primary: map-get($app-theme, primary);
 //$accent: map-get($app-theme, accent);
 $warn: map-get($app-theme, warn);
 $foreground: map-get($app-theme, foreground);
-//$background: map-get($app-theme, background);
+$background: map-get($app-theme, background);
+
+.mat-header-cell {
+  background-color: mat-color($primary, 50);
+}
 
 .table-buttons {
   padding: 15px;
@@ -22,7 +26,7 @@ $foreground: map-get($app-theme, foreground);
 }
 
 .fixed-height-container {
-  max-height: 400px;
+  max-height: 500px;
   overflow: auto;
 }
 
