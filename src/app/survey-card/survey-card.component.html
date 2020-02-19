@@ -1,5 +1,8 @@
 <mat-card>
-  <mat-card-title>{{title}}</mat-card-title>
+  <mat-card-title class="survey-card-title">
+    <mat-icon *ngIf="icon" [svgIcon]="icon" aria-hidden="false"></mat-icon>
+    {{title}}
+  </mat-card-title>
   <mat-card-content>
     <ng-content></ng-content>
   </mat-card-content>

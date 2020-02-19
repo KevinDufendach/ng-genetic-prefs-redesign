@@ -17,26 +17,27 @@ export class ConditionTableComponent implements OnInit {
   conditions: Condition2[] = (data as any).default;
   displayedCount = 10;
 
-  constructor(public survey: SurveyService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon(
-      'preventable',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable.svg')
-    );
-
-    iconRegistry.addSvgIcon(
-      'curable',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable.svg')
-    );
-
-    iconRegistry.addSvgIcon(
-      'adultOnset',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset.svg')
-    );
-
-    iconRegistry.addSvgIcon(
-      'carrier',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier.svg')
-    );
+  constructor(public survey: SurveyService) {
+  // constructor(public survey: SurveyService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    // iconRegistry.addSvgIcon(
+    //   'preventable',
+    //   sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable.svg')
+    // );
+    //
+    // iconRegistry.addSvgIcon(
+    //   'curable',
+    //   sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable.svg')
+    // );
+    //
+    // iconRegistry.addSvgIcon(
+    //   'adultOnset',
+    //   sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset.svg')
+    // );
+    //
+    // iconRegistry.addSvgIcon(
+    //   'carrier',
+    //   sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier.svg')
+    // );
   }
 
   ngOnInit(): void {

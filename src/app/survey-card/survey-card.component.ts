@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SurveyCardComponent implements OnInit {
   @Input() title: any;
+  @Input() icon?: string;
 
   constructor() { }
 
