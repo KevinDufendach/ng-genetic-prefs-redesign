@@ -15,7 +15,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class ConditionTableComponent implements OnInit {
   displayedColumns: string[] = ['curable', 'preventable', 'adultOnset', 'carrier', 'name'];
   conditions: Condition2[] = (data as any).default;
-  displayedCount = 5;
+  displayedCount = 10;
 
   constructor(public survey: SurveyService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon(

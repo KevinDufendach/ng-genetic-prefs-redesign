@@ -9,22 +9,12 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$ng-gen-prefs-redesign-primary: mat-palette($mat-indigo);
-$ng-gen-prefs-redesign-accent: mat-palette($mat-pink, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$ng-gen-prefs-redesign-warn: mat-palette($mat-red);
-
-// Create the theme object (a Sass map containing all of the palettes).
-$ng-gen-prefs-redesign-theme: mat-light-theme($ng-gen-prefs-redesign-primary, $ng-gen-prefs-redesign-accent, $ng-gen-prefs-redesign-warn);
+@import "theme";
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($ng-gen-prefs-redesign-theme);
+@include angular-material-theme($app-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
