@@ -7,19 +7,8 @@ import {SurveyService} from '../survey.service';
   templateUrl: './curability.component.html',
   styleUrls: ['./curability.component.scss']
 })
-export class CurabilityComponent implements OnInit {
+export class CurabilityComponent {
   notSureAllowed = false;
 
   constructor(public survey: SurveyService) { }
-
-  ngOnInit() {
-  }
-
-  get prev(): number {
-    return this.survey.selections.preventability;
-  }
-
-  set prev(value: number) {
-    this.survey.selections.preventability = value;
-  }
 }

@@ -1,48 +1,41 @@
 <div fxFlex fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
-  <div fxFlex="50" fxLayout="column">
+  <div fxFlex="50" fxLayout="column" fxLayoutGap="10px">
+    <h3>Do you want to receive results for diseases that are preventable and for diseases that are not preventable?</h3>
+    <p>Preventable diseases have medical or lifestyle steps you can take before the disease begins. For example,
+      surgery, lifelong medicine, or lifestyle changes can reduce the risk of getting some diseases. For diseases that
+      are not preventable, there are no known steps that will stop the disease from happening.</p>
+    <mat-radio-group fxLayout="column" class="survey-radio app-wrap" [(ngModel)]="survey.selections.preventability">
+      <mat-radio-button [value]="1">Yes, I want to receive results for diseases that are preventable AND for diseases
+        that are NOT preventable
+      </mat-radio-button>
+      <mat-radio-button [value]="0">No, I ONLY want to receive results for diseases that are preventable
+      </mat-radio-button>
+      <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span>
+      </mat-radio-button>
+    </mat-radio-group>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header (click)="notSureAllowed = true">I need more information</mat-expansion-panel-header>
+      <p>An example of a disease that can sometimes be genetic is colon cancer. Colon cancer usually begins as a small
+        clump of cells called a polyp. Polyps are not cancer but can turn into cancer over time. Colon cancer can be
+        prevented if polyps are removed from the colon before they turn into cancer. Researchers are trying to find ways
+        to prevent polyps. If colon cancer occurs, it can be cured with surgery, radiation, medicine or any combination
+        of the three treatments. The chances for cure are much higher if the cancer is found and treated early.</p>
+
+      <p>An example of a type of genetic disease that can’t be prevented is inherited tumor syndromes. In these types of
+        diseases, tumors can start in different parts of the body. Tumors are not always cancer but if noncancerous
+        tumors get too big they can cause many different problems and even death. If tumors occur, they can sometimes be
+        removed by surgery. Sometimes medicines or radiation might be needed to shrink the tumors before surgery.
+        Sometimes tumors can’t be removed by surgery.</p>
+    </mat-expansion-panel>
+
     <div class="youtube-container">
       <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/Nv6qUsKYodA" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
     </div>
-    <p>Preventable conditions have some treatment, therapy, or lifestyle change that can be made to help prevent or
-      avoid symptoms. Non-preventable conditions have no known interventions that will help to prevent them.</p>
-    <p>Cystic Fibrosis is an example of a condition that is not preventable. While there are treatments that may help
-      reduce symptoms, there is no medical intervention that will completely prevent the disease from occurring.</p>
-    <p>Other diseases in this category include osteopetrosis, immunodeficiency syndromes, and certain cancers</p>
+
   </div>
   <div fxFlex="50" fxLayout="column">
-    <h3>If genetic testing can reveal you are at risk for preventable and not preventable conditions, which types would
-      you want to be told about?</h3>
-    <mat-radio-group fxLayout="column" class="survey-radio app-wrap" [(ngModel)]="preventabilitySelection">
-      <mat-radio-button [value]="0">Preventable ONLY</mat-radio-button>
-      <mat-radio-button [value]="1">Preventable AND not preventable</mat-radio-button>
-      <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span></mat-radio-button>
-    </mat-radio-group>
-
-    <h4>Based on your selection, these are some conditions that would be reported:</h4>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-
-      <!-- Position Column -->
-      <ng-container matColumnDef="preventable">
-        <th mat-header-cell *matHeaderCellDef> Preventable</th>
-        <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
-          <mat-icon *ngIf="condition.preventable">check</mat-icon>
-        </td>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name</th>
-        <td mat-cell *matCellDef="let condition"
-            [ngClass]="{'strikethru': !condition.preventable && preventabilitySelection == 0}"> {{condition.condition}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+    <app-condition-table></app-condition-table>
   </div>
 </div>

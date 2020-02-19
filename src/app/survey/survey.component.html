@@ -18,10 +18,14 @@
         </app-survey-card>
       </mat-step>
       <mat-step label="Adult Onset" state="adultOnset">
-        Content 4
+        <app-survey-card title="Adult Onset" icon="adultOnset">
+          <app-adult-onset></app-adult-onset>
+        </app-survey-card>
       </mat-step>
       <mat-step label="Carrier Status" state="carrier">
-        Content 5
+        <app-survey-card title="Carrier Status" icon="carrier">
+          <app-carrier-status></app-carrier-status>
+        </app-survey-card>
       </mat-step>
 
       <ng-template matStepperIcon="curable">

@@ -25,6 +25,8 @@ import {SurveyCardComponent} from './survey-card/survey-card.component';
 import {ConditionTableComponent} from './condition-table/condition-table.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
+import { AdultOnsetComponent } from './adult-onset/adult-onset.component';
+import { CarrierStatusComponent } from './carrier-status/carrier-status.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
     ConditionTableComponent,
     ToggleButtonComponent,
     ToggleButtonComponent,
+    AdultOnsetComponent,
+    CarrierStatusComponent,
   ],
   imports: [
     BrowserModule,
