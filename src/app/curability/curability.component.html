@@ -1,10 +1,5 @@
 <div fxFlex fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
-  <div fxFlex="50" fxLayout="column">
-    <div class="youtube-container">
-      <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/Nv6qUsKYodA" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-    </div>
+  <div fxFlex="50" fxLayout="column" fxLayoutGap="10px">
     <h3>All diseases are treatable. Some treatable diseases can be cured. Some treatable diseases can’t be cured, but
       symptoms can be reduced or managed. Would you want to receive results about diseases that cannot be cured?</h3>
     <mat-radio-group fxLayout="column" class="survey-radio app-wrap" [(ngModel)]="survey.selections.curability">
@@ -23,7 +18,14 @@
         too thick or too thin, it can’t be cured. However medicine, a pace maker, lifestyle changes or any combination
         of the three treatments can improve the heart’s ability to pump blood. Once treatments begin, they are usually
         lifelong.</p>
+
     </mat-expansion-panel>
+
+    <div class="youtube-container">
+      <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/Nv6qUsKYodA" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
 
   </div>
   <div fxFlex="50" fxLayout="column">
