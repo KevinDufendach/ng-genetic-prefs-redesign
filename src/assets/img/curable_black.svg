@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+	 height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<g id="Base">
+</g>
+<g id="Curable_1_">
+	<path d="M15,7v4h-4.184C10.403,9.837,9.305,9,8,9c-1.657,0-3,1.343-3,3s1.343,3,3,3c1.305,0,2.403-0.837,2.816-2H15v4h2v-4v-2V7H15
+		z"/>
+	<path opacity="0.4" d="M5,12c0-0.353,0.072-0.686,0.184-1H0v2h5.184C5.072,12.686,5,12.353,5,12z"/>
+	<rect x="17" y="11" opacity="0.4" width="7" height="2"/>
+</g>
+<g id="Preventable" display="none">
+	<rect x="6" y="7" display="inline" width="2" height="10"/>
+	<g display="inline" opacity="0.4">
+		<rect y="11" width="6" height="2"/>
+		<path d="M18.816,11C18.403,9.837,17.305,9,16,9s-2.403,0.837-2.816,2H8v2h5.184c0.413,1.163,1.512,2,2.816,2s2.403-0.837,2.816-2
+			H24v-2H18.816z"/>
+	</g>
+</g>
+<g id="Adult_Onset" display="none">
+	<path display="inline" d="M24,11h-4.184C19.403,9.837,18.305,9,17,9c-1.657,0-3,1.343-3,3s1.343,3,3,3c1.305,0,2.403-0.837,2.816-2
+		H24V11z"/>
+	<path display="inline" opacity="0.4" d="M14,12c0-0.353,0.072-0.686,0.184-1H0v2h14.184C14.072,12.686,14,12.353,14,12z"/>
+</g>
+<g id="Carrier_1_" display="none">
+	<path display="inline" d="M24,17h-4.184c-0.413-1.163-1.512-2-2.816-2c-1.657,0-3,1.343-3,3s1.343,3,3,3
+		c1.305,0,2.403-0.837,2.816-2H24V17z"/>
+	<path display="inline" opacity="0.4" d="M0,11v2h11v6h3.184C14.072,18.686,14,18.353,14,18s0.072-0.686,0.184-1H13v-4h11v-2H0z"/>
+</g>
+</svg>

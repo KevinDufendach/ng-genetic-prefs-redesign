@@ -19,22 +19,22 @@ export class SurveyComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon(
       'preventable',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable.svg')
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_black.svg')
     );
 
     iconRegistry.addSvgIcon(
       'curable',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable.svg')
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_black.svg')
     );
 
     iconRegistry.addSvgIcon(
       'adultOnset',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset.svg')
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_black.svg')
     );
 
     iconRegistry.addSvgIcon(
       'carrier',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier.svg')
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_black.svg')
     );
   }
 
