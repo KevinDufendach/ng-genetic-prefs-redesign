@@ -7,7 +7,7 @@
       <ng-container matColumnDef="curable">
         <th mat-header-cell *matHeaderCellDef>
           <button mat-icon-button (click)="survey.curability = !survey.curability">
-            <mat-icon svgIcon="curable" aria-hidden="false" aria-label="Curable"
+            <mat-icon svgIcon="curable_circle" aria-hidden="false" aria-label="Curable"
                       [ngClass]="{'mat-primary': survey.curability}"></mat-icon>
           </button>
         </th>
@@ -18,7 +18,7 @@
                  'attribute-present': condition.curable,
                  'attribute-blocking': !survey.curability && !condition.curable
                }">
-            <mat-icon svgIcon="curable" aria-hidden="false" aria-label="Curable"></mat-icon>
+            <mat-icon svgIcon="curable_circle" aria-hidden="false" aria-label="Curable"></mat-icon>
           </div>
         </td>
       </ng-container>
@@ -27,7 +27,7 @@
       <ng-container matColumnDef="preventable">
         <th mat-header-cell *matHeaderCellDef>
           <button mat-icon-button (click)="survey.preventability = !survey.preventability">
-            <mat-icon svgIcon="preventable" aria-hidden="false" aria-label="Preventable"
+            <mat-icon svgIcon="preventable_circle" aria-hidden="false" aria-label="Preventable"
                       [ngClass]="{'mat-primary': survey.preventability}"></mat-icon>
           </button>
         </th>
@@ -38,7 +38,7 @@
                  'attribute-present': condition.preventable,
                  'attribute-blocking': !survey.preventability && !condition.preventable
                }">
-            <mat-icon svgIcon="preventable" aria-hidden="false" aria-label="Preventable"></mat-icon>
+            <mat-icon svgIcon="preventable_circle" aria-hidden="false" aria-label="Preventable"></mat-icon>
           </div>
         </td>
       </ng-container>
@@ -47,7 +47,7 @@
       <ng-container matColumnDef="adultOnset">
         <th mat-header-cell *matHeaderCellDef>
           <button mat-icon-button (click)="survey.adultOnset = !survey.adultOnset">
-            <mat-icon svgIcon="adultOnset" aria-hidden="false" aria-label="Adult Onset"
+            <mat-icon svgIcon="adultOnset_circle" aria-hidden="false" aria-label="Adult Onset"
                       [ngClass]="{'mat-primary': survey.adultOnset}"></mat-icon>
           </button>
         </th>
@@ -58,7 +58,7 @@
                  'attribute-present': condition.adultOnset,
                  'attribute-blocking': !survey.adultOnset && condition.adultOnset
                }">
-            <mat-icon svgIcon="adultOnset" aria-hidden="false" aria-label="Adult Onset"></mat-icon>
+            <mat-icon svgIcon="adultOnset_circle" aria-hidden="false" aria-label="Adult Onset"></mat-icon>
           </div>
         </td>
       </ng-container>
@@ -67,7 +67,7 @@
       <ng-container matColumnDef="carrier">
         <th mat-header-cell *matHeaderCellDef>
           <button mat-icon-button (click)="survey.carrierStatus = !survey.carrierStatus">
-            <mat-icon svgIcon="carrier" aria-hidden="false" aria-label="Carrier Status"
+            <mat-icon svgIcon="carrier_circle" aria-hidden="false" aria-label="Carrier Status"
                       [ngClass]="{'mat-primary': survey.carrierStatus}"></mat-icon>
           </button>
         </th>
@@ -77,7 +77,7 @@
                  'attribute-active': survey.carrierStatus,
                  'attribute-present': condition.carrier
                }">
-            <mat-icon svgIcon="carrier" aria-hidden="false" aria-label="Carrier Status"></mat-icon>
+            <mat-icon svgIcon="carrier_circle" aria-hidden="false" aria-label="Carrier Status"></mat-icon>
           </div>
         </td>
       </ng-container>
