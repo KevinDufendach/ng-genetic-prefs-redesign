@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {STEPPER_GLOBAL_OPTIONS, StepperSelectionEvent} from '@angular/cdk/stepper';
 import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-survey',
@@ -16,11 +17,19 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class SurveyComponent implements OnInit {
   step: number;
 
-  constructor(private route: ActivatedRoute, private router: Router, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private auth: AuthService,
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer
+  ) {
     this.registerIcons(iconRegistry, sanitizer);
   }
 
   ngOnInit() {
+    this.auth.login();
+
     this.route.queryParams.subscribe(params => {
       this.step = +params.step || 0;
     });

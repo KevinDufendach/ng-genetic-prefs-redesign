@@ -1,5 +1,9 @@
 <mat-toolbar color="primary">
   <span>Genetic Preferences App</span>
+  <span fxFlex></span>
+  <button mat-icon-button (click)="save()">
+    <mat-icon>save</mat-icon>
+  </button>
 </mat-toolbar>
 <div class="app-body">
   <router-outlet></router-outlet>
