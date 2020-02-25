@@ -17,6 +17,29 @@ export class SurveyComponent implements OnInit {
   step: number;
 
   constructor(private route: ActivatedRoute, private router: Router, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    this.registerIcons(iconRegistry, sanitizer);
+  }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.step = +params.step || 0;
+    });
+  }
+
+  selectionChanged($event: StepperSelectionEvent) {
+    this.step = $event.selectedIndex;
+
+    this.router.navigate(
+      [],
+      {
+        relativeTo: this.route,
+        queryParams: {step: this.step},
+        queryParamsHandling: 'merge'
+      }
+    );
+  }
+
+  registerIcons(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry
       .addSvgIcon(
         'preventable',
@@ -50,24 +73,5 @@ export class SurveyComponent implements OnInit {
         'carrier_circle',
         sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_circle.svg')
       );
-  }
-
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.step = +params.step || 0;
-    });
-  }
-
-  selectionChanged($event: StepperSelectionEvent) {
-    this.step = $event.selectedIndex;
-
-    this.router.navigate(
-      [],
-      {
-        relativeTo: this.route,
-        queryParams: {step: this.step},
-        queryParamsHandling: 'merge'
-      }
-    );
   }
 }

@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "genetic-prefs-staging"
+  },
+  "targets": {
+    "genetic-prefs-staging": {
+      "hosting": {
+        "ng-gen-prefs-redesign": [
+          "genetic-prefs-staging"
+        ]
+      }
+    }
   }
 }
