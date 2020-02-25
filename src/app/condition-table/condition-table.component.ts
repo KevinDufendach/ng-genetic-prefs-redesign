@@ -1,11 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-// import {CONDITION_DATA} from '../model/condition';
 import {SurveyService} from '../survey.service';
 // @ts-ignore
-import * as data from '../model/condition_list.json';
+import * as data from '../../assets/condition_list.json';
 import {Condition2} from '../model/condition2';
-import {MatIconRegistry} from '@angular/material/icon';
-import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-condition-table',
