@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataManagerService} from '../data-manager.service';
 
 @Component({
   selector: 'app-instructions',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstructionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dms: DataManagerService) { }
 
   ngOnInit() {
   }
 
+  setRole(role: string) {
+    console.log('setting role: ' + role);
+
+    this.dms.setRole(role);
+  }
 }

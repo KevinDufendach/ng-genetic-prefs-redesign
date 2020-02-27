@@ -3,9 +3,9 @@ import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestor
 import {AuthService} from './auth.service';
 import {SelectionChangeEvent} from './selection-logger.service';
 import {Observable} from 'rxjs';
+import * as firebase from 'firebase';
 import {User} from 'firebase';
 import Timestamp = firebase.firestore.Timestamp;
-import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -16,16 +16,6 @@ export class DataManagerService {
   constructor(private afs: AngularFirestore, private auth: AuthService) {
     this.user = this.auth.user;
   }
-
-  private getUserDataDocument(u: User): AngularFirestoreDocument {
-    return this.afs.collection('userData').doc(u.uid);
-  }
-
-  // private async bootstrapData(logEntry: SelectionChangeEvent): SelectionChangeEvent {
-  //   const u = this.user.toPromise();
-  //
-  //
-  // }
 
   logSelectionChange(logEntry: SelectionChangeEvent) {
     this.user.subscribe(u => {
@@ -47,7 +37,36 @@ export class DataManagerService {
             console.log('NOT successful saving log data for:' + u.uid + ' at ' + docId);
             console.log(reason);
         });
+      } else {
+        console.log('error getting user');
       }
     });
+  }
+
+  // private async bootstrapData(logEntry: SelectionChangeEvent): SelectionChangeEvent {
+  //   const u = this.user.toPromise();
+  //
+  //
+  // }
+
+  setRole(role: string) {
+    this.user.subscribe(u => {
+      if (u) {
+        this.getUserDataDocument(u).set({role})
+          .then(_ => {
+            console.log('successfully saved user as ' + role);
+          }).catch(reason => {
+            console.log('NOT successful saving role data for:' + u.uid + ' at ' + role);
+            console.log(reason);
+          }
+        );
+      } else {
+        console.log('error getting user');
+      }
+    });
+  }
+
+  private getUserDataDocument(u: User): AngularFirestoreDocument {
+    return this.afs.collection('userData').doc(u.uid);
   }
 }
