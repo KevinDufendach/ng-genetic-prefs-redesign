@@ -1,5 +1,5 @@
 <div fxFlex fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
-  <div fxFlex="50" fxLayout="column" fxLayoutGap="10px">
+  <div fxFlex.gt-sm="50" fxLayout="column" fxLayoutGap="10px">
     <h3>Do you want to receive results for diseases that are preventable and for diseases that are not preventable?</h3>
     <p>Preventable diseases have medical or lifestyle steps you can take before the disease begins. For example,
       surgery, lifelong medicine, or lifestyle changes can reduce the risk of getting some diseases. For diseases that
@@ -26,16 +26,16 @@
         tumors get too big they can cause many different problems and even death. If tumors occur, they can sometimes be
         removed by surgery. Sometimes medicines or radiation might be needed to shrink the tumors before surgery.
         Sometimes tumors can’t be removed by surgery.</p>
+      <div class="youtube-container">
+        <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/YlK5x2elBcM?start=42&end=61" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
     </mat-expansion-panel>
 
-    <div class="youtube-container">
-      <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/YlK5x2elBcM?start=42&end=61" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
 
   </div>
-  <div fxFlex="50" fxLayout="column">
+  <div fxFlex.gt-sm="50" fxLayout="column">
     <app-condition-table></app-condition-table>
   </div>
 </div>

@@ -1,9 +1,9 @@
-<mat-card>
+<mat-card fxFlex>
   <mat-card-header>
     <mat-icon *ngIf="icon" mat-card-avatar [svgIcon]="icon" aria-hidden="false"></mat-icon>
     <mat-card-title>{{title}}</mat-card-title>
   </mat-card-header>
-  <mat-card-content>
+  <mat-card-content fxFlex>
     <ng-content></ng-content>
   </mat-card-content>
   <mat-card-actions fxLayoutGap="15">

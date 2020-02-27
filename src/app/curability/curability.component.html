@@ -1,5 +1,5 @@
 <div fxFlex fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
-  <div fxFlex="50" fxLayout="column" fxLayoutGap="10px">
+  <div fxFlex.gt-sm="50" fxLayout="column" fxLayoutGap="10px">
     <h3>Do you want to receive results about treatable diseases that are curable and not curable?</h3>
     <p>All diseases are treatable. Some treatable diseases can be cured. Some treatable diseases can’t be cured, but
       symptoms can be reduced or managed. Would you want to receive results about diseases that cannot be cured?</p>
@@ -20,16 +20,22 @@
         of the three treatments can improve the heart’s ability to pump blood. Once treatments begin, they are usually
         lifelong.</p>
 
+      <div class="youtube-container">
+        <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/oznr-1-poSU" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+
+<!--      <div class="youtube-container">-->
+<!--        <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/YlK5x2elBcM?start=61&end=88" frameborder="0"-->
+<!--                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+<!--                allowfullscreen></iframe>-->
+<!--      </div>-->
+
     </mat-expansion-panel>
 
-    <div class="youtube-container">
-      <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/YlK5x2elBcM?start=61&end=88" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
-
   </div>
-  <div fxFlex="50" fxLayout="column">
+  <div fxFlex.gt-sm="50" fxLayout="column">
     <app-condition-table></app-condition-table>
   </div>
 </div>
