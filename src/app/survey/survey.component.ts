@@ -56,9 +56,7 @@ export class SurveyComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      console.log('step from params: ' + params.step);
       this.step = +params.step || 0;
-      console.log('step after params: ' + this.step);
     });
   }
 
@@ -67,7 +65,6 @@ export class SurveyComponent implements OnInit {
   }
 
   forwardStep() {
-    console.log(this.step);
     // Check to be sure another step exists
     if (this.step + 1 < STEP_COUNT) {
       this.onStepChange(this.step + 1);
@@ -77,7 +74,6 @@ export class SurveyComponent implements OnInit {
   }
 
   backwardStep() {
-    console.log(this.step);
     // Check to be sure another step exists
     if (this.step > 0) {
       this.onStepChange(this.step - 1);
