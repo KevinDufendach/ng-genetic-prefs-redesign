@@ -4,6 +4,8 @@ import {STEPPER_GLOBAL_OPTIONS, StepperSelectionEvent} from '@angular/cdk/steppe
 import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
 
+const STEP_COUNT = 5;
+
 @Component({
   selector: 'app-survey',
   templateUrl: './survey.component.html',
@@ -14,60 +16,86 @@ import {DomSanitizer} from '@angular/platform-browser';
   }]
 })
 export class SurveyComponent implements OnInit {
-  step: number;
+  step = 0;
 
   constructor(private route: ActivatedRoute, private router: Router, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry
-      .addSvgIcon(
-        'preventable',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_black.svg')
-      )
-      .addSvgIcon(
-        'curable',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_black.svg')
-      )
-      .addSvgIcon(
-        'adultOnset',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_black.svg')
-      )
-      .addSvgIcon(
-        'carrier',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_black.svg')
-      )
-      .addSvgIcon(
-        'preventable_circle',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_circle.svg')
-      )
-      .addSvgIcon(
-        'curable_circle',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_circle.svg')
-      )
-      .addSvgIcon(
-        'adultOnset_circle',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_circle.svg')
-      )
-      .addSvgIcon(
-        'carrier_circle',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_circle.svg')
-      );
+        .addSvgIcon(
+            'preventable',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_black.svg')
+        )
+        .addSvgIcon(
+            'curable',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_black.svg')
+        )
+        .addSvgIcon(
+            'adultOnset',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_black.svg')
+        )
+        .addSvgIcon(
+            'carrier',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_black.svg')
+        )
+        .addSvgIcon(
+            'preventable_circle',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_circle.svg')
+        )
+        .addSvgIcon(
+            'curable_circle',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_circle.svg')
+        )
+        .addSvgIcon(
+            'adultOnset_circle',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_circle.svg')
+        )
+        .addSvgIcon(
+            'carrier_circle',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_circle.svg')
+        );
   }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
+      console.log('step from params: ' + params.step);
       this.step = +params.step || 0;
+      console.log('step after params: ' + this.step);
     });
   }
 
   selectionChanged($event: StepperSelectionEvent) {
-    this.step = $event.selectedIndex;
+    this.onStepChange($event.selectedIndex);
+  }
+
+  forwardStep() {
+    console.log(this.step);
+    // Check to be sure another step exists
+    if (this.step + 1 < STEP_COUNT) {
+      this.onStepChange(this.step + 1);
+    } else {
+      console.log('unable to advance to next step');
+    }
+  }
+
+  backwardStep() {
+    console.log(this.step);
+    // Check to be sure another step exists
+    if (this.step > 0) {
+      this.onStepChange(this.step - 1);
+    } else {
+      console.log('unable to advance to next step');
+    }
+  }
+
+  onStepChange(newStep: number) {
+    this.step = newStep;
 
     this.router.navigate(
-      [],
-      {
-        relativeTo: this.route,
-        queryParams: {step: this.step},
-        queryParamsHandling: 'merge'
-      }
+        [],
+        {
+          relativeTo: this.route,
+          queryParams: {step: this.step},
+          queryParamsHandling: 'merge'
+        }
     );
   }
 }

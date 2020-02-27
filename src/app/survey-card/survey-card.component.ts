@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {noop} from 'rxjs';
 
 @Component({
   selector: 'app-survey-card',
@@ -8,6 +9,9 @@ import {Component, Input, OnInit} from '@angular/core';
 export class SurveyCardComponent implements OnInit {
   @Input() title: any;
   @Input() icon?: string;
+
+  // @Output() backFunction = noop;
+  // @Output() forwardFunction = noop;
 
   constructor() { }
 
