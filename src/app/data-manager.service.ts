@@ -4,6 +4,8 @@ import {AuthService} from './auth.service';
 import {SelectionChangeEvent} from './selection-logger.service';
 import {Observable} from 'rxjs';
 import {User} from 'firebase';
+import Timestamp = firebase.firestore.Timestamp;
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -22,30 +24,15 @@ export class DataManagerService {
   logSelectionChange(logEntry: SelectionChangeEvent) {
     this.user.subscribe(u => {
       if (u) {
-        console.log(u.uid);
+        const docId = (logEntry.timestamp || Timestamp.now()).toMillis().toString();
 
-        this.getUserDataDocument(u).collection('logs').doc<SelectionChangeEvent>().set(logEntry)
+        console.log('Logging selection change for:' + u.uid + ' at ' + docId);
+        this.getUserDataDocument(u).collection('logs').doc<SelectionChangeEvent>(docId).set(logEntry)
           .then(value => {
             console.log('successfully saved log data');
           }).catch(reason => {
             console.log('NOT successful saving log data:');
             console.log(reason);
-        });
-      }
-    });
-  }
-
-  logSaveEvent(logEntry: SelectionChangeEvent) {
-    this.user.subscribe(u => {
-      if (u) {
-        console.log(u.uid);
-
-        this.getUserDataDocument(u).collection('saves').doc<SelectionChangeEvent>().set(logEntry)
-          .then(value => {
-            console.log('successfully saved selection data');
-          }).catch(reason => {
-          console.log('NOT successful saving selection data:');
-          console.log(reason);
         });
       }
     });
