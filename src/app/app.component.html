@@ -1,9 +1,10 @@
 <mat-toolbar color="primary">
-  <button mat-button routerLink="/instructions">Genetic Preferences App</button>
+  <button mat-button routerLink="/instructions"><h1>Genetic Preferences App</h1></button>
   <span fxFlex></span>
-  <button mat-icon-button (click)="save()">
-    <mat-icon>save</mat-icon>
-  </button>
+  <div *ngIf="auth.user | async as user">Auto logged in as {{user.uid}}</div>
+<!--  <button mat-icon-button (click)="save()">-->
+<!--    <mat-icon>save</mat-icon>-->
+<!--  </button>-->
 </mat-toolbar>
 <div class="app-body">
   <router-outlet></router-outlet>
