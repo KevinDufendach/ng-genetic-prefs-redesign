@@ -11,4 +11,11 @@ export class CarrierStatusComponent {
 
   constructor(public survey: SurveyService) { }
 
+  get value(): number {
+    return this.survey.getCarrierStatus();
+  }
+
+  set value(val: number) {
+    this.survey.setCarrierStatus(val, {context: 'Carrier Status Step'});
+  }
 }
