@@ -112,6 +112,6 @@ export class SurveyService {
   // }
 
   private logSelections(context?: any) {
-    this.sls.log({uid: 'testUID', selections: this.selections, context});
+    this.sls.log({selections: this.selections, context});
   }
 }

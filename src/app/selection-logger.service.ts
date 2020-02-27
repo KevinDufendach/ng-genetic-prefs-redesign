@@ -3,12 +3,13 @@ import {Selections} from './model/selections';
 import * as firebase from 'firebase';
 import Timestamp = firebase.firestore.Timestamp;
 import {DataManagerService} from './data-manager.service';
+import {AuthService} from './auth.service';
 
 export interface SelectionChangeEvent {
-  uid: string;
-  timestamp?: Timestamp;
   selections: Selections;
   context?: any;
+  timestamp?: Timestamp;
+  uid?: string;
 }
 
 @Injectable({

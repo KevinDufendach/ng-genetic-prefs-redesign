@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
+import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {AuthService} from './auth.service';
 import {SelectionChangeEvent} from './selection-logger.service';
 import {Observable} from 'rxjs';
@@ -21,17 +21,30 @@ export class DataManagerService {
     return this.afs.collection('userData').doc(u.uid);
   }
 
+  // private async bootstrapData(logEntry: SelectionChangeEvent): SelectionChangeEvent {
+  //   const u = this.user.toPromise();
+  //
+  //
+  // }
+
   logSelectionChange(logEntry: SelectionChangeEvent) {
     this.user.subscribe(u => {
       if (u) {
-        const docId = (logEntry.timestamp || Timestamp.now()).toMillis().toString();
+        if (logEntry.uid == null) {
+          logEntry.uid = u.uid;
+        }
 
-        console.log('Logging selection change for:' + u.uid + ' at ' + docId);
+        if (!logEntry.timestamp == null) {
+          logEntry.timestamp = Timestamp.now();
+        }
+
+        const docId = (logEntry.timestamp).toMillis().toString();
+
         this.getUserDataDocument(u).collection('logs').doc<SelectionChangeEvent>(docId).set(logEntry)
           .then(value => {
-            console.log('successfully saved log data');
+            console.log('successfully saved log data for:' + u.uid + ' at ' + docId);
           }).catch(reason => {
-            console.log('NOT successful saving log data:');
+            console.log('NOT successful saving log data for:' + u.uid + ' at ' + docId);
             console.log(reason);
         });
       }
