@@ -7,6 +7,7 @@ export interface SelectionChangeEvent {
   uid: string;
   timestamp?: Timestamp;
   selections: Selections;
+  context?: any;
 }
 
 @Injectable({

@@ -10,4 +10,12 @@ export class PreventabilityComponent {
   notSureAllowed = false;
 
   constructor(public survey: SurveyService) { }
+
+  get value(): number {
+    return this.survey.getPreventability();
+  }
+
+  set value(val: number) {
+    this.survey.setPreventability(val, {context: 'Preventability Step'});
+  }
 }
