@@ -20,38 +20,38 @@ export class SurveyComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry
-        .addSvgIcon(
-            'preventable',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_black.svg')
-        )
-        .addSvgIcon(
-            'curable',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_black.svg')
-        )
-        .addSvgIcon(
-            'adultOnset',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_black.svg')
-        )
-        .addSvgIcon(
-            'carrier',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_black.svg')
-        )
-        .addSvgIcon(
-            'preventable_circle',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_circle.svg')
-        )
-        .addSvgIcon(
-            'curable_circle',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_circle.svg')
-        )
-        .addSvgIcon(
-            'adultOnset_circle',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_circle.svg')
-        )
-        .addSvgIcon(
-            'carrier_circle',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_circle.svg')
-        );
+      .addSvgIcon(
+        'preventable',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_black.svg')
+      )
+      .addSvgIcon(
+        'curable',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_black.svg')
+      )
+      .addSvgIcon(
+        'adultOnset',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_black.svg')
+      )
+      .addSvgIcon(
+        'carrier',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_black.svg')
+      )
+      .addSvgIcon(
+        'preventable_circle',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_circle.svg')
+      )
+      .addSvgIcon(
+        'curable_circle',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_circle.svg')
+      )
+      .addSvgIcon(
+        'adultOnset_circle',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_circle.svg')
+      )
+      .addSvgIcon(
+        'carrier_circle',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_circle.svg')
+      );
   }
 
   ngOnInit() {
@@ -86,12 +86,12 @@ export class SurveyComponent implements OnInit {
     this.step = newStep;
 
     this.router.navigate(
-        [],
-        {
-          relativeTo: this.route,
-          queryParams: {step: this.step},
-          queryParamsHandling: 'merge'
-        }
+      [],
+      {
+        relativeTo: this.route,
+        queryParams: {step: this.step},
+        queryParamsHandling: 'merge'
+      }
     );
   }
 }

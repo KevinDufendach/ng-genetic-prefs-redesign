@@ -27,6 +27,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 import { AdultOnsetComponent } from './adult-onset/adult-onset.component';
 import { CarrierStatusComponent } from './carrier-status/carrier-status.component';
+import { FinalReviewComponent } from './final-review/final-review.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { CarrierStatusComponent } from './carrier-status/carrier-status.componen
     ToggleButtonComponent,
     AdultOnsetComponent,
     CarrierStatusComponent,
+    FinalReviewComponent,
   ],
   imports: [
     BrowserModule,
