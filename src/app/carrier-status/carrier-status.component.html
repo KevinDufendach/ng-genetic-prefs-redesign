@@ -1,23 +1,31 @@
 <div fxFlex fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
   <div fxFlex="50" fxLayout="column" fxLayoutGap="10px">
-    <h3>Do you want to receive results if you are a carrier for a disease but you will not develop the disease yourself?</h3>
-    <p>Some genetic diseases are caused by gene variations that come from BOTH parents. A carrier only has one copy of the gene variation so a carrier won’t get the disease. Carriers are at risk of having children with the genetic disease if their partner also is a carrier for the same disease.</p>
+    <h3>Do you want to receive results if you are a carrier for a disease but you will not develop the disease
+      yourself?</h3>
+    <p>Some genetic diseases are caused by gene variations that come from BOTH parents. A carrier only has one copy of
+      the gene variation so a carrier won’t get the disease. Carriers are at risk of having children with the genetic
+      disease if their partner also is a carrier for the same disease.</p>
     <mat-radio-group fxLayout="column" class="survey-radio app-wrap" [(ngModel)]="survey.selections.carrierStatus">
       <mat-radio-button [value]="1">Yes, I want to receive results if I am a carrier</mat-radio-button>
-      <mat-radio-button [value]="0">No, I ONLY want to receive results if I will develop the disease myself</mat-radio-button>
+      <mat-radio-button [value]="0">No, I ONLY want to receive results if I will develop the disease myself
+      </mat-radio-button>
       <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span>
       </mat-radio-button>
     </mat-radio-group>
     <mat-expansion-panel>
       <mat-expansion-panel-header (click)="notSureAllowed = true">I need more information</mat-expansion-panel-header>
-      <p>An example of a disease that is caused by gene variations that come from both parents is sickle cell disease. When a parent has only one gene variation for sickle cell disease, the parent is a carrier for sickle cell but does not have the disease. When two parents are carriers for sickle cell disease, they have a 25% or a one in four chance of having a child with sickle cell disease.</p>
+      <p>An example of a disease that is caused by gene variations that come from both parents is sickle cell disease.
+        When a parent has only one gene variation for sickle cell disease, the parent is a carrier for sickle cell but
+        does not have the disease. When two parents are carriers for sickle cell disease, they have a 25% or a one in
+        four chance of having a child with sickle cell disease.</p>
+      <div class="youtube-container">
+        <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/pQme31Bx6FY?start=179&end=226"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
     </mat-expansion-panel>
 
-    <div class="youtube-container">
-      <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/pQme31Bx6FY?start=179&end=226" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
 
   </div>
   <div fxFlex="50" fxLayout="column">

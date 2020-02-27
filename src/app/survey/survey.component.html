@@ -45,22 +45,44 @@
   <span fxFlex></span>
 </div>
 
-<mat-vertical-stepper linear fxHide fxShow.lt-md>
+<mat-vertical-stepper [selectedIndex]="step" (selectionChange)="selectionChanged($event)">
   <mat-step label="General Intro">
-    <app-intro></app-intro>
+    <app-survey-card title="General Information">
+      <app-intro></app-intro>
+    </app-survey-card>
   </mat-step>
-  <mat-step label="Curable">
-    <app-curability></app-curability>
+  <mat-step label="Curable" state="curable">
+    <app-survey-card title="Curability" icon="curable_circle">
+      <app-curability></app-curability>
+    </app-survey-card>
   </mat-step>
-  <mat-step label="Preventable">
-    <app-preventability></app-preventability>
+  <mat-step label="Preventable" state="preventable">
+    <app-survey-card title="Preventability" icon="preventable_circle">
+      <app-preventability></app-preventability>
+    </app-survey-card>
   </mat-step>
-  <mat-step label="Step 4">
-    Content 4
+  <mat-step label="Adult Onset" state="adultOnset">
+    <app-survey-card title="Adult Onset" icon="adultOnset_circle">
+      <app-adult-onset></app-adult-onset>
+    </app-survey-card>
   </mat-step>
-  <mat-step label="Step 5">
-    Content 5
+  <mat-step label="Carrier Status" state="carrier">
+    <app-survey-card title="Carrier Status" icon="carrier_circle">
+      <app-carrier-status></app-carrier-status>
+    </app-survey-card>
   </mat-step>
 
+  <ng-template matStepperIcon="curable">
+    <mat-icon svgIcon="curable"></mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="preventable">
+    <mat-icon svgIcon="curable"></mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="adultOnset">
+    <mat-icon svgIcon="adultOnset"></mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="carrier">
+    <mat-icon svgIcon="carrier"></mat-icon>
+  </ng-template>
 </mat-vertical-stepper>
 
