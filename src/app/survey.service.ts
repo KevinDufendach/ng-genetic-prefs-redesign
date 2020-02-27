@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Selections} from './model/selections';
+import {SelectionLoggerService} from './selection-logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class SurveyService {
     carrierStatus: -1,
   };
 
-  constructor() {
+  constructor(private sls: SelectionLoggerService) {
   }
 
   get curability() {
@@ -25,6 +26,7 @@ export class SurveyService {
 
   set curability(val: boolean) {
     this.selections.curability = (val ? 1 : 0);
+    this.logSelections();
   }
 
   get preventability() {
@@ -37,6 +39,7 @@ export class SurveyService {
 
   set preventability(val: boolean) {
     this.selections.preventability = (val ? 1 : 0);
+    this.logSelections();
   }
 
   get adultOnset() {
@@ -49,6 +52,7 @@ export class SurveyService {
 
   set adultOnset(val: boolean) {
     this.selections.adultOnset = (val ? 1 : 0);
+    this.logSelections();
   }
 
   get carrierStatus() {
@@ -61,5 +65,10 @@ export class SurveyService {
 
   set carrierStatus(val: boolean) {
     this.selections.carrierStatus = (val ? 1 : 0);
+    this.logSelections();
+  }
+
+  private logSelections() {
+    this.sls.log({uid: 'testUID', selections: this.selections});
   }
 }
