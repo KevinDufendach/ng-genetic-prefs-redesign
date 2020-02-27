@@ -10,4 +10,12 @@ export class AdultOnsetComponent {
   notSureAllowed = false;
 
   constructor(public survey: SurveyService) { }
+
+  get value(): number {
+    return this.survey.getAdultOnset();
+  }
+
+  set value(val: number) {
+    this.survey.setAdultOnset(val, {context: 'Curability Step'});
+  }
 }

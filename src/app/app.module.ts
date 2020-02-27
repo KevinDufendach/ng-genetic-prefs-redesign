@@ -27,6 +27,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 import { AdultOnsetComponent } from './adult-onset/adult-onset.component';
 import { CarrierStatusComponent } from './carrier-status/carrier-status.component';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,9 @@ import { CarrierStatusComponent } from './carrier-status/carrier-status.componen
     MatIconModule,
     MatExpansionModule,
     MatDividerModule,
+
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

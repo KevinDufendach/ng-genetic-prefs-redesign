@@ -11,4 +11,12 @@ export class CurabilityComponent {
   notSureAllowed = false;
 
   constructor(public survey: SurveyService) { }
+
+  get value(): number {
+    return this.survey.getCurability();
+  }
+
+  set value(val: number) {
+    this.survey.setCurability(val, {context: 'Curability Step'});
+  }
 }

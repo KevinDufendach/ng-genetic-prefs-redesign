@@ -6,17 +6,17 @@
       <!-- Curable Column -->
       <ng-container matColumnDef="curable">
         <th mat-header-cell *matHeaderCellDef>
-          <button mat-icon-button (click)="survey.curability = !survey.curability">
+          <button mat-icon-button (click)="curability = !curability">
             <mat-icon svgIcon="curable_circle" aria-hidden="false" aria-label="Curable"
-                      [ngClass]="{'mat-primary': survey.curability}"></mat-icon>
+                      [ngClass]="{'mat-primary': curability}"></mat-icon>
           </button>
         </th>
         <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
           <div class="condition-attribute-icon"
                [ngClass]="{
-                 'attribute-active': survey.curability,
+                 'attribute-active': curability,
                  'attribute-present': condition.curable,
-                 'attribute-blocking': !survey.curability && !condition.curable
+                 'attribute-blocking': !curability && !condition.curable
                }">
             <mat-icon svgIcon="curable_circle" aria-hidden="false" aria-label="Curable"></mat-icon>
           </div>
@@ -26,17 +26,17 @@
       <!-- Preventable Column -->
       <ng-container matColumnDef="preventable">
         <th mat-header-cell *matHeaderCellDef>
-          <button mat-icon-button (click)="survey.preventability = !survey.preventability">
+          <button mat-icon-button (click)="preventability = !preventability">
             <mat-icon svgIcon="preventable_circle" aria-hidden="false" aria-label="Preventable"
-                      [ngClass]="{'mat-primary': survey.preventability}"></mat-icon>
+                      [ngClass]="{'mat-primary': preventability}"></mat-icon>
           </button>
         </th>
         <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
           <div class="condition-attribute-icon"
                [ngClass]="{
-                 'attribute-active': survey.preventability,
+                 'attribute-active': preventability,
                  'attribute-present': condition.preventable,
-                 'attribute-blocking': !survey.preventability && !condition.preventable
+                 'attribute-blocking': !preventability && !condition.preventable
                }">
             <mat-icon svgIcon="preventable_circle" aria-hidden="false" aria-label="Preventable"></mat-icon>
           </div>
@@ -46,17 +46,17 @@
       <!-- Adult Onset Column -->
       <ng-container matColumnDef="adultOnset">
         <th mat-header-cell *matHeaderCellDef>
-          <button mat-icon-button (click)="survey.adultOnset = !survey.adultOnset">
+          <button mat-icon-button (click)="adultOnset = !adultOnset">
             <mat-icon svgIcon="adultOnset_circle" aria-hidden="false" aria-label="Adult Onset"
-                      [ngClass]="{'mat-primary': survey.adultOnset}"></mat-icon>
+                      [ngClass]="{'mat-primary': adultOnset}"></mat-icon>
           </button>
         </th>
         <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
           <div class="condition-attribute-icon"
                [ngClass]="{
-                 'attribute-active': survey.adultOnset,
+                 'attribute-active': adultOnset,
                  'attribute-present': condition.adultOnset,
-                 'attribute-blocking': !survey.adultOnset && condition.adultOnset
+                 'attribute-blocking': !adultOnset && condition.adultOnset
                }">
             <mat-icon svgIcon="adultOnset_circle" aria-hidden="false" aria-label="Adult Onset"></mat-icon>
           </div>
@@ -66,15 +66,15 @@
       <!-- Adult Onset Column -->
       <ng-container matColumnDef="carrier">
         <th mat-header-cell *matHeaderCellDef>
-          <button mat-icon-button (click)="survey.carrierStatus = !survey.carrierStatus">
+          <button mat-icon-button (click)="carrierStatus = !carrierStatus">
             <mat-icon svgIcon="carrier_circle" aria-hidden="false" aria-label="Carrier Status"
-                      [ngClass]="{'mat-primary': survey.carrierStatus}"></mat-icon>
+                      [ngClass]="{'mat-primary': carrierStatus}"></mat-icon>
           </button>
         </th>
         <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
           <div class="condition-attribute-icon"
                [ngClass]="{
-                 'attribute-active': survey.carrierStatus,
+                 'attribute-active': carrierStatus,
                  'attribute-present': condition.carrier
                }">
             <mat-icon svgIcon="carrier_circle" aria-hidden="false" aria-label="Carrier Status"></mat-icon>

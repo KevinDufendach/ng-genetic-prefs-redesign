@@ -121,6 +121,10 @@
               "devServerTarget": "ng-gen-prefs-redesign:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
