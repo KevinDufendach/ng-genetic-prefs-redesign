@@ -31,6 +31,7 @@ import { FinalReviewComponent } from './final-review/final-review.component';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import { ModeratorDashboardComponent } from './moderator-dashboard/moderator-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     AdultOnsetComponent,
     CarrierStatusComponent,
     FinalReviewComponent,
+    ModeratorDashboardComponent,
   ],
   imports: [
     BrowserModule,
