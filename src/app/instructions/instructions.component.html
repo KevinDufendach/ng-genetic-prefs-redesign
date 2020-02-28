@@ -10,11 +10,10 @@
     </div>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button class="mat-warn">I'm not ready</button>
+    <button mat-raised-button class="mat-warn"><span fxHide.lt-md>I'm </span>not ready</button>
     <span fxFlex></span>
-    <h3>Continue as: </h3>
-    <button mat-raised-button class="mat-primary" routerLink="/survey" (click)="setRole('adolescent')">Adolescent 13-17</button>
-    <button mat-raised-button class="mat-primary" routerLink="/survey" (click)="setRole('young_adult')">Young Adult 18-21</button>
-    <button mat-raised-button class="mat-primary" routerLink="/survey" (click)="setRole('parent')">Parent (or >21)</button>
+    <button mat-raised-button class="mat-primary" routerLink="/survey" (click)="setRole('adolescent')"><span fxHide.lt-md>Adolescent </span>13-17</button>
+    <button mat-raised-button class="mat-primary" routerLink="/survey" (click)="setRole('young_adult')"><span fxHide.lt-md>Young Adult </span>18-21</button>
+    <button mat-raised-button class="mat-primary" routerLink="/survey" (click)="setRole('parent')">Parent<span fxHide.lt-md> (or >21)</span></button>
   </mat-card-actions>
 </mat-card>

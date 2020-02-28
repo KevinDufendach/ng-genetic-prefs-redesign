@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Observable} from 'rxjs';
 import {User} from 'firebase';
@@ -15,5 +15,11 @@ export class AuthService {
 
   login() {
     this.auth.signInAnonymously();
+  }
+
+  changeAnonymousUser() {
+    this.auth.signOut().then(_ => {
+      this.login();
+    });
   }
 }
