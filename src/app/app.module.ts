@@ -24,14 +24,18 @@ import {CurabilityComponent} from './curability/curability.component';
 import {SurveyCardComponent} from './survey-card/survey-card.component';
 import {ConditionTableComponent} from './condition-table/condition-table.component';
 import {HttpClientModule} from '@angular/common/http';
-import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
-import { AdultOnsetComponent } from './adult-onset/adult-onset.component';
-import { CarrierStatusComponent } from './carrier-status/carrier-status.component';
-import { FinalReviewComponent } from './final-review/final-review.component';
+import {ToggleButtonComponent} from './toggle-button/toggle-button.component';
+import {AdultOnsetComponent} from './adult-onset/adult-onset.component';
+import {CarrierStatusComponent} from './carrier-status/carrier-status.component';
+import {FinalReviewComponent} from './final-review/final-review.component';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
-import { ModeratorDashboardComponent } from './moderator-dashboard/moderator-dashboard.component';
+import {ModeratorDashboardComponent} from './moderator-dashboard/moderator-dashboard.component';
+import {ParticipantTableComponent} from './participant-table/participant-table.component';
+import {LoginFormComponent} from './login-form/login-form.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -49,6 +53,8 @@ import { ModeratorDashboardComponent } from './moderator-dashboard/moderator-das
     CarrierStatusComponent,
     FinalReviewComponent,
     ModeratorDashboardComponent,
+    ParticipantTableComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,9 +74,11 @@ import { ModeratorDashboardComponent } from './moderator-dashboard/moderator-das
     MatIconModule,
     MatExpansionModule,
     MatDividerModule,
+    MatFormFieldModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

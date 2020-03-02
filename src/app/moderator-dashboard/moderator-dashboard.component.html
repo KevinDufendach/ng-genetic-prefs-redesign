@@ -1,1 +1,14 @@
 <p>moderator-dashboard works!</p>
+
+<div *ngIf="isLoggedInWithCreds else login">
+  <app-participant-table></app-participant-table>
+</div>
+
+<ng-template #login>
+  <mat-card fxFlex fxFlex.gt-sm="400px">
+    <mat-card-title>Log in to moderator view</mat-card-title>
+    <mat-card-content>
+      <app-login-form></app-login-form>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
