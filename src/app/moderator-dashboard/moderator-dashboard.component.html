@@ -1,8 +1,8 @@
-<p>moderator-dashboard works!</p>
-
+<div fxFlex></div>
 <div *ngIf="isLoggedInWithCreds else login">
   <app-participant-table></app-participant-table>
 </div>
+<div fxFlex></div>
 
 <ng-template #login>
   <mat-card fxFlex fxFlex.gt-sm="400px">

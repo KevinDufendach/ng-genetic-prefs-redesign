@@ -1,6 +1,12 @@
 <div fxLayout="column">
-  <input matInput [(ngModel)]="email" placeholder="email">
-  <input matInput [(ngModel)]="password" placeholder="password">
-  <button mat-button>Register</button>
-  <button mat-raised-button>Login</button>
+  <mat-form-field>
+    <input matInput [(ngModel)]="email" placeholder="email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="password" placeholder="password" type="password">
+  </mat-form-field>
+  <div fxLayout="row" fxLayoutGap="15px">
+    <button mat-raised-button (click)="register()">Register</button>
+    <button mat-raised-button class="mat-primary" (click)="login()">Login</button>
+  </div>
 </div>
