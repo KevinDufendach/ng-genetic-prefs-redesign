@@ -10,8 +10,4 @@ export class AppComponent {
 
   constructor(public auth: AuthService) {
   }
-
-  save() {
-
-  }
 }

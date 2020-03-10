@@ -1,12 +1,13 @@
 <mat-toolbar color="primary">
   <button mat-button routerLink="/instructions">Genetic Preferences</button>
   <span fxFlex></span>
-  <div fxHide.lt-md *ngIf="auth.user | async as user">Auto logged in as {{user.uid}}</div>
-<!--  <div style="font-size: xx-small" fxHide fxShow.lt-md *ngIf="auth.user | async as user">{{user.uid | slice : 0 : 5}}</div>-->
+  <ng-container fxHide.lt-md *ngIf="auth.user | async as user">
+    <div>
+      <span *ngIf="user.isAnonymous">Logged in as {{user.uid}}</span>
+      <span *ngIf="!user.isAnonymous">{{user.email}}</span>
+    </div>
+  </ng-container>
   <button mat-button (click)="auth.changeAnonymousUser()">Change User</button>
-<!--  <button mat-icon-button (click)="save()">-->
-<!--    <mat-icon>save</mat-icon>-->
-<!--  </button>-->
 </mat-toolbar>
 <div class="app-body">
   <router-outlet></router-outlet>
