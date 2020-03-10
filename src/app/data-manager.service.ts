@@ -34,8 +34,8 @@ export class DataManagerService {
           .then(value => {
             console.log('successfully saved log data for:' + u.uid + ' at ' + docId);
           }).catch(reason => {
-            console.log('NOT successful saving log data for:' + u.uid + ' at ' + docId);
-            console.log(reason);
+          console.log('NOT successful saving log data for:' + u.uid + ' at ' + docId);
+          console.log(reason);
         });
       } else {
         console.log('error getting user');
@@ -64,6 +64,20 @@ export class DataManagerService {
         console.log('error getting user');
       }
     });
+  }
+
+  getResultsDuringTimeRange(start: Timestamp, end: Timestamp): Observable<SelectionChangeEvent[]> {
+    // const userData: AngularFirestoreCollection = this.afs.collection('userData');
+
+    // return this.afs.collection('userData')
+    //   .doc('1DO5BUDAD0P1nLqdba5ETBGG2Oq2')
+    //   .collection<SelectionChangeEvent>('logs')
+    //   .valueChanges();
+
+    return this.afs.collectionGroup<SelectionChangeEvent>('logs', ref => ref
+          .where('timestamp', '>=', start)
+          .where('timestamp', '<=', end))
+      .valueChanges();
   }
 
   private getUserDataDocument(u: User): AngularFirestoreDocument {

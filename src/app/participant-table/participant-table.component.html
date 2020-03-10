@@ -1,1 +1,40 @@
-<p>participant-table works!</p>
+<div>
+  <h5>Start</h5>
+  <mat-form-field>
+    <input matInput [(ngModel)]="startYear" placeholder="year">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="startMonth" placeholder="month">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="startDate" placeholder="day">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="startHour" placeholder="hour">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="startMinute" placeholder="minute">
+  </mat-form-field>
+</div>
+<div>
+  <h5>End</h5>
+  <mat-form-field>
+    <input matInput [(ngModel)]="endYear" placeholder="year">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="endMonth" placeholder="month">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="endDate" placeholder="day">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="endHour" placeholder="hour">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="endMinute" placeholder="minute">
+  </mat-form-field>
+</div>
+
+<button mat-raised-button (click)="getEvents()">Get Events</button>
+
+<div *ngFor="let ev of changeEvents | async">{{ev.context}} : {{ev.timestamp.toMillis()}} : {{ev.uid}}</div>
