@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SurveyService} from '../survey.service';
 // @ts-ignore
 import * as data from '../../assets/condition_list.json';
@@ -10,13 +10,18 @@ import {Condition2} from '../model/condition2';
   styleUrls: ['./condition-table.component.scss']
 })
 export class ConditionTableComponent implements OnInit {
-  displayedColumns: string[] = ['curable', 'preventable', 'adultOnset', 'carrier', 'name'];
+  displayedColumns: string[] = ['name', 'curable', 'preventable', 'adultOnset', 'carrier'];
+  columnOptions: string[] = ['name', 'curable', 'preventable', 'adultOnset', 'carrier'];
   conditions: Condition2[] = (data as any).default;
+  @Input() state = -1;
 
   constructor(public survey: SurveyService) {
   }
 
   ngOnInit(): void {
+    if (this.state > -1) {
+      this.displayedColumns = this.columnOptions.slice(0, this.state + 2);
+    }
   }
 
   get curability(): boolean {
