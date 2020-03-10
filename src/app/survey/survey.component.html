@@ -27,6 +27,11 @@
           <app-carrier-status></app-carrier-status>
         </app-survey-card>
       </mat-step>
+      <mat-step label="Final Review" state="finalReview">
+        <app-survey-card title="Final Review" icon="table_chart" finalStep="true">
+          <app-final-review></app-final-review>
+        </app-survey-card>
+      </mat-step>
 
       <ng-template matStepperIcon="curable">
         <mat-icon svgIcon="curable"></mat-icon>
@@ -39,6 +44,9 @@
       </ng-template>
       <ng-template matStepperIcon="carrier">
         <mat-icon svgIcon="carrier"></mat-icon>
+      </ng-template>
+      <ng-template matStepperIcon="finalReview">
+        <mat-icon svgIcon="table_chart"></mat-icon>
       </ng-template>
     </mat-horizontal-stepper>
   </div>

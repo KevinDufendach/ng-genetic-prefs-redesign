@@ -9,6 +9,7 @@
   <mat-card-actions fxLayoutGap="15">
     <span fxFlex></span>
     <button mat-raised-button matStepperPrevious>Back</button>
-    <button mat-raised-button class="mat-primary" matStepperNext>Next</button>
+    <button mat-raised-button *ngIf="!finalStep" class="mat-primary" matStepperNext>Next</button>
+    <button mat-raised-button *ngIf="finalStep" class="mat-primary" (click)="submit()">Save and Submit</button>
   </mat-card-actions>
 </mat-card>

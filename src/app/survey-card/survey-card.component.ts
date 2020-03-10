@@ -1,4 +1,5 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
+import {SurveyService} from '../survey.service';
 
 @Component({
   selector: 'app-survey-card',
@@ -8,10 +9,14 @@ import {Component, Input, OnInit, Output} from '@angular/core';
 export class SurveyCardComponent implements OnInit {
   @Input() title: any;
   @Input() icon?: string;
+  @Input() finalStep = false;
 
-  constructor() { }
+  constructor(private surveyService: SurveyService) { }
 
   ngOnInit() {
   }
 
+  submit() {
+    this.surveyService.logSelections('submit');
+  }
 }
