@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {InstructionsComponent} from './instructions/instructions.component';
 import {SurveyComponent} from './survey/survey.component';
 import {ModeratorDashboardComponent} from './moderator-dashboard/moderator-dashboard.component';
+import {VideosComponent} from './videos/videos.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
     path: 'moderator',
     component: ModeratorDashboardComponent
   },
+  {
+    path: 'videos',
+    component: VideosComponent
+  }
 ];
 
 @NgModule({

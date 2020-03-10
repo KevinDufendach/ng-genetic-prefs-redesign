@@ -37,6 +37,7 @@ import {LoginFormComponent} from './login-form/login-form.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSortModule} from '@angular/material/sort';
+import { VideosComponent } from './videos/videos.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import {MatSortModule} from '@angular/material/sort';
     ModeratorDashboardComponent,
     ParticipantTableComponent,
     LoginFormComponent,
+    VideosComponent,
   ],
   imports: [
     BrowserModule,
