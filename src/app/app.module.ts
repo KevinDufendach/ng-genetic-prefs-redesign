@@ -36,6 +36,7 @@ import {ParticipantTableComponent} from './participant-table/participant-table.c
 import {LoginFormComponent} from './login-form/login-form.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    MatInputModule
+    MatInputModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,6 +5,7 @@ import {SelectionChangeEvent} from '../selection-logger.service';
 import Timestamp = firebase.firestore.Timestamp;
 import * as firebase from 'firebase';
 import {AuthService} from '../auth.service';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-participant-table',
@@ -23,6 +24,8 @@ export class ParticipantTableComponent implements OnInit {
   endHour = 17;
   endMinute = 30;
   changeEvents: Observable<SelectionChangeEvent[]> | null;
+  dataSource: MatTableDataSource<SelectionChangeEvent>;
+  displayedColumns: ['uid', 'timestamp', 'curability', 'preventability', 'adultOnset', 'carrierStatus'];
 
   constructor(private dms: DataManagerService, private auth: AuthService) {
     // const startDate = new Date(2020, 1, 27, 16, 0);
@@ -43,6 +46,12 @@ export class ParticipantTableComponent implements OnInit {
       const endDate = new Date(this.endYear, this.endMonth - 1, this.endDate, this.endHour, this.endMinute);
 
       this.changeEvents = this.dms.getResultsDuringTimeRange(Timestamp.fromDate(startDate), Timestamp.fromDate(endDate));
+
+      this.changeEvents.subscribe(value => {
+        console.log(value);
+
+        this.dataSource = new MatTableDataSource<SelectionChangeEvent>(value);
+      });
     });
   }
 }
