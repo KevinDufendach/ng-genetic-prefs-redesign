@@ -17,30 +17,69 @@ export class DataManagerService {
     this.user = this.auth.user;
   }
 
-  logSelectionChange(logEntry: SelectionChangeEvent) {
-    this.user.subscribe(u => {
-      if (u) {
-        if (logEntry.uid == null) {
-          logEntry.uid = u.uid;
+  // async logSelectionChange(logEntry: SelectionChangeEvent): Promise<void> {
+  //   console.log('getting user');
+  //
+  //   const u = await this.user.toPromise();
+  //
+  //   console.log(u);
+  //
+  //   if (u) {
+  //     if (logEntry.uid == null) {
+  //       logEntry.uid = u.uid;
+  //     }
+  //
+  //     if (!logEntry.timestamp == null) {
+  //       logEntry.timestamp = Timestamp.now();
+  //     }
+  //
+  //     const docId = (logEntry.timestamp).toMillis().toString();
+  //     console.log('about to save selections');
+  //
+  //     try {
+  //       this.getUserDataDocument(u).collection('logs').doc<SelectionChangeEvent>(docId).set(logEntry);
+  //       console.log('successfully saved log data for:' + u.uid + ' at ' + docId);
+  //       return;
+  //     } catch (err) {
+  //       throw new Error('unsuccessful saving log data for:' + u.uid + ' at ' + docId);
+  //     }
+  //   } else {
+  //     throw new Error('error getting user');
+  //   }
+  // }
+
+  logSelectionChange(logEntry: SelectionChangeEvent): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this.user.subscribe(u => {
+        if (u) {
+          if (logEntry.uid == null) {
+            logEntry.uid = u.uid;
+          }
+
+          if (!logEntry.timestamp == null) {
+            logEntry.timestamp = Timestamp.now();
+          }
+
+          const docId = (logEntry.timestamp).toMillis().toString();
+
+          this.getUserDataDocument(u).collection('logs').doc<SelectionChangeEvent>(docId).set(logEntry)
+            .then(value => {
+              console.log('successfully saved log data for:' + u.uid + ' at ' + docId);
+              resolve();
+            })
+            .catch(reason => {
+              console.log('NOT successful saving log data for:' + u.uid + ' at ' + docId);
+              console.log(reason);
+              reject(reason);
+            });
+        } else {
+          console.log('error getting user');
+          reject(new Error('error getting user'));
         }
+      });
 
-        if (!logEntry.timestamp == null) {
-          logEntry.timestamp = Timestamp.now();
-        }
-
-        const docId = (logEntry.timestamp).toMillis().toString();
-
-        this.getUserDataDocument(u).collection('logs').doc<SelectionChangeEvent>(docId).set(logEntry)
-          .then(value => {
-            console.log('successfully saved log data for:' + u.uid + ' at ' + docId);
-          }).catch(reason => {
-          console.log('NOT successful saving log data for:' + u.uid + ' at ' + docId);
-          console.log(reason);
-        });
-      } else {
-        console.log('error getting user');
-      }
     });
+
   }
 
   // private async bootstrapData(logEntry: SelectionChangeEvent): SelectionChangeEvent {
@@ -75,8 +114,8 @@ export class DataManagerService {
     //   .valueChanges();
 
     return this.afs.collectionGroup<SelectionChangeEvent>('logs', ref => ref
-          .where('timestamp', '>=', start)
-          .where('timestamp', '<=', end))
+      .where('timestamp', '>=', start)
+      .where('timestamp', '<=', end))
       .valueChanges();
   }
 

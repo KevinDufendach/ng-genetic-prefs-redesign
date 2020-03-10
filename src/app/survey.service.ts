@@ -60,6 +60,6 @@ export class SurveyService {
   }
 
   public logSelections(context?: any) {
-    this.sls.log({selections: this.selections, context});
+    return this.sls.log({selections: this.selections, context});
   }
 }

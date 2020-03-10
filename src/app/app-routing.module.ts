@@ -4,6 +4,7 @@ import {InstructionsComponent} from './instructions/instructions.component';
 import {SurveyComponent} from './survey/survey.component';
 import {ModeratorDashboardComponent} from './moderator-dashboard/moderator-dashboard.component';
 import {VideosComponent} from './videos/videos.component';
+import {SaveConfirmationComponent} from './save-confirmation/save-confirmation.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'moderator',
     component: ModeratorDashboardComponent
+  },
+  {
+    path: 'complete',
+    component: SaveConfirmationComponent
   },
   {
     path: 'videos',

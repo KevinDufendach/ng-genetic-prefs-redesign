@@ -18,12 +18,12 @@ export interface SelectionChangeEvent {
 export class SelectionLoggerService {
   constructor(private dms: DataManagerService) { }
 
-  log(e: SelectionChangeEvent) {
+  log(e: SelectionChangeEvent): Promise<void> {
     if (!e.timestamp) {
       e.timestamp = Timestamp.now();
     }
 
     // console.log(e);
-    this.dms.logSelectionChange(e);
+    return this.dms.logSelectionChange(e);
   }
 }

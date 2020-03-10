@@ -46,7 +46,7 @@
         <mat-icon svgIcon="carrier"></mat-icon>
       </ng-template>
       <ng-template matStepperIcon="finalReview">
-        <mat-icon svgIcon="table_chart"></mat-icon>
+        <mat-icon>table_chart</mat-icon>
       </ng-template>
     </mat-horizontal-stepper>
   </div>
@@ -123,7 +123,22 @@
     <mat-card-actions fxLayoutGap="15">
       <span fxFlex></span>
       <button mat-raised-button (click)="backwardStep()">Back</button>
-      <button mat-raised-button class="mat-primary" (click)="forwardStep()"><mat-icon>save</mat-icon>Save</button>
+      <button mat-raised-button class="mat-primary" (click)="forwardStep()">Next</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card fxFlex *ngIf="step == 5">
+    <mat-card-header>
+      <mat-icon mat-card-avatar aria-hidden="false">table_chart</mat-icon>
+      <mat-card-title>Final Review</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-final-review></app-final-review>
+    </mat-card-content>
+    <mat-card-actions fxLayoutGap="15">
+      <span fxFlex></span>
+      <button mat-raised-button (click)="backwardStep()">Back</button>
+      <button mat-raised-button class="mat-primary" (click)="submit()"><mat-icon>save</mat-icon>Save</button>
     </mat-card-actions>
   </mat-card>
   <!--    <app-preventability></app-preventability>-->
