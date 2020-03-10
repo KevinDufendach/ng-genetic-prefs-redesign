@@ -54,10 +54,10 @@
     <td>{{ev.uid | slice : 0 : 5}}</td>
     <td>{{ev.timestamp.toDate().toTimeString()}}</td>
     <td>{{ev.context.context}}</td>
-    <td><mat-icon>{{ev.selections.curability ? 'check_box' : 'check_box_outline_blank'}}</mat-icon></td>
-    <td><mat-icon>{{ev.selections.preventability ? 'check_box' : 'check_box_outline_blank'}}</mat-icon></td>
-    <td><mat-icon>{{ev.selections.adultOnset ? 'check_box' : 'check_box_outline_blank'}}</mat-icon></td>
-    <td><mat-icon>{{ev.selections.carrierStatus ? 'check_box' : 'check_box_outline_blank'}}</mat-icon></td>
+    <td><mat-icon>{{ev.selections.curability === 1 ? 'check_box' : 'check_box_outline_blank'}}</mat-icon></td>
+    <td><mat-icon>{{ev.selections.preventability === 1 ? 'check_box' : 'check_box_outline_blank'}}</mat-icon></td>
+    <td><mat-icon>{{ev.selections.adultOnset === 1 ? 'check_box' : 'check_box_outline_blank'}}</mat-icon></td>
+    <td><mat-icon>{{ev.selections.carrierStatus === 1 ? 'check_box' : 'check_box_outline_blank'}}</mat-icon></td>
   </tr>
 </table>
 

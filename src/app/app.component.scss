@@ -2,4 +2,13 @@
 
 .app-body {
   background-color: mat-color($mat-blue-gray);
+  margin-bottom: 40px
+}
+
+.footer {
+  position: fixed;
+  right: 10px;
+  bottom: 0;
+  color: gray;
+  font-size: xx-small;
 }

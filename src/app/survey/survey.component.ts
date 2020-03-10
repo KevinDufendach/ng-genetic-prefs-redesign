@@ -6,7 +6,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {AuthService} from '../auth.service';
 import {SurveyService} from '../survey.service';
 
-const STEP_COUNT = 5;
+const STEP_COUNT = 6;
 
 @Component({
   selector: 'app-survey',
