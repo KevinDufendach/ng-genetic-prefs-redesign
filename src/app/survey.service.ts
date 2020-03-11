@@ -27,6 +27,10 @@ export class SurveyService {
     return this.selections.curability;
   }
 
+  get curability(): boolean {
+    return this.selections.curability === 1;
+  }
+
   setPreventability(val: number, context?: any) {
     if (this.selections.preventability !== val) {
       this.selections.preventability = val;
@@ -36,6 +40,10 @@ export class SurveyService {
 
   getPreventability(): number {
     return this.selections.preventability;
+  }
+
+  get preventability(): boolean {
+    return this.selections.preventability === 1;
   }
 
   setAdultOnset(val: number, context?: any) {
@@ -48,6 +56,11 @@ export class SurveyService {
   getAdultOnset(): number {
     return this.selections.adultOnset;
   }
+
+  get adultOnset(): boolean {
+    return this.selections.adultOnset === 1;
+  }
+
   setCarrierStatus(val: number, context?: any) {
     if (this.selections.carrierStatus !== val) {
       this.selections.carrierStatus = val;
@@ -57,6 +70,10 @@ export class SurveyService {
 
   getCarrierStatus(): number {
     return this.selections.carrierStatus;
+  }
+
+  get carrierStatus(): boolean {
+    return this.selections.carrierStatus === 1;
   }
 
   public logSelections(context?: any) {

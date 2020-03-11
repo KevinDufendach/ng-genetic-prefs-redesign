@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import {SurveyService} from '../survey.service';
+import {SURVEY_STEP} from '../condition-manager.service';
 
 @Component({
   selector: 'app-adult-onset',
@@ -7,6 +8,7 @@ import {SurveyService} from '../survey.service';
   styleUrls: ['./adult-onset.component.scss']
 })
 export class AdultOnsetComponent {
+  surveySteps = SURVEY_STEP;
   notSureAllowed = false;
 
   constructor(public survey: SurveyService) { }

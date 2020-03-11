@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {SurveyService} from '../survey.service';
+import {SURVEY_STEP} from '../condition-manager.service';
 
 @Component({
   selector: 'app-preventability',
@@ -7,6 +8,7 @@ import {SurveyService} from '../survey.service';
   styleUrls: ['./preventability.component.scss']
 })
 export class PreventabilityComponent {
+  surveySteps = SURVEY_STEP;
   notSureAllowed = false;
 
   constructor(public survey: SurveyService) { }

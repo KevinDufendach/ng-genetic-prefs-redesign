@@ -3,6 +3,8 @@ import {SurveyService} from '../survey.service';
 // @ts-ignore
 import * as data from '../../assets/condition_list.json';
 import {Condition2} from '../model/condition2';
+import {ConditionManagerService, SURVEY_STEP} from '../condition-manager.service';
+import {Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-condition-table',
@@ -11,16 +13,31 @@ import {Condition2} from '../model/condition2';
 })
 export class ConditionTableComponent implements OnInit {
   displayedColumns: string[] = ['name', 'curable', 'preventable', 'adultOnset', 'carrier'];
-  columnOptions: string[] = ['name', 'curable', 'preventable', 'adultOnset', 'carrier'];
-  conditions: Condition2[] = (data as any).default;
-  @Input() state = -1;
+  conditions: Condition2[];
+  // conditions: Condition2[] = (data as any).default;
+  @Input() state = SURVEY_STEP.UNDEFINED;
 
-  constructor(public survey: SurveyService) {
+  constructor(public survey: SurveyService, private conditionManager: ConditionManagerService) {
   }
 
   ngOnInit(): void {
-    if (this.state > -1) {
-      this.displayedColumns = this.columnOptions.slice(0, this.state + 2);
+    console.log(this.state);
+
+    if (this.state < 0) {
+      this.conditions = (data as any).default;
+    } else {
+      this.displayedColumns = this.displayedColumns.slice(0, this.state + 2);
+
+      const conditions: Condition2[] = (data as any).default;
+
+      this.conditions = [];
+      for (const cond of conditions) {
+        if (this.conditionManager.conditionWouldModifyAtStep(cond, this.state)) {
+          // console.log(this.state);
+          // console.log(cond.description);
+          this.conditions.push(cond);
+        }
+      }
     }
   }
 
@@ -76,12 +93,7 @@ export class ConditionTableComponent implements OnInit {
     );
   }
 
-  wouldReturnCondition(c: Condition2): boolean {
-    return (
-      ((c.curable || this.curability) &&
-      (c.preventable || this.preventability) &&
-      (!c.adultOnset || this.adultOnset)) ||
-      (c.carrier && this.carrierStatus)
-    );
+  wouldReturnCondition(c: Condition2) {
+    return this.conditionManager.wouldReturnCondition(c);
   }
 }

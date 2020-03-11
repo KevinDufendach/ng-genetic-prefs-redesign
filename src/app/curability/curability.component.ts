@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CONDITION_DATA} from '../model/condition';
 import {SurveyService} from '../survey.service';
+import {SURVEY_STEP} from '../condition-manager.service';
 
 @Component({
   selector: 'app-curability',
@@ -9,6 +9,7 @@ import {SurveyService} from '../survey.service';
 })
 export class CurabilityComponent {
   notSureAllowed = false;
+  surveySteps = SURVEY_STEP;
 
   constructor(public survey: SurveyService) { }
 
