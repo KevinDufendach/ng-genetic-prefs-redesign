@@ -21,18 +21,17 @@ export class ConditionTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.state);
-
     if (this.state < 0) {
       this.conditions = (data as any).default;
     } else {
-      this.displayedColumns = this.displayedColumns.slice(0, this.state + 2);
+      // this.displayedColumns = this.displayedColumns.slice(0, this.state + 2);
 
       const conditions: Condition2[] = (data as any).default;
 
       this.conditions = [];
       for (const cond of conditions) {
-        if (this.conditionManager.conditionWouldModifyAtStep(cond, this.state)) {
+        // if (this.conditionManager.conditionWouldModifyAtStep(cond, this.state)) {
+        if (this.conditionManager.conditionModifiedByStep(cond, this.state)) {
           // console.log(this.state);
           // console.log(cond.description);
           this.conditions.push(cond);

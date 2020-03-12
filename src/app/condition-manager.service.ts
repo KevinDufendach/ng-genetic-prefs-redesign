@@ -37,6 +37,21 @@ export class ConditionManagerService {
     );
   }
 
+  conditionModifiedByStep(c: Condition2, step: SURVEY_STEP): boolean {
+    switch (step) {
+      case SURVEY_STEP.CURABILITY:
+        return !c.curable;
+      case SURVEY_STEP.PREVENTABILITY:
+        return !c.preventable;
+      case SURVEY_STEP.ADULT_ONSET:
+        return c.adultOnset;
+      case SURVEY_STEP.CARRIER_STATUS:
+        return c.carrier;
+    }
+
+    return false;
+  }
+
   conditionWouldModifyAtStep(c: Condition2, step: SURVEY_STEP): boolean {
     const curability = this.surveyService.curability;
     const preventability = this.surveyService.preventability;
