@@ -1,15 +1,18 @@
-<mat-toolbar color="primary">
-  <button mat-button routerLink="/instructions">Genetic Preferences</button>
-  <span fxFlex></span>
-  <div fxHide fxShow.gt-sm *ngIf="auth.user | async as user">
-    <span *ngIf="user.isAnonymous">Logged in as {{user.uid}}</span>
-    <span *ngIf="!user.isAnonymous">{{user.email}}</span>
+<div fxLayout="column" style="min-height: 100%">
+  <mat-toolbar color="primary">
+    <button mat-button routerLink="/instructions">Genetic Preferences</button>
+    <span fxFlex></span>
+    <div fxHide fxShow.gt-sm *ngIf="auth.user | async as user">
+      <span *ngIf="user.isAnonymous">Logged in as {{user.uid}}</span>
+      <span *ngIf="!user.isAnonymous">{{user.email}}</span>
+    </div>
+    <button mat-button (click)="auth.changeAnonymousUser()">Change User</button>
+  </mat-toolbar>
+  <div class="app-body">
+    <router-outlet></router-outlet>
   </div>
-  <button mat-button (click)="auth.changeAnonymousUser()">Change User</button>
-</mat-toolbar>
-<div class="app-body">
-  <router-outlet></router-outlet>
-</div>
-<div class="footer">
-  <p>Version 2020-03-10-1830</p>
+  <div fxFlex></div>
+  <div class="footer">
+    <p>Version 2020-03-10-1830</p>
+  </div>
 </div>
