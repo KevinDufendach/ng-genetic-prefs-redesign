@@ -10,10 +10,10 @@
       </mat-radio-button>
       <mat-radio-button [value]="0">No, I ONLY want to receive results for diseases that are preventable
       </mat-radio-button>
-      <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span>
+      <mat-radio-button [value]="2" (click)="notSureAllowed = true">I'm not sure<span *ngIf="!notSureAllowed"> (Show me more info)</span>
       </mat-radio-button>
     </mat-radio-group>
-    <button mat-raised-button (click)="notSureAllowed = true" *ngIf="!notSureAllowed else moreInfo">I need more information</button>
+    <button mat-raised-button class="mat-primary" (click)="notSureAllowed = true" *ngIf="!notSureAllowed else moreInfo">Show more information</button>
 <!--    <mat-expansion-panel>-->
 <!--      <mat-expansion-panel-header (click)="notSureAllowed = true">I need more information</mat-expansion-panel-header>-->
 <!--    </mat-expansion-panel>-->

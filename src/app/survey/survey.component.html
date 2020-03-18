@@ -71,11 +71,14 @@
     <mat-card-header>
       <mat-icon mat-card-avatar svgIcon="curable_circle" aria-hidden="false"></mat-icon>
       <mat-card-title>Curability</mat-card-title>
+      <span fxFlex></span>
+      <button mat-raised-button (click)="backwardStep()">Back</button>
+      <button mat-raised-button class="mat-primary" (click)="forwardStep()">Next</button>
     </mat-card-header>
     <mat-card-content>
       <app-curability></app-curability>
     </mat-card-content>
-    <mat-card-actions fxLayoutGap="15">
+    <mat-card-actions fxLayoutGap="15px">
       <span fxFlex></span>
       <button mat-raised-button (click)="backwardStep()">Back</button>
       <button mat-raised-button class="mat-primary" (click)="forwardStep()">Next</button>
@@ -86,6 +89,11 @@
     <mat-card-header>
       <mat-icon mat-card-avatar svgIcon="preventable_circle" aria-hidden="false"></mat-icon>
       <mat-card-title>Preventability</mat-card-title>
+      <span fxFlex></span>
+      <div fxLayoutGap="15px">
+        <button mat-raised-button (click)="backwardStep()">Back</button>
+        <button mat-raised-button class="mat-primary" (click)="forwardStep()">Next</button>
+      </div>
     </mat-card-header>
     <mat-card-content>
       <app-preventability></app-preventability>
