@@ -43,6 +43,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   white-space: normal;
 }
 
-.survey-radio .mat-radio-button {
+.survey-radio-group mat-radio-button {
   margin: 5px;
+}
+
+.survey-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
 }

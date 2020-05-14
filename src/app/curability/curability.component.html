@@ -3,7 +3,7 @@
     <h3>Do you want to receive results about treatable diseases that are curable and not curable?</h3>
     <p>All diseases are treatable. Some treatable diseases can be cured. Some treatable diseases can’t be cured, but
       symptoms can be reduced or managed. Would you want to receive results about diseases that cannot be cured?</p>
-    <mat-radio-group fxLayout="column" class="survey-radio app-wrap" [(ngModel)]="value">
+    <mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="value">
       <mat-radio-button [value]="1">Yes, both curable AND not curable</mat-radio-button>
       <mat-radio-button [value]="0">No, curable ONLY</mat-radio-button>
       <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span>
