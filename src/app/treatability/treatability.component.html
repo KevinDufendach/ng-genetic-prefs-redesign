@@ -1,30 +1,24 @@
 <div fxFlex fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
   <div fxFlex.gt-sm="50" fxLayout="column" fxLayoutGap="10px">
-    <h3>Do you want to receive results about treatable diseases that are curable and not curable?</h3>
-    <p>All diseases are treatable. Some treatable diseases can be cured. Some treatable diseases can’t be cured, but
-      symptoms can be reduced or managed. Would you want to receive results about diseases that cannot be cured?</p>
+    <div class="youtube-container">
+      <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/oznr-1-poSU" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope"
+              allowfullscreen></iframe>
+    </div>
+    <p>Treatments can vary in how much they work. Some treatments can reverse or slow the disease,
+      while others will only help someone adapt to a disease.</p>
+    <h3>Do you want to receive results for diseases that can be treated but the disease cannot be reversed or slowed? </h3>
     <mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="value">
-      <mat-radio-button [value]="1">Yes, both curable AND not curable</mat-radio-button>
-      <mat-radio-button [value]="0">No, curable ONLY</mat-radio-button>
+      <mat-radio-button [value]="1">Yes, I want to receive results even if treatment only helps people live with a disease</mat-radio-button>
+      <mat-radio-button [value]="0">No, I only want to receive results where treatments reverse or slow the disease</mat-radio-button>
       <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span>
       </mat-radio-button>
     </mat-radio-group>
     <mat-expansion-panel>
       <mat-expansion-panel-header (click)="notSureAllowed = true">I need more information</mat-expansion-panel-header>
-      <p>An example of a disease that can sometimes be genetic is thyroid cancer. Thyroid cancer can be cured with
-        surgery, radiation, medicine or any combination of the three treatments. However, not all thyroid cancers can be
-        cured. The chances for cure are much higher if the cancer is found and treated early.</p>
+      <p>TODO: add example</p>
 
-      <p>Another example of a disease that can sometimes be genetic is heart muscle disease. When heart muscle becomes
-        too thick or too thin, it can’t be cured. However medicine, a pace maker, lifestyle changes or any combination
-        of the three treatments can improve the heart’s ability to pump blood. Once treatments begin, they are usually
-        lifelong.</p>
 
-      <div class="youtube-container">
-        <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/oznr-1-poSU" frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-      </div>
 
 <!--      <div class="youtube-container">-->
 <!--        <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/YlK5x2elBcM?start=61&end=88" frameborder="0"-->
