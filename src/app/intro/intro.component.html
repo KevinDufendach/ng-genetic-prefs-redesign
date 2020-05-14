@@ -6,20 +6,4 @@
   <p>Please answer the following questions. You can change your answers to the questions. As you answer questions,
     some diseases in the list may be crossed out. You can always add a disease back in. You can also click on a
     disease to learn more about it.</p>
-    <h3>Some people do not want to learn results from genetic studies. Would you like to learn your (or your child's)
-      genetic results?</h3>
-    <mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="preventabilitySelection">
-      <mat-radio-button [value]="1">Yes, I want the chance to learn my/my child's genetic results
-      </mat-radio-button>
-      <mat-radio-button [value]="0">No, I do NOT want to receive any genetic results</mat-radio-button>
-      <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span></mat-radio-button>
-    </mat-radio-group>
-
-    <mat-expansion-panel class="more-info-box">
-      <mat-expansion-panel-header (click)="notSureAllowed = true">More Information</mat-expansion-panel-header>
-      <div>Using this tool may help you decide if you want to learn any genetic results. If you answer, “Yes, I want the
-        chance to learn my/my child’s genetic results,” you will be asked 4 more questions. You will be able to see the
-        type of diseases you could learn about based on your answers to the 4 questions. If you do not want to learn any
-        results, you can come back to this question and answer, “No, I do not want to receive any genetic results.”</div>
-    </mat-expansion-panel>
-  </div>
+</div>

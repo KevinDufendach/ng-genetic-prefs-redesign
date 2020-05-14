@@ -2,9 +2,14 @@
   <span fxFlex></span>
   <div id="horizontal-content">
     <mat-horizontal-stepper [selectedIndex]="step" (selectionChange)="selectionChanged($event)">
-      <mat-step label="General Intro">
-        <app-survey-card title="General Information">
+      <mat-step label="Instructions">
+        <app-survey-card title="General Instructions">
           <app-intro></app-intro>
+        </app-survey-card>
+      </mat-step>
+      <mat-step label="Opt In/Out">
+        <app-survey-card title="Opt In/Out">
+          <app-opt-out></app-opt-out>
         </app-survey-card>
       </mat-step>
       <mat-step label="Treatable">

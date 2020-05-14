@@ -39,6 +39,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSortModule} from '@angular/material/sort';
 import { VideosComponent } from './videos/videos.component';
 import { SaveConfirmationComponent } from './save-confirmation/save-confirmation.component';
+import { OptOutComponent } from './opt-out/opt-out.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { SaveConfirmationComponent } from './save-confirmation/save-confirmation
     LoginFormComponent,
     VideosComponent,
     SaveConfirmationComponent,
+    OptOutComponent,
   ],
   imports: [
     BrowserModule,
