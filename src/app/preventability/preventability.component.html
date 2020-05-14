@@ -1,5 +1,10 @@
 <div fxFlex fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
   <div fxFlex.gt-sm="50" fxLayout="column" fxLayoutGap="10px">
+    <div class="youtube-container">
+      <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/YlK5x2elBcM?start=42&end=61" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
     <h3>Do you want to receive results for diseases that are preventable and for diseases that are not preventable?</h3>
     <p>Preventable diseases have medical or lifestyle steps you can take before the disease begins. For example,
       surgery, lifelong medicine, or lifestyle changes can reduce the risk of getting some diseases. For diseases that
@@ -13,11 +18,21 @@
       <mat-radio-button [value]="2" (click)="notSureAllowed = true">I'm not sure<span *ngIf="!notSureAllowed"> (Show me more info)</span>
       </mat-radio-button>
     </mat-radio-group>
-    <button mat-raised-button class="mat-primary" (click)="notSureAllowed = true" *ngIf="!notSureAllowed else moreInfo">Show more information</button>
-<!--    <mat-expansion-panel>-->
-<!--      <mat-expansion-panel-header (click)="notSureAllowed = true">I need more information</mat-expansion-panel-header>-->
-<!--    </mat-expansion-panel>-->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header (click)="notSureAllowed = true">I need more information</mat-expansion-panel-header>
+      <p>An example of a disease that can sometimes be genetic is colon cancer. Colon cancer usually begins as a small
+        clump of cells called a polyp. Polyps are not cancer but can turn into cancer over time. Colon cancer can be
+        prevented if polyps are removed from the colon before they turn into cancer. Researchers are trying to find ways
+        to prevent polyps. If colon cancer occurs, it can be cured with surgery, radiation, medicine or any combination
+        of the three treatments. The chances for cure are much higher if the cancer is found and treated early.</p>
 
+    <p>An example of a type of genetic disease that can’t be prevented is inherited tumor syndromes. In these types of
+      diseases, tumors can start in different parts of the body. Tumors are not always cancer but if noncancerous
+      tumors get too big they can cause many different problems and even death. If tumors occur, they can sometimes be
+      removed by surgery. Sometimes medicines or radiation might be needed to shrink the tumors before surgery.
+      Sometimes tumors can’t be removed by surgery.</p>
+
+  </mat-expansion-panel>
 
   </div>
   <div fxFlex.gt-sm="50" fxLayout="column">
@@ -25,23 +40,3 @@
     <app-condition-table [state]="surveySteps.PREVENTABILITY"></app-condition-table>
   </div>
 </div>
-
-<ng-template #moreInfo>
-  <h3>More Information</h3>
-  <p>An example of a disease that can sometimes be genetic is colon cancer. Colon cancer usually begins as a small
-    clump of cells called a polyp. Polyps are not cancer but can turn into cancer over time. Colon cancer can be
-    prevented if polyps are removed from the colon before they turn into cancer. Researchers are trying to find ways
-    to prevent polyps. If colon cancer occurs, it can be cured with surgery, radiation, medicine or any combination
-    of the three treatments. The chances for cure are much higher if the cancer is found and treated early.</p>
-
-  <p>An example of a type of genetic disease that can’t be prevented is inherited tumor syndromes. In these types of
-    diseases, tumors can start in different parts of the body. Tumors are not always cancer but if noncancerous
-    tumors get too big they can cause many different problems and even death. If tumors occur, they can sometimes be
-    removed by surgery. Sometimes medicines or radiation might be needed to shrink the tumors before surgery.
-    Sometimes tumors can’t be removed by surgery.</p>
-  <div class="youtube-container">
-    <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/YlK5x2elBcM?start=42&end=61" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-  </div>
-</ng-template>

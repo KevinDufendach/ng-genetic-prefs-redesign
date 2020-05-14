@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SurveyService } from '../survey.service';
 
 @Component({
   selector: 'app-opt-out',
@@ -8,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class OptOutComponent implements OnInit {
   notSureAllowed = false;
 
-  constructor() { }
+  constructor(private survey: SurveyService) { }
 
   ngOnInit(): void {
+  }
+
+  get value(): number {
+    return this.survey.getPreventability();
+  }
+
+  set value(val: number) {
+    this.survey.setPreventability(val, {context: 'Preventability Step'});
   }
 
 }
