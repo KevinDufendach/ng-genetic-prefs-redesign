@@ -20,7 +20,7 @@ import {FormsModule} from '@angular/forms';
 import {InstructionsComponent} from './instructions/instructions.component';
 import {PreventabilityComponent} from './preventability/preventability.component';
 import {IntroComponent} from './intro/intro.component';
-import {CurabilityComponent} from './curability/curability.component';
+import {TreatabilityComponent} from './treatability/treatability.component';
 import {SurveyCardComponent} from './survey-card/survey-card.component';
 import {ConditionTableComponent} from './condition-table/condition-table.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -47,7 +47,7 @@ import { SaveConfirmationComponent } from './save-confirmation/save-confirmation
     SurveyComponent,
     PreventabilityComponent,
     IntroComponent,
-    CurabilityComponent,
+    TreatabilityComponent,
     SurveyCardComponent,
     ConditionTableComponent,
     ToggleButtonComponent,

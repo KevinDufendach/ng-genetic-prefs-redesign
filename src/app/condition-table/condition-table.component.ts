@@ -41,13 +41,13 @@ export class ConditionTableComponent implements OnInit {
   }
 
   get curability(): boolean {
-    return this.survey.getCurability() === 1;
+    return this.survey.getTreatability() === 1;
   }
 
   set curability(val: boolean) {
     if (this.curability === val) { return; }
 
-    this.survey.setCurability(
+    this.survey.setTreatability(
       (val ? 1 : 0),
       {context: 'condition table'}
     );

@@ -16,14 +16,14 @@ export class SurveyService {
   constructor(private sls: SelectionLoggerService) {
   }
 
-  setCurability(val: number, context?: any) {
+  setTreatability(val: number, context?: any) {
     if (this.selections.curability !== val) {
       this.selections.curability = val;
       this.logSelections(context);
     }
   }
 
-  getCurability(): number {
+  getTreatability(): number {
     return this.selections.curability;
   }
 
