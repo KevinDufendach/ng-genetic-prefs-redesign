@@ -1,5 +1,5 @@
 export interface Selections {
-  curability: number;
+  treatability: number;
   preventability: number;
   adultOnset: number;
   carrierStatus: number;

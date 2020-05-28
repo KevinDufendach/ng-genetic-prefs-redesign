@@ -4,7 +4,6 @@ import {SurveyService} from '../survey.service';
 import * as data from '../../assets/condition_list.json';
 import {Condition2} from '../model/condition2';
 import {ConditionManagerService, SURVEY_STEP} from '../condition-manager.service';
-import {Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-condition-table',

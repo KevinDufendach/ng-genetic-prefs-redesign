@@ -7,7 +7,7 @@ import {SelectionLoggerService} from './selection-logger.service';
 })
 export class SurveyService {
   private selections: Selections = {
-    curability: -1,
+    treatability: -1,
     preventability: -1,
     adultOnset: -1,
     carrierStatus: -1,
@@ -17,18 +17,18 @@ export class SurveyService {
   }
 
   setTreatability(val: number, context?: any) {
-    if (this.selections.curability !== val) {
-      this.selections.curability = val;
+    if (this.selections.treatability !== val) {
+      this.selections.treatability = val;
       this.logSelections(context);
     }
   }
 
   getTreatability(): number {
-    return this.selections.curability;
+    return this.selections.treatability;
   }
 
-  get curability(): boolean {
-    return this.selections.curability === 1;
+  get treatability(): boolean {
+    return this.selections.treatability === 1;
   }
 
   setPreventability(val: number, context?: any) {

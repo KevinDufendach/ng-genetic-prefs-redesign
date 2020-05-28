@@ -7,11 +7,11 @@ export interface Condition2 {
   description: string;
   preventable: boolean;
   preventableText: string;
-  curable: boolean;
-  curableText: string;
+  treatable: boolean;
+  treatableText: string;
   adultOnset: boolean;
   adultOnsetText: string;
   carrier: boolean;
   carrierText: string;
-  resources: string;
+  resource_link: string;
 }
