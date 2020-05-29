@@ -40,6 +40,7 @@ import {MatSortModule} from '@angular/material/sort';
 import { VideosComponent } from './videos/videos.component';
 import { SaveConfirmationComponent } from './save-confirmation/save-confirmation.component';
 import { OptOutComponent } from './opt-out/opt-out.component';
+import { ConditionTableReviewComponent } from './condition-table-review/condition-table-review.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { OptOutComponent } from './opt-out/opt-out.component';
     VideosComponent,
     SaveConfirmationComponent,
     OptOutComponent,
+    ConditionTableReviewComponent,
   ],
   imports: [
     BrowserModule,
