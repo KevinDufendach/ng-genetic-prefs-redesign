@@ -1,0 +1,60 @@
+.condition-block {
+  position: relative;
+  padding: 15px;
+}
+
+ul.tags {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+ul.tags li {
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  font-size: small;
+}
+
+ul.tags li:after {
+  content: " | ";
+  color: #aaa;
+}
+
+ul.tags li:last-child:after {
+  content: "";
+}
+
+.inapplicable {
+  opacity: 0.2;
+  text-decoration: line-through;
+}
+
+.disease-icon {
+  height: 50px;
+  width: auto;
+  margin: 20px;
+}
+
+.hidden {
+  opacity: .8;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.hidden .title {
+  color: maroon;
+  text-decoration: line-through;
+}
+
+#overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}

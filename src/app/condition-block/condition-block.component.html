@@ -1,0 +1,18 @@
+<div fxLayout="row" [ngClass]="{'hidden': hidden}" class="condition-block">
+  <div id="overlay" fxHide [fxShow]="hidden">
+    <img src="/assets/img/crossed-out.svg" style="width: 100%; height: 100%; object-fit: fill">
+  </div>
+  <div>
+    <img class="disease-icon" [src]="'assets/img/' + getConditionIcon()">
+  </div>
+  <div fxLayout="column" fxFlex>
+    <h3 class="title">{{condition.conditions}}</h3>
+    <p>{{condition.description}}</p>
+    <ul class="tags">
+      <li><span [ngClass]="{'inapplicable': !condition.preventable}">Preventable</span></li>
+      <li><span [ngClass]="{'inapplicable': !condition.treatable}">Treatable</span></li>
+      <li><span [ngClass]="{'inapplicable': !condition.adultOnset}">Adult Onset</span></li>
+      <li><span [ngClass]="{'inapplicable': !condition.carrier}">Carrier</span></li>
+    </ul>
+  </div>
+</div>

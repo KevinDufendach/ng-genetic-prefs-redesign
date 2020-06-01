@@ -1,1 +1,6 @@
-<p>condition-table-review works!</p>
+<div class="condition-table">
+  <ng-container *ngFor="let c of conditions; last as isLast">
+    <app-condition-block [condition]="c" [hidden]="!wouldReturnCondition(c)"></app-condition-block>
+    <mat-divider *ngIf="!isLast"></mat-divider>
+  </ng-container>
+</div>

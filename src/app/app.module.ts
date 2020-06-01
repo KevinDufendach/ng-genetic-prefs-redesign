@@ -14,6 +14,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
 
@@ -41,6 +42,7 @@ import { VideosComponent } from './videos/videos.component';
 import { SaveConfirmationComponent } from './save-confirmation/save-confirmation.component';
 import { OptOutComponent } from './opt-out/opt-out.component';
 import { ConditionTableReviewComponent } from './condition-table-review/condition-table-review.component';
+import { ConditionBlockComponent } from './condition-block/condition-block.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,7 @@ import { ConditionTableReviewComponent } from './condition-table-review/conditio
     SaveConfirmationComponent,
     OptOutComponent,
     ConditionTableReviewComponent,
+    ConditionBlockComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,6 +87,7 @@ import { ConditionTableReviewComponent } from './condition-table-review/conditio
     MatExpansionModule,
     MatDividerModule,
     MatFormFieldModule,
+    MatListModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
