@@ -7,12 +7,12 @@
   </div>
   <div fxLayout="column" fxFlex>
     <h3 class="title">{{condition.conditions}}</h3>
-    <p>{{condition.description}}</p>
     <ul class="tags">
       <li><span [ngClass]="{'inapplicable': !condition.preventable}">Preventable</span></li>
       <li><span [ngClass]="{'inapplicable': !condition.treatable}">Treatable</span></li>
       <li><span [ngClass]="{'inapplicable': !condition.adultOnset}">Adult Onset</span></li>
       <li><span [ngClass]="{'inapplicable': !condition.carrier}">Carrier</span></li>
     </ul>
+    <p>{{condition.description}} <a href="{{condition.resource_link}}" target="_blank" mat-button class="mat-primary">Learn More <mat-icon>launch</mat-icon></a></p>
   </div>
 </div>
