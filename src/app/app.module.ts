@@ -43,6 +43,7 @@ import { SaveConfirmationComponent } from './save-confirmation/save-confirmation
 import { OptOutComponent } from './opt-out/opt-out.component';
 import { ConditionTableReviewComponent } from './condition-table-review/condition-table-review.component';
 import { ConditionBlockComponent } from './condition-block/condition-block.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -68,32 +69,33 @@ import { ConditionBlockComponent } from './condition-block/condition-block.compo
     ConditionTableReviewComponent,
     ConditionBlockComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
 
-    FlexLayoutModule,
-    FormsModule,
+        FlexLayoutModule,
+        FormsModule,
 
-    MatToolbarModule,
-    MatCardModule,
-    MatStepperModule,
-    MatRadioModule,
-    MatTableModule,
-    MatButtonModule,
-    MatIconModule,
-    MatExpansionModule,
-    MatDividerModule,
-    MatFormFieldModule,
-    MatListModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatStepperModule,
+        MatRadioModule,
+        MatTableModule,
+        MatButtonModule,
+        MatIconModule,
+        MatExpansionModule,
+        MatDividerModule,
+        MatFormFieldModule,
+        MatListModule,
 
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    MatInputModule,
-    MatSortModule
-  ],
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,
+        MatInputModule,
+        MatSortModule,
+        MatCheckboxModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

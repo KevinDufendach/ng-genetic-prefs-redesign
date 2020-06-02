@@ -1,35 +1,82 @@
-<table class="condition-table">
-  <tr>
-    <th>Preventable</th>
-    <th>Treatable</th>
-    <th>Adult Onset</th>
-    <th>Carrier</th>
-    <th class="col">Condition</th>
-  </tr>
-  <ng-container *ngFor="let c of conditions">
-    <tr>
-      <td><h3 class="title">{{c.conditions}}</h3></td>
-      <td [ngClass]="{'inapplicable': !c.preventable, 'attribute-selected': survey.getPreventability()}">
-        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c, Parameter.Preventability)}}</mat-icon>
-        <span>Preventable</span>
-      </td>
-      <td [ngClass]="{'inapplicable': !c.treatable, 'attribute-selected': survey.getTreatability()}">
-        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c, Parameter.Treatability)}}</mat-icon>
-        <span>Treatable</span>
-      </td>
-      <td [ngClass]="{'inapplicable': !c.adultOnset, 'attribute-selected': survey.getAdultOnset()}">
-        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c, Parameter.AdultOnset)}}</mat-icon>
-        <span>Adult Onset</span>
-      </td>
-      <td [ngClass]="{'inapplicable': !c.carrier, 'attribute-selected': survey.getCarrierStatus()}">
-        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c, Parameter.Carrier)}}</mat-icon>
-        <span>Carrier</span>
-      </td>
-    </tr>
-    <tr>
-      <td class="condition-description-cell" colspan="5">
-        <p>{{c.description}} <a href="{{c.resource_link}}" target="_blank" mat-button class="mat-primary">Learn More <mat-icon>launch</mat-icon></a></p>
-      </td>
-    </tr>
-  </ng-container>
-</table>
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel *ngFor="let c of conditions" togglePosition="before">
+    <mat-expansion-panel-header [ngClass]="{'notShown': wouldReturnCondition(c)}">
+      <mat-panel-title>{{c.conditions}}</mat-panel-title>
+      <mat-panel-description>
+<!--        <div class="overflow-child">{{c.description}}</div>-->
+<!--        <div style="font-size: x-small">Show Details</div>-->
+        <div fxFlex></div>
+
+        <div class="preventable attribute-info" [ngClass]="{'inapplicable': !c.preventable}">
+          <mat-icon>{{getIcon(c.preventable, Parameter.Preventability)}}</mat-icon>
+          Preventable
+        </div>
+        <div class="treatable attribute-info" [ngClass]="{'inapplicable': !c.treatable}">
+          <mat-icon>{{getIcon(c.treatable, Parameter.Treatability)}}</mat-icon>
+          Treatable
+        </div>
+        <div class="adult-onset attribute-info" [ngClass]="{'inapplicable': !c.adultOnset}">
+          <mat-icon>{{getIcon(c.adultOnset, Parameter.AdultOnset)}}</mat-icon>
+          Adult Onset
+        </div>
+        <div class="carrier-status attribute-info" [ngClass]="{'inapplicable': !c.carrier}">
+          <mat-icon>{{getIcon(c.carrier, Parameter.Carrier)}}</mat-icon>
+          Carrier Status
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div>
+      <p>{{c.description}} <a href="{{c.resource_link}}" target="_blank" mat-button class="mat-primary">Learn More <mat-icon>launch</mat-icon></a></p>
+
+      <div>ToDo: Add radio buttons: "No matter my selections, I would [ALWAYS/NEVER] want to learn about this condition, vs use my selections (default)</div>
+<!--      <mat-form-field>-->
+<!--        <label>No matter my selections, I would</label>-->
+<!--        <mat-radio-group>-->
+<!--          <mat-radio-button >ALWAYS want to learn about this condition</mat-radio-button>-->
+<!--          <mat-radio-button>NEVER want to learn about this condition</mat-radio-button>-->
+<!--          <mat-radio-button>Use my selections (default)</mat-radio-button>-->
+<!--        </mat-radio-group>-->
+
+<!--      </mat-form-field>-->
+
+    </div>
+
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<!--<table class="condition-table">-->
+<!--  <tr>-->
+<!--    <th>Preventable</th>-->
+<!--    <th>Treatable</th>-->
+<!--    <th>Adult Onset</th>-->
+<!--    <th>Carrier</th>-->
+<!--    <th class="col">Condition</th>-->
+<!--  </tr>-->
+<!--  <ng-container *ngFor="let c of conditions">-->
+<!--    <tr>-->
+<!--      <td><h3 class="title">{{c.conditions}}</h3></td>-->
+<!--      <td [ngClass]="{'inapplicable': !c.preventable, 'attribute-selected': survey.getPreventability()}">-->
+<!--        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c.preventable, Parameter.Preventability)}}</mat-icon>-->
+<!--        <span>Preventable</span>-->
+<!--      </td>-->
+<!--      <td [ngClass]="{'inapplicable': !c.treatable, 'attribute-selected': survey.getTreatability()}">-->
+<!--        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c.treatable, Parameter.Treatability)}}</mat-icon>-->
+<!--        <span>Treatable</span>-->
+<!--      </td>-->
+<!--      <td [ngClass]="{'inapplicable': !c.adultOnset, 'attribute-selected': survey.getAdultOnset()}">-->
+<!--        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c.adultOnset, Parameter.AdultOnset)}}</mat-icon>-->
+<!--        <span>Adult Onset</span>-->
+<!--      </td>-->
+<!--      <td [ngClass]="{'inapplicable': !c.carrier, 'attribute-selected': survey.getCarrierStatus()}">-->
+<!--        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c.carrier, Parameter.Carrier)}}</mat-icon>-->
+<!--        <span>Carrier</span>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td class="condition-description-cell" colspan="5">-->
+<!--        <p>{{c.description}} <a href="{{c.resource_link}}" target="_blank" mat-button class="mat-primary">Learn More <mat-icon>launch</mat-icon></a></p>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--  </ng-container>-->
+<!--</table>-->

@@ -1,3 +1,46 @@
-<p>Great work! Based on your selections, these are some conditions that would be reported. Is there anything you would like to change?</p>
+<h1>Great work!</h1>
+<p>Based on your selections, these are some conditions that would be reported. Click a condition for details</p>
+
 <app-condition-table-review></app-condition-table-review>
+
+<h1>Is there anything you would like to change?</h1>
+
+<h3>Do you want to receive results for diseases that are preventable and for diseases that are not preventable?</h3>
+<mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="preventability">
+  <mat-radio-button [value]="1">Yes, I want to receive results for diseases that are preventable AND for diseases
+    that are NOT preventable
+  </mat-radio-button>
+  <mat-radio-button [value]="0">No, I ONLY want to receive results for diseases that are preventable
+  </mat-radio-button>
+  <mat-radio-button [value]="2">I'm not sure</mat-radio-button>
+</mat-radio-group>
+
+<h3>Do you want to receive results for diseases that can be treated but the disease cannot be reversed or slowed?</h3>
+<mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="treatability">
+  <mat-radio-button [value]="1">Yes, I want to receive results even if treatment only helps people live with a disease</mat-radio-button>
+  <mat-radio-button [value]="0">No, I only want to receive results where treatments reverse or slow the disease</mat-radio-button>
+  <mat-radio-button [value]="2">I'm not sure</mat-radio-button>
+</mat-radio-group>
+
+<h3>Do you want to receive results for adult-onset diseases for which there is no prevention or treatment during
+  childhood?</h3>
+<mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="adultOnset">
+  <mat-radio-button [value]="1">Yes, I want to receive results for adult-onset diseases even though there is NO
+    prevention or treatment during childhood.
+  </mat-radio-button>
+  <mat-radio-button [value]="0">No, I ONLY want to receive results for diseases that are preventable or treatable
+    during childhood
+  </mat-radio-button>
+  <mat-radio-button [value]="2">I'm not sure</mat-radio-button>
+</mat-radio-group>
+
+<h3>Do you want to receive results if you are a carrier for a disease but you will not develop the disease
+  yourself?</h3>
+<mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="carrierStatus">
+  <mat-radio-button [value]="1">Yes, I want to receive results if I am a carrier</mat-radio-button>
+  <mat-radio-button [value]="0">No, I ONLY want to receive results if I will develop the disease myself
+  </mat-radio-button>
+  <mat-radio-button [value]="2">I'm not sure</mat-radio-button>
+</mat-radio-group>
+
 

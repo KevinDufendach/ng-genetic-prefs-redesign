@@ -24,7 +24,16 @@ export class ConditionTableReviewComponent implements OnInit {
     return this.conditionManager.wouldReturnCondition(c);
   }
 
-  getIcon(c: Condition2, parameter: Parameter) {
-    return 'check';
+  getIcon(hasParameter: boolean, parameter: Parameter) {
+    const status = this.survey.getParameter(parameter);
+
+    if (hasParameter) {
+      return (status ? 'check_circle' : 'check');
+    } else {
+      return (status ? 'remove_circle' : 'remove');
+    }
   }
+
+
 }
+

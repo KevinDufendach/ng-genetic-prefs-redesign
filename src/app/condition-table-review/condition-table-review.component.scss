@@ -25,12 +25,12 @@
   margin: 20px;
 }
 
-.hidden {
+.notShown {
   opacity: 50%;
-  background-color: rgba(0,0,0,0.2);
+  //background-color: rgba(0,0,0,0.2);
 }
 
-.hidden .title {
+.notShown mat-panel-title {
   color: maroon;
   text-decoration: line-through;
 }
@@ -44,4 +44,35 @@
   right: 0;
   bottom: 0;
   z-index: 99;
+}
+
+//////////////////////////////
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+// https://css-tricks.com/flexbox-truncated-text/
+.overflow-child {
+  flex: 1;
+  min-width: 0;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.attribute-info {
+  margin-left: 5px;
+  margin-right: 5px;
 }
