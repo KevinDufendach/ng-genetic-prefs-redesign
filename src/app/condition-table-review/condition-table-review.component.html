@@ -1,6 +1,35 @@
-<div class="condition-table">
-  <ng-container *ngFor="let c of conditions; last as isLast">
-    <app-condition-block [condition]="c" [hidden]="!wouldReturnCondition(c)"></app-condition-block>
-    <mat-divider *ngIf="!isLast"></mat-divider>
+<table class="condition-table">
+  <tr>
+    <th>Preventable</th>
+    <th>Treatable</th>
+    <th>Adult Onset</th>
+    <th>Carrier</th>
+    <th class="col">Condition</th>
+  </tr>
+  <ng-container *ngFor="let c of conditions">
+    <tr>
+      <td><h3 class="title">{{c.conditions}}</h3></td>
+      <td [ngClass]="{'inapplicable': !c.preventable, 'attribute-selected': survey.getPreventability()}">
+        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c, Parameter.Preventability)}}</mat-icon>
+        <span>Preventable</span>
+      </td>
+      <td [ngClass]="{'inapplicable': !c.treatable, 'attribute-selected': survey.getTreatability()}">
+        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c, Parameter.Treatability)}}</mat-icon>
+        <span>Treatable</span>
+      </td>
+      <td [ngClass]="{'inapplicable': !c.adultOnset, 'attribute-selected': survey.getAdultOnset()}">
+        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c, Parameter.AdultOnset)}}</mat-icon>
+        <span>Adult Onset</span>
+      </td>
+      <td [ngClass]="{'inapplicable': !c.carrier, 'attribute-selected': survey.getCarrierStatus()}">
+        <mat-icon class="preventable condition-attribute-icon">{{getIcon(c, Parameter.Carrier)}}</mat-icon>
+        <span>Carrier</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="condition-description-cell" colspan="5">
+        <p>{{c.description}} <a href="{{c.resource_link}}" target="_blank" mat-button class="mat-primary">Learn More <mat-icon>launch</mat-icon></a></p>
+      </td>
+    </tr>
   </ng-container>
-</div>
+</table>

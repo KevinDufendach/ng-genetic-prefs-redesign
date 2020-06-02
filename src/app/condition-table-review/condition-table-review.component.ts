@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SurveyService } from '../survey.service';
+import { SurveyService, Parameter } from '../survey.service';
 import { ConditionManagerService } from '../condition-manager.service';
 import * as data from '../../assets/condition_list.json';
 import {Condition2} from '../model/condition2';
@@ -11,8 +11,10 @@ import {Condition2} from '../model/condition2';
 })
 export class ConditionTableReviewComponent implements OnInit {
   conditions: Condition2[];
+  Parameter = Parameter;
 
-  constructor(public survey: SurveyService, private conditionManager: ConditionManagerService) { }
+  constructor(public survey: SurveyService, private conditionManager: ConditionManagerService) {
+  }
 
   ngOnInit(): void {
     this.conditions = (data as any).default;
@@ -20,5 +22,9 @@ export class ConditionTableReviewComponent implements OnInit {
 
   wouldReturnCondition(c: Condition2) {
     return this.conditionManager.wouldReturnCondition(c);
+  }
+
+  getIcon(c: Condition2, parameter: Parameter) {
+    return 'check';
   }
 }

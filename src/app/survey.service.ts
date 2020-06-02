@@ -2,6 +2,13 @@ import {Injectable} from '@angular/core';
 import {Selections} from './model/selections';
 import {SelectionLoggerService} from './selection-logger.service';
 
+export enum Parameter {
+  Preventability,
+  Treatability,
+  AdultOnset,
+  Carrier
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -78,5 +85,18 @@ export class SurveyService {
 
   public logSelections(context?: any) {
     return this.sls.log({selections: this.selections, context});
+  }
+
+  getParameter(p: Parameter): boolean {
+    switch (p) {
+      case Parameter.Preventability:
+        return this.preventability;
+      case Parameter.Treatability:
+        return this.treatability;
+      case Parameter.AdultOnset:
+        return this.adultOnset;
+      case Parameter.Carrier:
+        return this.carrierStatus;
+    }
   }
 }
