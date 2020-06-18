@@ -1,27 +1,27 @@
 <mat-accordion class="example-headers-align">
   <mat-expansion-panel *ngFor="let c of conditions" togglePosition="before">
-    <mat-expansion-panel-header [ngClass]="{'notShown': wouldReturnCondition(c)}">
-      <mat-panel-title>{{c.conditions}}</mat-panel-title>
+    <mat-expansion-panel-header [ngClass]="{'notShown': !wouldReturnCondition(c)}">
+      <mat-panel-title>{{c.category}}</mat-panel-title>
       <mat-panel-description>
 <!--        <div class="overflow-child">{{c.description}}</div>-->
-<!--        <div style="font-size: x-small">Show Details</div>-->
+        <div class="show-details">Click for details</div>
         <div fxFlex></div>
 
-        <div class="preventable attribute-info" [ngClass]="{'inapplicable': !c.preventable}">
-          <mat-icon>{{getIcon(c.preventable, Parameter.Preventability)}}</mat-icon>
-          Preventable
-        </div>
         <div class="treatable attribute-info" [ngClass]="{'inapplicable': !c.treatable}">
-          <mat-icon>{{getIcon(c.treatable, Parameter.Treatability)}}</mat-icon>
+<!--          <mat-icon>{{getIcon(c.treatable, Parameter.Treatability)}}</mat-icon>-->
           Treatable
         </div>
-        <div class="adult-onset attribute-info" [ngClass]="{'inapplicable': !c.adultOnset}">
-          <mat-icon>{{getIcon(c.adultOnset, Parameter.AdultOnset)}}</mat-icon>
-          Adult Onset
+        <div class="preventable attribute-info" [ngClass]="{'inapplicable': !c.preventable}">
+<!--          <mat-icon>{{getIcon(c.preventable, Parameter.Preventability)}}</mat-icon>-->
+          Preventable
         </div>
-        <div class="carrier-status attribute-info" [ngClass]="{'inapplicable': !c.carrier}">
-          <mat-icon>{{getIcon(c.carrier, Parameter.Carrier)}}</mat-icon>
-          Carrier Status
+        <div class="adult-onset attribute-info" [ngClass]="{'inapplicable': !c.adultOnset}">
+<!--          <mat-icon>{{getIcon(c.adultOnset, Parameter.AdultOnset)}}</mat-icon>-->
+          <span>Adult Onset</span>
+        </div>
+        <div class="carrier-status attribute-info" [ngClass]="{'inapplicable': !c.carrier, 'condition-hidden': !c.carrier}">
+<!--          <mat-icon>{{getIcon(c.carrier, Parameter.Carrier)}}</mat-icon>-->
+          Carrier
         </div>
       </mat-panel-description>
     </mat-expansion-panel-header>

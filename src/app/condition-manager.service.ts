@@ -20,10 +20,11 @@ export class ConditionManagerService {
 
   private static wrc(c: Condition2, treatable, preventability, adultOnset, carrierStatus) {
     return (
-      ((c.treatable || treatable) &&
+      (
+        (c.treatable || treatable) &&
         (c.preventable || preventability) &&
-        (!c.adultOnset || adultOnset)) ||
-      (c.carrier && carrierStatus)
+        (!c.adultOnset || adultOnset)
+      ) || (c.carrier && carrierStatus)
     );
   }
 

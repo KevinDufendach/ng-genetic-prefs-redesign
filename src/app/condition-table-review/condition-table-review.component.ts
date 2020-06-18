@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { SurveyService, Parameter } from '../survey.service';
-import { ConditionManagerService } from '../condition-manager.service';
+import {Component, OnInit} from '@angular/core';
+import {Parameter, SurveyService} from '../survey.service';
+import {ConditionManagerService} from '../condition-manager.service';
 import * as data from '../../assets/condition_list.json';
 import {Condition2} from '../model/condition2';
 
@@ -27,11 +27,28 @@ export class ConditionTableReviewComponent implements OnInit {
   getIcon(hasParameter: boolean, parameter: Parameter) {
     const status = this.survey.getParameter(parameter);
 
-    if (hasParameter) {
-      return (status ? 'check_circle' : 'check');
-    } else {
-      return (status ? 'remove_circle' : 'remove');
+    switch (parameter) {
+      case Parameter.Treatability:
+      case Parameter.Preventability:
+        if (hasParameter) {
+          return 'check_circle';
+        } else {
+          return (status ? 'remove_circle' : 'remove');
+        }
+      case Parameter.Carrier:
+      case Parameter.AdultOnset:
+        if (hasParameter) {
+          return (status ? 'check_circle' : 'check');
+        } else {
+          return 'remove_circle';
+        }
     }
+    //
+    // if (hasParameter) {
+    //   return (status ? 'check_circle' : 'check');
+    // } else {
+    //   return (status ? 'remove_circle' : 'remove');
+    // }
   }
 
 
