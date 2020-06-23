@@ -1,45 +1,36 @@
-<div fxFlex fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
-  <div fxFlex.gt-sm="50" fxLayout="column" fxLayoutGap="10px">
-    <div class="youtube-container">
-      <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/oznr-1-poSU" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
-    <h3 class="adult-onset">Do you want to receive results for adult-onset diseases for which there is no prevention or treatment during
-      childhood?</h3>
-    <p>Some adult-onset diseases may have medical or surgical steps you can take after childhood to prevent the
-      diseases. Some adult-onset diseases can be cured if they occur. Some adult-onset diseases can only be managed if
-      they occur.</p>
-    <mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="value">
-      <mat-radio-button [value]="1">Yes, I want to receive results for adult-onset diseases even though there is NO
-        prevention or treatment during childhood.
-      </mat-radio-button>
-      <mat-radio-button [value]="0">No, I ONLY want to receive results for diseases that are preventable or treatable
-        during childhood
-      </mat-radio-button>
-      <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span>
-      </mat-radio-button>
-    </mat-radio-group>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header (click)="notSureAllowed = true">I need more information</mat-expansion-panel-header>
-      <p>An example of a disease that can sometimes be genetic is colon cancer. Colon cancer is considered a disease
-        that occurs in adults. Colon cancer usually begins as a small clump of cells called a polyp. Polyps are not
-        cancer but can turn into cancer over time. Polyps usually occur in adults. People who have polyps usually do not
-        know they have them because polyps usually do not cause any symptoms.</p>
-
-      <p>Colon cancer can be prevented if polyps are removed from the colon before they turn into cancer. Screening is a
-        process of looking for polyps in people who do not have any symptoms. Colon cancer screening is recommended for
-        all adults starting at age 50. People who have a gene that increases their risk for colon cancer need to start
-        screening earlier. With regular screening, most polyps can be found and removed before they turn into cancer. If
-        colon cancer occurs, it can be cured with surgery, radiation, medicine or any combination of the three
-        treatments. The chances for cure are much higher if the cancer is found and treated early.</p>
-
-    </mat-expansion-panel>
-
-
-  </div>
-  <div fxFlex.gt-sm="50" fxLayout="column">
-    <p>Based on your selections, these are some conditions that could be returned</p>
-    <app-condition-table [state]="surveySteps.ADULT_ONSET"></app-condition-table>
-  </div>
+<div class="youtube-container">
+  <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/oznr-1-poSU" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
 </div>
+<h3 class="adult-onset">Do you want to receive results for adult-onset diseases for which there is no prevention or treatment during
+  childhood?</h3>
+<p>Some adult-onset diseases may have medical or surgical steps you can take after childhood to prevent the
+  diseases. Some adult-onset diseases can be cured if they occur. Some adult-onset diseases can only be managed if
+  they occur.</p>
+<mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="value">
+  <mat-radio-button [value]="1">Yes, I want to receive results for adult-onset diseases even though there is NO
+    prevention or treatment during childhood.
+  </mat-radio-button>
+  <mat-radio-button [value]="0">No, I ONLY want to receive results for diseases that are preventable or treatable
+    during childhood
+  </mat-radio-button>
+  <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span>
+  </mat-radio-button>
+</mat-radio-group>
+<mat-expansion-panel>
+  <mat-expansion-panel-header (click)="notSureAllowed = true">I need more information</mat-expansion-panel-header>
+  <p>An example of a disease that can sometimes be genetic is colon cancer. Colon cancer is considered a disease
+    that occurs in adults. Colon cancer usually begins as a small clump of cells called a polyp. Polyps are not
+    cancer but can turn into cancer over time. Polyps usually occur in adults. People who have polyps usually do not
+    know they have them because polyps usually do not cause any symptoms.</p>
+
+  <p>Colon cancer can be prevented if polyps are removed from the colon before they turn into cancer. Screening is a
+    process of looking for polyps in people who do not have any symptoms. Colon cancer screening is recommended for
+    all adults starting at age 50. People who have a gene that increases their risk for colon cancer need to start
+    screening earlier. With regular screening, most polyps can be found and removed before they turn into cancer. If
+    colon cancer occurs, it can be cured with surgery, radiation, medicine or any combination of the three
+    treatments. The chances for cure are much higher if the cancer is found and treated early.</p>
+
+</mat-expansion-panel>
+<app-survey-actions-bar backwardLink="preventability" forwardLink="carrier-status"></app-survey-actions-bar>

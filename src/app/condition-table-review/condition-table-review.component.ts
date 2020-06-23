@@ -3,6 +3,9 @@ import {Parameter, SurveyService} from '../survey.service';
 import {ConditionManagerService} from '../condition-manager.service';
 
 import {Condition2, Override} from '../model/condition2';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-condition-table-review',
@@ -14,7 +17,16 @@ export class ConditionTableReviewComponent implements OnInit {
   Parameter = Parameter;
   Override = Override;
 
-  constructor(public survey: SurveyService, private conditionManager: ConditionManagerService) {
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
+  constructor(
+    public survey: SurveyService,
+    private conditionManager: ConditionManagerService,
+    private breakpointObserver: BreakpointObserver) {
   }
 
   ngOnInit(): void {

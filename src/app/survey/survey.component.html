@@ -8,8 +8,8 @@
         <mat-nav-list>
           <a mat-list-item href="survey/instructions">1. Introduction</a>
           <a mat-list-item href="survey/opt-out">2. Opt Out</a>
-          <a mat-list-item href="survey/treatability">3. Treatability</a>
-          <a mat-list-item href="survey/preventability">4. Preventability</a>
+          <a mat-list-item href="survey/treatability" class="treatability">3. Treatability</a>
+          <a mat-list-item href="survey/preventability" class="preventability">4. Preventability</a>
           <a mat-list-item href="survey/adult-onset">5. Adult Onset</a>
           <a mat-list-item href="survey/carrier-status">6. Carrier</a>
           <a mat-list-item href="survey/review">7. Final Review</a>
@@ -17,9 +17,11 @@
       </mat-drawer>
 
       <div class="survey-area">
-        <button *ngIf="isHandset$ | async" mat-icon-button (click)="drawer.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
+        <h1>
+          <button *ngIf="isHandset$ | async" mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button><span [ngClass]="stepClass | async">{{stepTitle | async}}</span>
+        </h1>
         <router-outlet></router-outlet>
       </div>
 
@@ -28,7 +30,7 @@
   </mat-card>
 
   <mat-card class="conditions-table">
-    <h3>Conditions Table</h3>
+    <h1>Example Conditions Table</h1>
     <p>Based on your selections so far, these are some conditions that could be reported.</p>
     <app-condition-table-review></app-condition-table-review>
   </mat-card>

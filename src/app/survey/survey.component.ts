@@ -7,7 +7,7 @@ import {AuthService} from '../auth.service';
 import {SurveyService} from '../survey.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
 
 const STEP_COUNT = 7;
 
@@ -22,6 +22,9 @@ const STEP_COUNT = 7;
 })
 export class SurveyComponent implements OnInit {
   step = 0;
+  stepTitle: Observable<string>;
+  stepClass: Observable<string>;
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -100,9 +103,17 @@ export class SurveyComponent implements OnInit {
   ngOnInit() {
     this.auth.login();
 
-    this.route.queryParams.subscribe(params => {
-      this.step = +params.step || 0;
-    });
+    // this.route.queryParams.subscribe(params => {
+    //   this.step = +params.step || 0;
+    // });
+
+    this.stepClass = this.route.url.pipe(map(() => this.route.snapshot.firstChild.routeConfig.path));
+    this.stepTitle = this.stepClass.pipe(map(sc => this.getStepTitle(sc)));
+
+    // this.route.url.subscribe(() => {
+    //   this.stepClass = this.route.snapshot.firstChild.routeConfig.path;
+    //   this.stepTitle = this.getStepTitle(this.stepClass);
+    //  });
 
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
@@ -160,5 +171,28 @@ export class SurveyComponent implements OnInit {
 
   private complete() {
     this.router.navigate(['/complete']);
+  }
+
+  private getStepTitle(path: string | null) {
+    if (path) {
+      switch (path) {
+        case 'instructions':
+          return 'Instructions';
+        case 'opt-out':
+          return 'Opt Out';
+        case 'treatability':
+          return 'Treatability';
+        case 'preventability':
+          return 'Preventability';
+        case 'adult-onset':
+          return 'Adult Onset';
+        case 'carrier-status':
+          return 'Carrier Status';
+        case 'review':
+          return 'Final Review';
+        default:
+          return '';
+      }
+    }
   }
 }

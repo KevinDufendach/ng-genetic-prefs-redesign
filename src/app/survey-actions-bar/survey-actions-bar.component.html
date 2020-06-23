@@ -1,0 +1,5 @@
+<div class="container" fxLayout="row" fxLayoutAlign="end none">
+  <mat-divider></mat-divider>
+  <a mat-raised-button [routerLink]="'../' + backwardLink" [disabled]="!backwardLink">Back</a>
+  <a mat-raised-button class="mat-primary" [routerLink]="'../' + forwardLink" [disabled]="!forwardLink">Next</a>
+</div>

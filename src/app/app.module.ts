@@ -47,6 +47,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { SurveyNavComponent } from './survey-nav/survey-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { SurveyActionsBarComponent } from './survey-actions-bar/survey-actions-bar.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     ConditionTableReviewComponent,
     ConditionBlockComponent,
     SurveyNavComponent,
+    SurveyActionsBarComponent,
   ],
     imports: [
         BrowserModule,
