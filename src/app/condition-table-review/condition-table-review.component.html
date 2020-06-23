@@ -6,36 +6,25 @@
 <!--        <div class="overflow-child">{{c.description}}</div>-->
         <div class="show-details">Click for details</div>
         <div fxFlex></div>
-
-        <div class="treatable attribute-info" [ngClass]="{'inapplicable': !c.treatable}">
-<!--          <mat-icon>{{getIcon(c.treatable, Parameter.Treatability)}}</mat-icon>-->
-          Treatable
-        </div>
-        <div class="preventable attribute-info" [ngClass]="{'inapplicable': !c.preventable}">
-<!--          <mat-icon>{{getIcon(c.preventable, Parameter.Preventability)}}</mat-icon>-->
-          Preventable
-        </div>
-        <div class="adult-onset attribute-info" [ngClass]="{'inapplicable': !c.adultOnset}">
-<!--          <mat-icon>{{getIcon(c.adultOnset, Parameter.AdultOnset)}}</mat-icon>-->
-          <span>Adult Onset</span>
-        </div>
-        <div class="carrier-status attribute-info" [ngClass]="{'inapplicable': !c.carrier, 'condition-hidden': !c.carrier}">
-<!--          <mat-icon>{{getIcon(c.carrier, Parameter.Carrier)}}</mat-icon>-->
-          Carrier
-        </div>
+        <div class="atrribute-info" [ngClass]="{'inapplicable': c.override === Override.Default}">Manually {{c.override === Override.Include ? 'Included' : 'Excluded'}}</div>
+        <div class="treatable attribute-info" [ngClass]="{'inapplicable': !c.treatable}">Treatable</div>
+        <div class="preventable attribute-info" [ngClass]="{'inapplicable': !c.preventable}">Preventable</div>
+        <div class="adult-onset attribute-info" [ngClass]="{'inapplicable': !c.adultOnset}">Adult Onset</div>
+        <div class="carrier-status attribute-info" [ngClass]="{'inapplicable': !c.carrier, 'condition-hidden': !c.carrier}">Carrier</div>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <div>
       <p>{{c.description}} <a href="{{c.resource_link}}" target="_blank" mat-button class="mat-primary">Learn More <mat-icon>launch</mat-icon></a></p>
 
       <div>
-        <h2>Override Defaults</h2>
-          <div>ToDo: Add radio buttons: "No matter my selections, I would [ALWAYS/NEVER] want to learn about this condition, vs use my selections (default)</div>
-        <!-- <mat-radio-group>
-          <mat-radio-button></mat-radio-button>
-        </mat-radio-group> -->
-
-
+        <h4>Override Defaults</h4>
+        <p>Do you want to override your survey responses? [ TODO: NEED FEEDBACK ON THIS WORDING ]</p>
+        <!-- <div>Override: {{c.override}}</div> -->
+        <mat-radio-group [(ngModel)]="c.override">
+          <mat-radio-button [value]="Override.Default">Use my selections (default)</mat-radio-button>
+          <mat-radio-button [value]="Override.Include">ALWAYS tell me about this condition</mat-radio-button>
+          <mat-radio-button [value]="Override.Exclude">NEVER tell me about this condition</mat-radio-button>
+        </mat-radio-group>
       </div>
 
 <!--      <mat-form-field>-->

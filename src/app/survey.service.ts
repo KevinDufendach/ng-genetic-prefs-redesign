@@ -20,8 +20,33 @@ export class SurveyService {
     carrierStatus: -1,
   };
 
+  private overrideIncludes: Set<string> = new Set();
+  private overrideExcludes: Set<string> = new Set();
+
   constructor(private sls: SelectionLoggerService) {
   }
+
+  // getOverride(id: string): Overrides {
+  //   if (this.overrideIncludes.has(id)) { return Overrides.Include; }
+  //   if (this.overrideExcludes.has(id)) { return Overrides.Exclude; }
+  //   return Overrides.Default;
+  // }
+
+  // setOverride(id: string, value: Overrides) {
+  //   if (value === Overrides.Include) {
+  //     this.overrideIncludes.add(id);
+  //     this.overrideExcludes.delete(id);
+  //     return;
+  //   }
+
+  //   this.overrideIncludes.delete(id);
+  //   if (value === Overrides.Exclude) {
+  //     this.overrideExcludes.add(id);
+  //     return;
+  //   }
+
+  //   this.overrideExcludes.delete(id);
+  // }
 
   setTreatability(val: number, context?: any) {
     if (this.selections.treatability !== val) {

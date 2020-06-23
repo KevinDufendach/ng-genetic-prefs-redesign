@@ -1,3 +1,9 @@
+export enum Override {
+  Default = 0,
+  Include = 1,
+  Exclude = 2
+}
+
 export interface Condition2 {
   id: string;
   genes: string | null;
@@ -15,4 +21,5 @@ export interface Condition2 {
   carrierText: string;
   carrier: boolean;
   resource_link: string;
+  override?: Override;
 }

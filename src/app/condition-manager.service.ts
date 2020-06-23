@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Condition2} from './model/condition2';
+import {Condition2, Override} from './model/condition2';
 import {SurveyService} from './survey.service';
+import * as data from '../assets/condition_list.json';
 
 export enum SURVEY_STEP {
   UNDEFINED = -1,
@@ -14,11 +15,27 @@ export enum SURVEY_STEP {
   providedIn: 'root'
 })
 export class ConditionManagerService {
+  readonly conditions: Condition2[];
 
   constructor(private surveyService: SurveyService) {
+    this.conditions = (data as any).default;
+
+    this.conditions.forEach(c => {
+      c.override = Override.Default;
+    });
   }
 
-  private static wrc(c: Condition2, treatable, preventability, adultOnset, carrierStatus) {
+  private static wrc(
+      c: Condition2,
+      treatable: boolean,
+      preventability: boolean,
+      adultOnset: boolean,
+      carrierStatus: boolean
+    ) {
+
+    if (c.override === Override.Include) { return true; }
+    if (c.override === Override.Exclude) { return false; }
+
     return (
       (
         (c.treatable || treatable) &&

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Parameter, SurveyService} from '../survey.service';
 import {ConditionManagerService} from '../condition-manager.service';
-import * as data from '../../assets/condition_list.json';
-import {Condition2} from '../model/condition2';
+
+import {Condition2, Override} from '../model/condition2';
 
 @Component({
   selector: 'app-condition-table-review',
@@ -12,12 +12,13 @@ import {Condition2} from '../model/condition2';
 export class ConditionTableReviewComponent implements OnInit {
   conditions: Condition2[];
   Parameter = Parameter;
+  Override = Override;
 
   constructor(public survey: SurveyService, private conditionManager: ConditionManagerService) {
   }
 
   ngOnInit(): void {
-    this.conditions = (data as any).default;
+    this.conditions = this.conditionManager.conditions;
   }
 
   wouldReturnCondition(c: Condition2) {
