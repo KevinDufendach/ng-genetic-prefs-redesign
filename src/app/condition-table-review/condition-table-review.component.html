@@ -4,7 +4,7 @@
       <mat-panel-title>{{c.condition}}</mat-panel-title>
       <mat-panel-description>
 <!--        <div class="overflow-child">{{c.description}}</div>-->
-        <div class="show-details">Click for details</div>
+        <div class="show-details">Click for details and options</div>
         <div fxFlex></div>
         <div class="atrribute-info" [ngClass]="{'inapplicable': c.override === Override.Default}">Manually {{c.override === Override.Include ? 'Included' : 'Excluded'}}</div>
         <div class="treatable attribute-info" [ngClass]="{'inapplicable': !c.treatable}">Treatable</div>
