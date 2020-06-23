@@ -1,215 +1,36 @@
-<!-- <div fxLayout="column" fxFlex> -->
-<div class="survey-container">
-
-  <mat-drawer-container fxFlex>
-    <mat-drawer #drawer class="sidenav"
+<div fxFlex fxLayout="column" fxLayoutGap="15px">
+  <mat-card>
+    <mat-drawer-container class="survey-container">
+      <mat-drawer #drawer class="sidenav"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-      <mat-nav-list>
-        <a mat-list-item href="survey/instructions">1. General Instructions</a>
-        <a mat-list-item href="survey/opt-out">2. Opt In/Out</a>
-        <a mat-list-item href="survey/treatability">3. Treatability</a>
-        <a mat-list-item href="survey/preventability">4. Preventability</a>
-        <a mat-list-item href="survey/adult-onset">5. Adult Onset</a>
-        <a mat-list-item href="survey/carrier-status">6. Carrier</a>
-        <a mat-list-item href="survey/review">7. Final Review</a>
-      </mat-nav-list>
-    </mat-drawer>
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+        <mat-nav-list>
+          <a mat-list-item href="survey/instructions">1. Introduction</a>
+          <a mat-list-item href="survey/opt-out">2. Opt Out</a>
+          <a mat-list-item href="survey/treatability">3. Treatability</a>
+          <a mat-list-item href="survey/preventability">4. Preventability</a>
+          <a mat-list-item href="survey/adult-onset">5. Adult Onset</a>
+          <a mat-list-item href="survey/carrier-status">6. Carrier</a>
+          <a mat-list-item href="survey/review">7. Final Review</a>
+        </mat-nav-list>
+      </mat-drawer>
 
-    <div class="survey-area">
-      <button mat-icon-button (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <router-outlet></router-outlet>
-    </div>
-
-  </mat-drawer-container>
-</div>
-<!-- </div> -->
-
-
-<!-- <mat-drawer-container class="survey-container" fxFlex>
-  <mat-drawer #drawer class="sidenav" mode="side">
-    <mat-nav-list>
-      <a mat-list-item href="survey">General Instructions</a>
-      <a mat-list-item href="survey">Opt In/Out</a>
-      <a mat-list-item href="survey">Treatability</a>
-      <a mat-list-item href="survey">Preventability</a>
-      <a mat-list-item href="survey">Adult Onset</a>
-      <a mat-list-item href="survey">Carrier</a>
-      <a mat-list-item href="survey">Final Review</a>
-    </mat-nav-list>
-  </mat-drawer>
-
-  <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
-  </div>
-
-</mat-drawer-container> -->
-
-<!-- <app-opt-out></app-opt-out> -->
-
-<!-- <div fxHide fxShow.gt-sm>
-  <span fxFlex></span>
-  <div id="horizontal-content">
-    <mat-horizontal-stepper [selectedIndex]="step" (selectionChange)="selectionChanged($event)">
-      <mat-step label="Instructions">
-        <app-survey-card title="General Instructions">
-          <app-intro></app-intro>
-        </app-survey-card>
-      </mat-step>
-      <mat-step label="Opt In/Out">
-        <app-survey-card title="Opt In/Out">
-          <app-opt-out></app-opt-out>
-        </app-survey-card>
-      </mat-step>
-      <mat-step label="Treatable">
-        <app-survey-card title="Treatability">
-          <app-treatability></app-treatability>
-        </app-survey-card>
-      </mat-step>
-      <mat-step label="Preventable">
-        <app-survey-card title="Preventability">
-          <app-preventability></app-preventability>
-        </app-survey-card>
-      </mat-step>
-      <mat-step label="Adult Onset">
-        <app-survey-card title="Adult Onset">
-          <app-adult-onset></app-adult-onset>
-        </app-survey-card>
-      </mat-step>
-      <mat-step label="Carrier Status">
-        <app-survey-card title="Carrier Status">
-          <app-carrier-status></app-carrier-status>
-        </app-survey-card>
-      </mat-step>
-      <mat-step label="Final Review" state="finalReview">
-        <app-survey-card title="Final Review" finalStep="true">
-          <app-final-review></app-final-review>
-        </app-survey-card>
-      </mat-step>
-
-      <ng-template matStepperIcon="curable">
-        <mat-icon svgIcon="curable"></mat-icon>
-      </ng-template>
-      <ng-template matStepperIcon="preventable">
-        <mat-icon svgIcon="curable"></mat-icon>
-      </ng-template>
-      <ng-template matStepperIcon="adultOnset">
-        <mat-icon svgIcon="adultOnset"></mat-icon>
-      </ng-template>
-      <ng-template matStepperIcon="carrier">
-        <mat-icon svgIcon="carrier"></mat-icon>
-      </ng-template>
-      <ng-template matStepperIcon="finalReview">
-        <mat-icon>table_chart</mat-icon>
-      </ng-template>
-    </mat-horizontal-stepper>
-  </div>
-  <span fxFlex></span>
-</div> -->
-
-<!-- <div fxShow fxHide.gt-sm>
-  <mat-card fxFlex *ngIf="!step || step == 0">
-    <mat-card-header>
-      <mat-card-title>General Instructions</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <app-intro></app-intro>
-    </mat-card-content>
-    <mat-card-actions fxLayoutGap="15">
-      <span fxFlex></span>
-      <button mat-raised-button class="mat-primary" (click)="forwardStep()">Next</button>
-    </mat-card-actions>
-  </mat-card>
-
-  <mat-card fxFlex *ngIf="step == 1">
-    <mat-card-header>
-      <mat-icon mat-card-avatar svgIcon="curable_circle" aria-hidden="false"></mat-icon>
-      <mat-card-title>Treatability</mat-card-title>
-      <span fxFlex></span>
-      <button mat-raised-button (click)="backwardStep()">Back</button>
-      <button mat-raised-button class="mat-primary" (click)="forwardStep()">Next</button>
-    </mat-card-header>
-    <mat-card-content>
-      <app-treatability></app-treatability>
-    </mat-card-content>
-    <mat-card-actions fxLayoutGap="15px">
-      <span fxFlex></span>
-      <button mat-raised-button (click)="backwardStep()">Back</button>
-      <button mat-raised-button class="mat-primary" (click)="forwardStep()">Next</button>
-    </mat-card-actions>
-  </mat-card>
-
-  <mat-card fxFlex *ngIf="step == 2">
-    <mat-card-header>
-      <mat-icon mat-card-avatar svgIcon="preventable_circle" aria-hidden="false"></mat-icon>
-      <mat-card-title>Preventability</mat-card-title>
-      <span fxFlex></span>
-      <div fxLayoutGap="15px">
-        <button mat-raised-button (click)="backwardStep()">Back</button>
-        <button mat-raised-button class="mat-primary" (click)="forwardStep()">Next</button>
+      <div class="survey-area">
+        <button *ngIf="isHandset$ | async" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <router-outlet></router-outlet>
       </div>
-    </mat-card-header>
-    <mat-card-content>
-      <app-preventability></app-preventability>
-    </mat-card-content>
-    <mat-card-actions fxLayoutGap="15">
-      <span fxFlex></span>
-      <button mat-raised-button (click)="backwardStep()">Back</button>
-      <button mat-raised-button class="mat-primary" (click)="forwardStep()">Next</button>
-    </mat-card-actions>
+
+    </mat-drawer-container>
+
   </mat-card>
 
-  <mat-card fxFlex *ngIf="step == 3">
-    <mat-card-header>
-      <mat-icon mat-card-avatar svgIcon="adultOnset_circle" aria-hidden="false"></mat-icon>
-      <mat-card-title>Adult Onset</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <app-adult-onset></app-adult-onset>
-    </mat-card-content>
-    <mat-card-actions fxLayoutGap="15">
-      <span fxFlex></span>
-      <button mat-raised-button (click)="backwardStep()">Back</button>
-      <button mat-raised-button class="mat-primary" (click)="forwardStep()">Next</button>
-    </mat-card-actions>
+  <mat-card class="conditions-table">
+    <h3>Conditions Table</h3>
+    <p>Based on your selections so far, these are some conditions that could be reported.</p>
+    <app-condition-table-review></app-condition-table-review>
   </mat-card>
 
-  <mat-card fxFlex *ngIf="step == 4">
-    <mat-card-header>
-      <mat-icon mat-card-avatar svgIcon="carrier_circle" aria-hidden="false"></mat-icon>
-      <mat-card-title>Carrier Status</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <app-carrier-status></app-carrier-status>
-    </mat-card-content>
-    <mat-card-actions fxLayoutGap="15">
-      <span fxFlex></span>
-      <button mat-raised-button (click)="backwardStep()">Back</button>
-      <button mat-raised-button class="mat-primary" (click)="forwardStep()">Next</button>
-    </mat-card-actions>
-  </mat-card>
-
-  <mat-card fxFlex *ngIf="step == 5">
-    <mat-card-header>
-      <mat-icon mat-card-avatar aria-hidden="false">table_chart</mat-icon>
-      <mat-card-title>Final Review</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <app-final-review></app-final-review>
-    </mat-card-content>
-    <mat-card-actions fxLayoutGap="15">
-      <span fxFlex></span>
-      <button mat-raised-button (click)="backwardStep()">Back</button>
-      <button mat-raised-button class="mat-primary" (click)="submit()"><mat-icon>save</mat-icon>Save</button>
-    </mat-card-actions>
-  </mat-card>
-  <!~~    <app-preventability></app-preventability>~~>
-  <!~~    <app-adult-onset></app-adult-onset>~~>
-  <!~~    <app-carrier-status></app-carrier-status>~~>
 </div>
-  -->

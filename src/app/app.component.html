@@ -11,16 +11,10 @@
   </mat-toolbar>
 
   <!-- <div fxLayout="row" fxFlex class="app-body"> -->
-  <div fxFlex fxLayout="row">
-    <!-- <span fxFlex></span> -->
-    <!-- <div class="app-body"> -->
-    <span fxFlex></span>
-    <router-outlet></router-outlet>
-    <span fxFlex></span>
-    <!-- </div> -->
-    <!-- <span fxFlex></span> -->
-    <!-- <span fxFlex></span> -->
-    <!-- <span fxFlex></span> -->
+  <div fxFlex fxLayout="column" class="app-body">
+    <div class="app-container" fxFlex>
+      <router-outlet></router-outlet>
+    </div>
   </div>
   <div class="footer">
     <p>Version 2020-06-23-1300</p>

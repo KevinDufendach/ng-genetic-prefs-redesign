@@ -1,12 +1,19 @@
 @import "~@angular/material/theming";
 
 .app-body {
-  background-color: mat-color($mat-blue-gray);
+  // background-color: mat-color($mat-blue-gray);
+  background-color: rgb(208, 215, 221);
   //margin-bottom: 40px
 
   // display: flex;
   // flex-direction: column;
   // flex: 1;
+}
+
+.app-container {
+  margin: 15px auto;
+  width: 100%;
+  max-width: 1280px;
 }
 
 .footer {
