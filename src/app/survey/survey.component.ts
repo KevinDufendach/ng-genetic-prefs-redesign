@@ -5,6 +5,9 @@ import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
 import {AuthService} from '../auth.service';
 import {SurveyService} from '../survey.service';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 
 const STEP_COUNT = 7;
 
@@ -19,12 +22,18 @@ const STEP_COUNT = 7;
 })
 export class SurveyComponent implements OnInit {
   step = 0;
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private auth: AuthService,
     private surveyService: SurveyService,
+    private breakpointObserver: BreakpointObserver,
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer
   ) {

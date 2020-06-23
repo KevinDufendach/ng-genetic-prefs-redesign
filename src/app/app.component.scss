@@ -3,13 +3,19 @@
 .app-body {
   background-color: mat-color($mat-blue-gray);
   //margin-bottom: 40px
+
+  // display: flex;
+  // flex-direction: column;
+  // flex: 1;
 }
 
 .footer {
-  //position: fixed;
-  //left: 10px;
-  //bottom: 0;
+  position: fixed;
+  right: 10px;
+  bottom: 0;
 
   color: gray;
   font-size: xx-small;
+  z-index: 100;
 }
+

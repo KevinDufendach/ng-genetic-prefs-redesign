@@ -44,6 +44,9 @@ import { OptOutComponent } from './opt-out/opt-out.component';
 import { ConditionTableReviewComponent } from './condition-table-review/condition-table-review.component';
 import { ConditionBlockComponent } from './condition-block/condition-block.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { SurveyNavComponent } from './survey-nav/survey-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -68,6 +71,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     OptOutComponent,
     ConditionTableReviewComponent,
     ConditionBlockComponent,
+    SurveyNavComponent,
   ],
     imports: [
         BrowserModule,
@@ -94,7 +98,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
         AngularFireAuthModule,
         MatInputModule,
         MatSortModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        LayoutModule,
+        MatSidenavModule
     ],
   providers: [],
   bootstrap: [AppComponent]
