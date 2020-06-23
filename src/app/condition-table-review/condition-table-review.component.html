@@ -1,7 +1,7 @@
 <mat-accordion class="example-headers-align">
   <mat-expansion-panel *ngFor="let c of conditions" togglePosition="before">
     <mat-expansion-panel-header [ngClass]="{'notShown': !wouldReturnCondition(c)}">
-      <mat-panel-title>{{c.category}}</mat-panel-title>
+      <mat-panel-title>{{c.condition}}</mat-panel-title>
       <mat-panel-description>
 <!--        <div class="overflow-child">{{c.description}}</div>-->
         <div class="show-details">Click for details</div>
@@ -28,7 +28,16 @@
     <div>
       <p>{{c.description}} <a href="{{c.resource_link}}" target="_blank" mat-button class="mat-primary">Learn More <mat-icon>launch</mat-icon></a></p>
 
-      <div>ToDo: Add radio buttons: "No matter my selections, I would [ALWAYS/NEVER] want to learn about this condition, vs use my selections (default)</div>
+      <div>
+        <h2>Override Defaults</h2>
+          <div>ToDo: Add radio buttons: "No matter my selections, I would [ALWAYS/NEVER] want to learn about this condition, vs use my selections (default)</div>
+        <!-- <mat-radio-group>
+          <mat-radio-button></mat-radio-button>
+        </mat-radio-group> -->
+
+
+      </div>
+
 <!--      <mat-form-field>-->
 <!--        <label>No matter my selections, I would</label>-->
 <!--        <mat-radio-group>-->

@@ -1,10 +1,11 @@
 [
   {
+    "id": "pLIix6MEOLeM",
     "genes": "KCNH2, KCNQ1, RYR2, SCN5A",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Long QT syndrome-2",
-    "category": "abnormal heartbeats",
+    "kalia_conditions": "Long QT syndrome-2",
+    "condition": "Abnormal heartbeats",
     "description": "Irregular heartbeat may interfere with heart's ability to pump blood",
     "preventableText": "Yes",
     "preventable": true,
@@ -17,11 +18,12 @@
     "resource_link": "https:\/\/www.heart.org\/en\/health-topics\/arrhythmia\/about-arrhythmia\/types-of-arrhythmia-in-children"
   },
   {
+    "id": "a61EqJomTEI1",
     "genes": null,
     "carrierPanel": "ASPA",
     "inheritance": "AR",
-    "conditions": "Canavan disease",
-    "category": "Canavan disease",
+    "kalia_conditions": "Canavan disease",
+    "condition": "Canavan disease",
     "description": "Disease that damages nerves in the brain that can cause death.",
     "preventableText": "No",
     "preventable": false,
@@ -34,11 +36,12 @@
     "resource_link": "https:\/\/www.ntsad.org\/index.php\/canavan"
   },
   {
+    "id": "JEzO3joOj37H",
     "genes": "BRCA1, BRCA2, MLH1, MSH2, MSH6, PMS2, ",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Breast-ovarian cancer, Lynch syndrome, ",
-    "category": "Cancers that might start during adult years",
+    "kalia_conditions": "Breast-ovarian cancer, Lynch syndrome, ",
+    "condition": "Cancers that might start during adult years",
     "description": "Cancer might occur in breast, ovaries, prostate, colon",
     "preventableText": "Yes",
     "preventable": true,
@@ -51,11 +54,12 @@
     "resource_link": "https:\/\/www.cancer.org\/cancer\/cancer-causes\/genetics\/family-cancer-syndromes.html"
   },
   {
+    "id": "yVaQXekW9Lct",
     "genes": "MUTYH",
     "carrierPanel": "MUTYH",
     "inheritance": "AR",
-    "conditions": "MUTYH-associated polyposis",
-    "category": "Colon cancer risk due to polyps recessive ",
+    "kalia_conditions": "MUTYH-associated polyposis",
+    "condition": "Colon cancer risk due to polyps recessive ",
     "description": "Polyps are growths in the colon that can turn into cancer. Some polyps can cause serious bleeding. Removing polyps can prevent colon cancer and prevent serious bleeding",
     "preventableText": "yes ",
     "preventable": true,
@@ -68,11 +72,12 @@
     "resource_link": "https:\/\/www.uptodate.com\/contents\/colon-polyps-beyond-the-basics"
   },
   {
+    "id": "Xb03rEMU64yT",
     "genes": "APC, BMPR1A, SMAD4 ",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Familial adenomatous polyposis; juvenile polyposis",
-    "category": "Colon cancer risk due to polyps dominate ",
+    "kalia_conditions": "Familial adenomatous polyposis; juvenile polyposis",
+    "condition": "Colon cancer risk due to polyps dominant ",
     "description": "Polyps are growths in the colon that can turn into cancer. Some polyps can cause serious bleeding. Removing polyps can prevent colon cancer and prevent serious bleeding",
     "preventableText": "yes ",
     "preventable": true,
@@ -85,11 +90,12 @@
     "resource_link": "https:\/\/www.uptodate.com\/contents\/colon-polyps-beyond-the-basics"
   },
   {
+    "id": "Y6BzUZKC97i4",
     "genes": null,
     "carrierPanel": "CFTR",
     "inheritance": "AR",
-    "conditions": "Cystic fibrosis",
-    "category": "Cystic fibrosis",
+    "kalia_conditions": "Cystic fibrosis",
+    "condition": "Cystic fibrosis",
     "description": "Build up of thick mucus that can damage many body organs. Breathing problems and digestive problems often occur.  Mucous build up in the pancreas can lead to diabetes",
     "preventableText": "No",
     "preventable": false,
@@ -102,11 +108,12 @@
     "resource_link": "https:\/\/www.cff.org\/What-is-CF\/About-Cystic-Fibrosis\/"
   },
   {
+    "id": "xgciFnq9RBXO",
     "genes": "COL3A1",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Ehlers-Danlos syndrome, vascular type",
-    "category": "Ehlers-Danlos syndrome, vascular type",
+    "kalia_conditions": "Ehlers-Danlos syndrome, vascular type",
+    "condition": "Ehlers-Danlos syndrome, vascular type",
     "description": "Disease with risk for unpredictable tearing of blood vessels, gut and uterus. ",
     "preventableText": "No ",
     "preventable": false,
@@ -119,11 +126,12 @@
     "resource_link": "https:\/\/rarediseases.info.nih.gov\/diseases\/2082\/vascular-ehlers-danlos-syndrome"
   },
   {
+    "id": "2tAG1yKwILAL",
     "genes": "GLA",
     "carrierPanel": null,
     "inheritance": "XL",
-    "conditions": "Fabry, Hypertrophic cardiomyopathy, Dilated cardiomyopathy",
-    "category": "Fabry, Heart muscle disease",
+    "kalia_conditions": "Fabry, Hypertrophic cardiomyopathy, Dilated cardiomyopathy",
+    "condition": "Fabry, Heart muscle disease",
     "description": "Condition leads to heart and kidney disease and nerve pain in hands and feet. ",
     "preventableText": "No",
     "preventable": false,
@@ -136,11 +144,12 @@
     "resource_link": "https:\/\/fabrydiseasenews.com\/what-is-fabry-disease\/ "
   },
   {
+    "id": "o5vR67b2rMQS",
     "genes": null,
     "carrierPanel": "ELP1 (formally IKBKAP)",
     "inheritance": "AR",
-    "conditions": "Familial dysautonomia",
-    "category": "Familial dysautonomia",
+    "kalia_conditions": "Familial dysautonomia",
+    "condition": "Familial dysautonomia",
     "description": "Very rare disease of the nervous system that can lead to unstable body temperature, breathing, heart, digestive and visioin problems.  ",
     "preventableText": "No",
     "preventable": false,
@@ -153,11 +162,12 @@
     "resource_link": "https:\/\/familialdysautonomia.org\/about-fd"
   },
   {
+    "id": "kS3u9I5KKgTP",
     "genes": null,
     "carrierPanel": "GBA",
     "inheritance": "AR",
-    "conditions": "Gaucher disease",
-    "category": "Gaucher disease",
+    "kalia_conditions": "Gaucher disease",
+    "condition": "Gaucher disease",
     "description": "Body can't break down a fatty chemical that is naturally found in body. Cells build up with fat causing liver, spleen, bone disease and sometimes brain disease",
     "preventableText": "No",
     "preventable": false,
@@ -170,11 +180,12 @@
     "resource_link": "https:\/\/www.gaucherdisease.org\/about-gaucher-disease\/what-is\/"
   },
   {
+    "id": "nO1KrsheE2OE",
     "genes": "ACTC1, LMNA, MYBPC3, MYH7, MYL2, MYL3, PRKAG2, TNNI3, TNNT2, TPM1",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Hypertrophic cardiomyopathy, Dilated cardiomyopathy",
-    "category": "Heart muscle disease",
+    "kalia_conditions": "Hypertrophic cardiomyopathy, Dilated cardiomyopathy",
+    "condition": "Heart muscle disease",
     "description": "Heart may not be able to pump blood well when the heart muscle becomes too thick or too thin.",
     "preventableText": "Yes (medication, pacemaker, ICD)",
     "preventable": true,
@@ -187,11 +198,12 @@
     "resource_link": "https:\/\/www.heart.org\/en\/health-topics\/cardiomyopathy\/pediatric-cardiomyopathies"
   },
   {
+    "id": "fwZeA5jbsBXA",
     "genes": "DSC2, DSG2, DSP, PKP2, TMEM43",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Arrhythmogenic right ventricular cardiomyopathy",
-    "category": "Heart muscle disease and abnormal heart beat",
+    "kalia_conditions": "Arrhythmogenic right ventricular cardiomyopathy",
+    "condition": "Heart muscle disease and abnormal heart beat",
     "description": "Heart may not be able to pump blood well when the heart muscle becomes too thick or too thin.",
     "preventableText": "Yes (medication, pacemaker, ICD)",
     "preventable": true,
@@ -204,11 +216,12 @@
     "resource_link": "https:\/\/www.heart.org\/en\/health-topics\/cardiomyopathy\/what-is-cardiomyopathy-in-adults\/arrhythmogenic-right-ventricular-dysplasia"
   },
   {
+    "id": "3hcMNWcyTLvJ",
     "genes": "APOB, LDLR, PCSK9",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Hypercholesterolemia",
-    "category": "high cholesterol",
+    "kalia_conditions": "Hypercholesterolemia",
+    "condition": "High cholesterol",
     "description": "High levels of bad cholesterol can lead to blocked blood vessels and early heart attacks",
     "preventableText": "yes",
     "preventable": true,
@@ -221,11 +234,12 @@
     "resource_link": "https:\/\/www.heart.org\/en\/health-topics\/cholesterol\/causes-of-high-cholesterol\/familial-hypercholesterolemia-fh"
   },
   {
+    "id": "47rGpctaegMI",
     "genes": "CACNA1S, RYR1",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Malignant hyperthermia susceptibility",
-    "category": "Malignant hyperthermia susceptibility",
+    "kalia_conditions": "Malignant hyperthermia susceptibility",
+    "condition": "Malignant hyperthermia susceptibility",
     "description": "People with this condition may have life threatening rise in body temperature and muscle rigidity if given certain medications",
     "preventableText": "Yes",
     "preventable": true,
@@ -238,11 +252,12 @@
     "resource_link": "https:\/\/ghr.nlm.nih.gov\/condition\/malignant-hyperthermia "
   },
   {
+    "id": "c8mAsNqjSc3v",
     "genes": "MEN1",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Multiple endocrine neoplasia 1",
-    "category": "Multiple endocrine neoplasia 1",
+    "kalia_conditions": "Multiple endocrine neoplasia 1",
+    "condition": "Multiple endocrine neoplasia 1",
     "description": "Noncancerous tumors that cause overactive hormone glands that lead to different types of health problems",
     "preventableText": "No",
     "preventable": false,
@@ -255,11 +270,12 @@
     "resource_link": "https:\/\/www.niddk.nih.gov\/health-information\/endocrine-diseases\/multiple-endocrine-neoplasia-type-1"
   },
   {
+    "id": "ux9i53yyD3Hy",
     "genes": "RET",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Multiple endocrine neoplasia 2A",
-    "category": "Multiple endocrine neoplasia IIA",
+    "kalia_conditions": "Multiple endocrine neoplasia 2A",
+    "condition": "Multiple endocrine neoplasia IIA",
     "description": "Tumors in thyroid, parathyroids, adrenal glands ",
     "preventableText": "Yes",
     "preventable": true,
@@ -272,11 +288,12 @@
     "resource_link": "https:\/\/ghr.nlm.nih.gov\/condition\/multiple-endocrine-neoplasia"
   },
   {
+    "id": "P3MRJgN8ZGrB",
     "genes": "NF2",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Neurofibromatosis type 2",
-    "category": "Neurofibromatosis type 2",
+    "kalia_conditions": "Neurofibromatosis type 2",
+    "condition": "Neurofibromatosis type 2",
     "description": "Tumors can develop on nerves that go from the brain to the ear. Tumors may develop in other parts of the nervous system.  Cancer risk is low",
     "preventableText": "No",
     "preventable": false,
@@ -289,11 +306,12 @@
     "resource_link": "https:\/\/rarediseases.info.nih.gov\/diseases\/7193\/neurofibromatosis-type-2"
   },
   {
+    "id": "OUTp7tBqHtJv",
     "genes": "OTC",
     "carrierPanel": null,
     "inheritance": "XL",
-    "conditions": "ornithine transcarbamylase deficiency",
-    "category": "OTC deficiency",
+    "kalia_conditions": "ornithine transcarbamylase deficiency",
+    "condition": "OTC deficiency",
     "description": "Dangerous amounts of ammonia can build up in the blood and can cause severe illness or death.",
     "preventableText": "Yes",
     "preventable": true,
@@ -306,11 +324,12 @@
     "resource_link": "https:\/\/ghr.nlm.nih.gov\/condition\/ornithine-transcarbamylase-deficiency"
   },
   {
+    "id": "aYALubyNLOid",
     "genes": "STK11",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Peutz-Jeghers syndrome",
-    "category": "Polyps, cancer syndrome",
+    "kalia_conditions": "Peutz-Jeghers syndrome",
+    "condition": "Polyps, cancer syndrome",
     "description": "noncancerous growths in the stomach and gut that can lead to cancer. Cancer may develop in different parts of body",
     "preventableText": "No",
     "preventable": false,
@@ -323,11 +342,12 @@
     "resource_link": "https:\/\/www.mayoclinic.org\/diseases-conditions\/stomach-polyps\/symptoms-causes\/syc-20377992"
   },
   {
+    "id": "OOvDwR6wMTrV",
     "genes": "RB1",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Retinoblastoma",
-    "category": "Retinoblastoma",
+    "kalia_conditions": "Retinoblastoma",
+    "condition": "Retinoblastoma",
     "description": "Eye cancer that begins in the retina (back of the eye)",
     "preventableText": "No",
     "preventable": false,
@@ -340,11 +360,12 @@
     "resource_link": "https:\/\/ghr.nlm.nih.gov\/condition\/retinoblastoma"
   },
   {
+    "id": "FbLd9Rb9xqOD",
     "genes": "ACTA2, FBN1, MYH11, SMAD3, TGFBR1, TGFBR2",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Familial thoracic aortic aneurysm & dissection, Marfan syndrome, Loeys-Dietz syndrome",
-    "category": "Risk for serious bleeding",
+    "kalia_conditions": "Familial thoracic aortic aneurysm & dissection, Marfan syndrome, Loeys-Dietz syndrome",
+    "condition": "Risk for serious bleeding",
     "description": "Conditions that may have weak blood vessels that can swell and burst",
     "preventableText": "Yes (medication to reduce vascular stress, remove aneurysm before rupture) but other features of syndrome not preventable)",
     "preventable": true,
@@ -357,11 +378,12 @@
     "resource_link": "https:\/\/ghr.nlm.nih.gov\/condition\/familial-thoracic-aortic-aneurysm-and-dissection"
   },
   {
+    "id": "tLMulxluWx2M",
     "genes": null,
     "carrierPanel": "HBB",
     "inheritance": "AR",
-    "conditions": "Sickle cell disease, beta thalassemia",
-    "category": "Sickle cell disease, beta thalassemia",
+    "kalia_conditions": "Sickle cell disease, beta thalassemia",
+    "condition": "Sickle cell disease, beta thalassemia",
     "description": "Round red blood cells can contort into sickle shapes that block blood flow and cause pain and damage organs",
     "preventableText": "No",
     "preventable": false,
@@ -374,11 +396,12 @@
     "resource_link": "https:\/\/kidshealth.org\/en\/teens\/sickle-cell-anemia.html"
   },
   {
+    "id": "qtYygX0bKRVi",
     "genes": null,
     "carrierPanel": "Hex-A",
     "inheritance": "AR",
-    "conditions": "Tay-Sachs disease",
-    "category": "Tay-Sachs disease",
+    "kalia_conditions": "Tay-Sachs disease",
+    "condition": "Tay-Sachs disease",
     "description": "Disease that damages nerves in the brain and spinal cord often resulting in death during childhood.",
     "preventableText": "No",
     "preventable": false,
@@ -391,11 +414,12 @@
     "resource_link": "https:\/\/ghr.nlm.nih.gov\/condition\/tay-sachs-disease"
   },
   {
+    "id": "tGoPZrpulRBP",
     "genes": "TSC1, TSC2",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Tuberous sclerosis 1, Tuberous sclerosis 2",
-    "category": "Tuberous sclerosis",
+    "kalia_conditions": "Tuberous sclerosis 1, Tuberous sclerosis 2",
+    "condition": "Tuberous sclerosis",
     "description": "Tumors can develop in brain, eyes, heart, kidney, skin and lungs. Some people may have seizures, developmentla delay and intellectual disability",
     "preventableText": "No",
     "preventable": false,
@@ -408,11 +432,12 @@
     "resource_link": "https:\/\/www.ninds.nih.gov\/Disorders\/Patient-Caregiver-Education\/Fact-Sheets\/Tuberous-Sclerosis-Fact-Sheet"
   },
   {
+    "id": "SggMu8vR1oCZ",
     "genes": "PTEN, TP53, VHL, ",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Cowden disease, Li-Faumeni syndrome, von Hippel-Lindau syndrome",
-    "category": "Tumor, cancer syndrome",
+    "kalia_conditions": "Cowden disease, Li-Faumeni syndrome, von Hippel-Lindau syndrome",
+    "condition": "Tumor, cancer syndrome",
     "description": "Tumors and cancer can develop in different parts of body",
     "preventableText": "No",
     "preventable": false,
@@ -425,11 +450,12 @@
     "resource_link": "https:\/\/www.cancer.ca\/en\/cancer-information\/cancer-101\/what-is-cancer\/types-of-tumours\/?region=on"
   },
   {
+    "id": "29kfvVPn4KCr",
     "genes": "SDHAF2, SDHB, SDHC, SDHD",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "Hereditary Paraganglioma-Pheochromocytoma Syndromes",
-    "category": "Tumors on nerves and adrenal glands",
+    "kalia_conditions": "Hereditary Paraganglioma-Pheochromocytoma Syndromes",
+    "condition": "Tumors on nerves and adrenal glands",
     "description": "Tumors usually do not turn into cancer but can cause serious health problems",
     "preventableText": "No",
     "preventable": false,
@@ -442,11 +468,12 @@
     "resource_link": "https:\/\/www.mdanderson.org\/cancer-types\/adrenal-tumors.html"
   },
   {
+    "id": "oYhcH9muZ11K",
     "genes": "ATP7B",
     "carrierPanel": null,
     "inheritance": "AR",
-    "conditions": "Wilson Disease",
-    "category": "Wilson Disease",
+    "kalia_conditions": "Wilson Disease",
+    "condition": "Wilson Disease",
     "description": "High levels of copper build up in the liver, brain and eyes",
     "preventableText": "Yes",
     "preventable": true,
@@ -459,11 +486,12 @@
     "resource_link": "https:\/\/liverfoundation.org\/for-patients\/about-the-liver\/diseases-of-the-liver\/wilson-disease\/"
   },
   {
+    "id": "l3rvZ0PfZNwL",
     "genes": "WT1",
     "carrierPanel": null,
     "inheritance": "AD",
-    "conditions": "WT1-related Wilms",
-    "category": "WT1-related Wilms",
+    "kalia_conditions": "WT1-related Wilms",
+    "condition": "WT1-related Wilms",
     "description": "Kidney tumor that can become cancerous",
     "preventableText": "No",
     "preventable": false,

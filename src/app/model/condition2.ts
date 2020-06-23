@@ -1,17 +1,18 @@
 export interface Condition2 {
+  id: string;
   genes: string | null;
   carrierPanel: string | null;
   inheritance: string;
-  conditions: string;
-  category: string;
+  kalia_conditions: string;
+  condition: string;
   description: string;
-  preventable: boolean;
   preventableText: string;
-  treatable: boolean;
+  preventable: boolean;
   treatableText: string;
-  adultOnset: boolean;
+  treatable: boolean;
   adultOnsetText: string;
-  carrier: boolean;
+  adultOnset: boolean;
   carrierText: string;
+  carrier: boolean;
   resource_link: string;
 }
