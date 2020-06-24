@@ -13,7 +13,7 @@
           <div class="carrier-status attribute-info" [ngClass]="{'inapplicable': !c.carrier, 'condition-hidden': !c.carrier}">C</div>
         </div>
         <div fxLayout="row" *ngIf="!(isHandset$ | async)">
-          <div class="attribute-info" [ngClass]="{'inapplicable': c.override === Override.Default}">Manual {{c.override === Override.Include ? 'Include' : 'Exclude'}}</div>
+          <div class="attribute-info" [ngClass]="{'inapplicable': c.override === Override.Default}">{{c.override === Override.Include ? 'Always' : 'Never'}} Report</div>
           <div class="treatability attribute-info" [ngClass]="{'inapplicable': !c.treatable}">Treatable</div>
           <div class="preventability attribute-info" [ngClass]="{'inapplicable': !c.preventable}">Preventable</div>
           <div class="adult-onset attribute-info" [ngClass]="{'inapplicable': !c.adultOnset}">Adult Onset</div>
@@ -26,12 +26,12 @@
       <p>{{c.description}} <a href="{{c.resource_link}}" target="_blank" mat-button class="mat-primary">Learn More <mat-icon>launch</mat-icon></a></p>
 
       <div>
-        <h4>Manually Override Defaults</h4>
-        <p>Do you want to override your survey responses? [ TODO: NEED FEEDBACK ON THIS WORDING ]</p>
+        <!-- <h4>Manually include/exclude this condition?</h4> -->
+        <!-- <p>Do you want to override your survey responses? [ TODO: NEED FEEDBACK ON THIS WORDING ]</p> -->
         <mat-radio-group [(ngModel)]="c.override">
-          <mat-radio-button [value]="Override.Default">Use my selections (default)</mat-radio-button>
-          <mat-radio-button [value]="Override.Include">ALWAYS tell me about this condition</mat-radio-button>
-          <mat-radio-button [value]="Override.Exclude">NEVER tell me about this condition</mat-radio-button>
+          <mat-radio-button [value]="Override.Include">ALWAYS report this condition</mat-radio-button>
+          <mat-radio-button [value]="Override.Exclude">NEVER report this condition</mat-radio-button>
+          <mat-radio-button [value]="Override.Default">Use my survey selections (default)</mat-radio-button>
         </mat-radio-group>
       </div>
     </div>

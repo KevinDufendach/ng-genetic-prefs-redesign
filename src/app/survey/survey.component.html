@@ -6,13 +6,13 @@
         [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="(isHandset$ | async) === false">
         <mat-nav-list>
-          <a mat-list-item href="survey/instructions">1. Introduction</a>
-          <a mat-list-item href="survey/opt-out">2. Opt Out</a>
-          <a mat-list-item href="survey/treatability" class="treatability">3. Treatability</a>
-          <a mat-list-item href="survey/preventability" class="preventability">4. Preventability</a>
-          <a mat-list-item href="survey/adult-onset">5. Adult Onset</a>
-          <a mat-list-item href="survey/carrier-status">6. Carrier</a>
-          <a mat-list-item href="survey/review">7. Final Review</a>
+          <a mat-list-item routerLink="/survey/instructions" routerLinkActive="active-list-item">Introduction</a>
+          <a mat-list-item routerLink="/survey/opt-out" routerLinkActive="active-list-item">Opt Out</a>
+          <a mat-list-item routerLink="/survey/treatability" routerLinkActive="active-list-item">Treatability</a>
+          <a mat-list-item routerLink="/survey/preventability" routerLinkActive="active-list-item">Preventability</a>
+          <a mat-list-item routerLink="/survey/adult-onset" routerLinkActive="active-list-item">Adult Onset</a>
+          <a mat-list-item routerLink="/survey/carrier-status" routerLinkActive="active-list-item">Carrier</a>
+          <a mat-list-item routerLink="/survey/review" routerLinkActive="active-list-item">Final Review</a>
         </mat-nav-list>
       </mat-drawer>
 
@@ -30,8 +30,8 @@
   </mat-card>
 
   <mat-card class="conditions-table">
-    <h1>Example Conditions Table</h1>
-    <p>Based on your selections so far, these are some conditions that could be reported.</p>
+    <h1>Example Conditions List</h1>
+    <p>Based on your selections, these are some conditions that would be reported.</p>
     <app-condition-table-review></app-condition-table-review>
   </mat-card>
 

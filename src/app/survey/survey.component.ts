@@ -37,68 +37,47 @@ export class SurveyComponent implements OnInit {
     private auth: AuthService,
     private surveyService: SurveyService,
     private breakpointObserver: BreakpointObserver,
-    iconRegistry: MatIconRegistry,
-    sanitizer: DomSanitizer
+    // iconRegistry: MatIconRegistry,
+    // sanitizer: DomSanitizer
   ) {
-    this.registerIcons(iconRegistry, sanitizer);
+    // this.registerIcons(iconRegistry, sanitizer);
   }
 
-  // ngOnInit() {
-  //   this.auth.login();
-  //
-  //   this.route.queryParams.subscribe(params => {
-  //     this.step = +params.step || 0;
-  //   });
+  // registerIcons(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  //   iconRegistry
+  //     .addSvgIcon(
+  //       'preventable',
+  //       sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_black.svg')
+  //     )
+  //     .addSvgIcon(
+  //       'curable',
+  //       sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_black.svg')
+  //     )
+  //     .addSvgIcon(
+  //       'adultOnset',
+  //       sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_black.svg')
+  //     )
+  //     .addSvgIcon(
+  //       'carrier',
+  //       sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_black.svg')
+  //     )
+  //     .addSvgIcon(
+  //       'preventable_circle',
+  //       sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_circle.svg')
+  //     )
+  //     .addSvgIcon(
+  //       'curable_circle',
+  //       sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_circle.svg')
+  //     )
+  //     .addSvgIcon(
+  //       'adultOnset_circle',
+  //       sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_circle.svg')
+  //     )
+  //     .addSvgIcon(
+  //       'carrier_circle',
+  //       sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_circle.svg')
+  //     );
   // }
-  //
-  // selectionChanged($event: StepperSelectionEvent) {
-  //   this.step = $event.selectedIndex;
-  //
-  //   this.router.navigate(
-  //     [],
-  //     {
-  //       relativeTo: this.route,
-  //       queryParams: {step: this.step},
-  //       queryParamsHandling: 'merge'
-  //     }
-  //   );
-  // }
-
-  registerIcons(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry
-      .addSvgIcon(
-        'preventable',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_black.svg')
-      )
-      .addSvgIcon(
-        'curable',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_black.svg')
-      )
-      .addSvgIcon(
-        'adultOnset',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_black.svg')
-      )
-      .addSvgIcon(
-        'carrier',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_black.svg')
-      )
-      .addSvgIcon(
-        'preventable_circle',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/preventable_circle.svg')
-      )
-      .addSvgIcon(
-        'curable_circle',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/curable_circle.svg')
-      )
-      .addSvgIcon(
-        'adultOnset_circle',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/adult_onset_circle.svg')
-      )
-      .addSvgIcon(
-        'carrier_circle',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/img/carrier_circle.svg')
-      );
-  }
 
   ngOnInit() {
     this.auth.login();
@@ -119,6 +98,7 @@ export class SurveyComponent implements OnInit {
       if (!(evt instanceof NavigationEnd)) {
         return;
       }
+      // console.log('found a router event');
       window.scrollTo(0, 0);
     });
   }
@@ -177,7 +157,7 @@ export class SurveyComponent implements OnInit {
     if (path) {
       switch (path) {
         case 'instructions':
-          return 'Instructions';
+          return 'Introduction';
         case 'opt-out':
           return 'Opt Out';
         case 'treatability':
