@@ -3,22 +3,19 @@
     <table mat-table [dataSource]="(conditions)" class="mat-elevation-z8" fxFlex>
       <!-- Curable Column -->
       <ng-container matColumnDef="curable">
-        <th mat-header-cell *matHeaderCellDef>
-          <button mat-icon-button (click)="curability = !curability">
-            <mat-icon svgIcon="curable_circle" aria-hidden="false" aria-label="Curable"
-                      [ngClass]="{'mat-primary': curability}"></mat-icon>
-          </button>
-        </th>
-        <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
-          <div class="condition-attribute-icon"
-               [ngClass]="{
-                 'attribute-active': curability,
-                 'attribute-present': condition.curable,
-                 'attribute-blocking': !curability && !condition.curable
-               }">
-            <mat-icon svgIcon="curable" aria-hidden="false" aria-label="Curable"></mat-icon>
-          </div>
-        </td>
+        <th mat-header-cell *matHeaderCellDef>Treatability</th>
+        <ng-container *matCellDef="let condition">
+          <td mat-cell *ngIf="wouldReturnCondition(condition)" class="condition-attribute-cell">
+            <div class="condition-attribute-icon"
+              [ngClass]="{
+                'attribute-active': curability,
+                'attribute-present': condition.curable,
+                'attribute-blocking': !curability && !condition.curable
+              }">
+              <mat-icon svgIcon="curable" aria-hidden="false" aria-label="Curable"></mat-icon>
+            </div>
+          </td>
+        </ng-container>
       </ng-container>
 
       <!-- Preventable Column -->
@@ -29,16 +26,18 @@
                       [ngClass]="{'mat-primary': preventability}"></mat-icon>
           </button>
         </th>
-        <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
-          <div class="condition-attribute-icon"
-               [ngClass]="{
-                 'attribute-active': preventability,
-                 'attribute-present': condition.preventable,
-                 'attribute-blocking': !preventability && !condition.preventable
-               }">
-            <mat-icon svgIcon="preventable" aria-hidden="false" aria-label="Preventable"></mat-icon>
-          </div>
-        </td>
+        <ng-container *matCellDef="let condition">
+          <td mat-cell *ngIf="wouldReturnCondition(condition)" class="condition-attribute-cell">
+            <div class="condition-attribute-icon"
+                [ngClass]="{
+                  'attribute-active': preventability,
+                  'attribute-present': condition.preventable,
+                  'attribute-blocking': !preventability && !condition.preventable
+                }">
+              <mat-icon svgIcon="preventable" aria-hidden="false" aria-label="Preventable"></mat-icon>
+            </div>
+          </td>
+        </ng-container>
       </ng-container>
 
       <!-- Adult Onset Column -->
@@ -49,16 +48,18 @@
                       [ngClass]="{'mat-primary': adultOnset}"></mat-icon>
           </button>
         </th>
-        <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
-          <div class="condition-attribute-icon"
-               [ngClass]="{
-                 'attribute-active': adultOnset,
-                 'attribute-present': condition.adultOnset,
-                 'attribute-blocking': !adultOnset && condition.adultOnset
-               }">
-            <mat-icon svgIcon="adultOnset" aria-hidden="false" aria-label="Adult Onset"></mat-icon>
-          </div>
-        </td>
+        <ng-container *matCellDef="let condition">
+          <td mat-cell *ngIf="wouldReturnCondition(condition)" class="condition-attribute-cell">
+            <div class="condition-attribute-icon"
+                [ngClass]="{
+                  'attribute-active': adultOnset,
+                  'attribute-present': condition.adultOnset,
+                  'attribute-blocking': !adultOnset && condition.adultOnset
+                }">
+              <mat-icon svgIcon="adultOnset" aria-hidden="false" aria-label="Adult Onset"></mat-icon>
+            </div>
+          </td>
+        </ng-container>
       </ng-container>
 
       <!-- Carrier Column -->
@@ -69,22 +70,25 @@
                       [ngClass]="{'mat-primary': carrierStatus}"></mat-icon>
           </button>
         </th>
-        <td mat-cell *matCellDef="let condition" class="condition-attribute-cell">
-          <div class="condition-attribute-icon"
-               [ngClass]="{
-                 'attribute-active': carrierStatus,
-                 'attribute-present': condition.carrier
-               }">
-            <mat-icon svgIcon="carrier" aria-hidden="false" aria-label="Carrier Status"></mat-icon>
-          </div>
-        </td>
+        <ng-container *matCellDef="let condition">
+          <td mat-cell *ngIf="wouldReturnCondition(condition)" class="condition-attribute-cell">
+            <div class="condition-attribute-icon"
+                [ngClass]="{
+                  'attribute-active': carrierStatus,
+                  'attribute-present': condition.carrier
+                }">
+              <mat-icon svgIcon="carrier" aria-hidden="false" aria-label="Carrier Status"></mat-icon>
+            </div>
+          </td>
+        </ng-container>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef><h3>Condition Name</h3></th>
-        <td mat-cell *matCellDef="let condition"
-            [ngClass]="{'condition-not-displayed': !wouldReturnCondition(condition)}"> {{condition.conditions}} </td>
+        <ng-container *matCellDef="let condition">
+          <td mat-cell *ngIf="wouldReturnCondition(condition)"> {{condition.conditions}} </td>
+        </ng-container>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

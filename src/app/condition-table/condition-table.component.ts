@@ -3,7 +3,8 @@ import {SurveyService} from '../survey.service';
 // @ts-ignore
 import * as data from '../../assets/condition_list.json';
 import {Condition2} from '../model/condition2';
-import {ConditionManagerService, SURVEY_STEP} from '../condition-manager.service';
+import {ConditionManagerService} from '../condition-manager.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-condition-table',
@@ -13,30 +14,13 @@ import {ConditionManagerService, SURVEY_STEP} from '../condition-manager.service
 export class ConditionTableComponent implements OnInit {
   displayedColumns: string[] = ['name', 'curable', 'preventable', 'adultOnset', 'carrier'];
   conditions: Condition2[];
-  // conditions: Condition2[] = (data as any).default;
-  @Input() state = SURVEY_STEP.UNDEFINED;
 
-  constructor(public survey: SurveyService, private conditionManager: ConditionManagerService) {
-  }
+  displayedConditions: Observable<Condition2[]>;
+
+  constructor(public survey: SurveyService, private conditionManager: ConditionManagerService) { }
 
   ngOnInit(): void {
-    if (this.state < 0) {
-      this.conditions = (data as any).default;
-    } else {
-      // this.displayedColumns = this.displayedColumns.slice(0, this.state + 2);
-
-      const conditions: Condition2[] = (data as any).default;
-
-      this.conditions = [];
-      for (const cond of conditions) {
-        // if (this.conditionManager.conditionWouldModifyAtStep(cond, this.state)) {
-        if (this.conditionManager.conditionModifiedByStep(cond, this.state)) {
-          // console.log(this.state);
-          // console.log(cond.description);
-          this.conditions.push(cond);
-        }
-      }
-    }
+    this.conditions = (data as any).default;
   }
 
   get curability(): boolean {

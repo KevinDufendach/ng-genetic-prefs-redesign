@@ -30,4 +30,15 @@
     removed by surgery. Sometimes medicines or radiation might be needed to shrink the tumors before surgery.
     Sometimes tumors can’t be removed by surgery.</p>
 </mat-expansion-panel>
+
+<h1>Test Area</h1>
+<mat-radio-group [(ngModel)]="testRadioResponse">
+  <mat-radio-button [value]="true">True</mat-radio-button>
+  <mat-radio-button [value]="false">False</mat-radio-button>
+  <mat-radio-button [value]="null">Null</mat-radio-button>
+</mat-radio-group>
+
+<p>The value is: {{testRadioResponse}}</p>
+<p>Is Null: {{testRadioResponse === null ? 'yes' : 'no'}}</p>
+
 <app-survey-actions-bar backwardLink="treatability" forwardLink="adult-onset"></app-survey-actions-bar>

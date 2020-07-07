@@ -11,6 +11,8 @@ export class PreventabilityComponent {
   surveySteps = SURVEY_STEP;
   notSureAllowed = false;
 
+  testRadioResponse: boolean | null = null;
+
   constructor(public survey: SurveyService) { }
 
   get value(): number {
