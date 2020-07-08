@@ -1,15 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {CONDITION_DATA} from '../model/condition';
+import { stepAnimations } from './step-animations';
 
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.component.html',
-  styleUrls: ['./intro.component.scss']
+  styleUrls: ['./intro.component.scss'],
+  animations: [stepAnimations.horizontalStepTransition]
 })
 export class IntroComponent implements OnInit {
   preventabilitySelection = -1;
   notSureAllowed = false;
-  step = 1;
+  selectedStep = 0;
   stepCount = 3;
 
   constructor() {
@@ -18,8 +19,14 @@ export class IntroComponent implements OnInit {
   ngOnInit() {
   }
 
+  getDirection(stepIndex: number) {
+    if (stepIndex === this.selectedStep) { return 'current'; }
+
+    return (stepIndex < this.selectedStep ? 'previous' : 'next');
+  }
+
   cycleStep() {
-    this.step++;
-    if (this.step >= this.stepCount) { this.step = 0; }
+    this.selectedStep++;
+    if (this.selectedStep >= this.stepCount) { this.selectedStep = 0; }
   }
 }
