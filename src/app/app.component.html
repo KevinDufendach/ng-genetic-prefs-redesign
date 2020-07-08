@@ -1,5 +1,43 @@
-<div fxLayout="column" style="min-height: 100%">
-  <mat-toolbar color="primary">
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav"
+  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/survey/instructions" routerLinkActive="active-list-item">Introduction</a>
+      <a mat-list-item routerLink="/survey/opt-out" routerLinkActive="active-list-item">Opt Out</a>
+      <a mat-list-item routerLink="/survey/treatability" routerLinkActive="active-list-item">Treatability</a>
+      <a mat-list-item routerLink="/survey/preventability" routerLinkActive="active-list-item">Preventability</a>
+      <a mat-list-item routerLink="/survey/adult-onset" routerLinkActive="active-list-item">Adult Onset</a>
+      <a mat-list-item routerLink="/survey/carrier-status" routerLinkActive="active-list-item">Carrier</a>
+      <a mat-list-item routerLink="/survey/review" routerLinkActive="active-list-item">Final Review</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <div class="top-background">
+    <div class="top-toolbar" fxLayout="row">
+      <button id="menu-button" *ngIf="isHandset$ | async" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span fxFlex></span>
+      <h1 class="title-text">Title</h1>
+      <span fxFlex></span>
+    </div>
+
+  </div>
+
+  <div class="app-container">
+
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
+
+<div class="footer">
+  <p>Version 2020-07-07-1700</p>
+</div>
+
+<!-- <div fxLayout="column" style="min-height: 100%">
+  <!~~ <mat-toolbar color="primary">
 
     <button mat-button routerLink="/instructions">Genetic Preferences</button>
     <span fxFlex></span>
@@ -8,15 +46,14 @@
       <span *ngIf="!user.isAnonymous">{{user.email}}</span>
     </div>
     <button mat-button (click)="auth.changeAnonymousUser()">Change User</button>
-  </mat-toolbar>
+  </mat-toolbar> ~~>
 
-  <!-- <div fxLayout="row" fxFlex class="app-body"> -->
+  <!~~ <div fxLayout="row" fxFlex class="app-body"> ~~>
   <div fxFlex fxLayout="column" class="app-body">
     <div class="app-container" fxFlex>
-      <router-outlet></router-outlet>
+
     </div>
   </div>
-  <div class="footer">
-    <p>Version 2020-06-23-1300</p>
-  </div>
+
 </div>
+ -->

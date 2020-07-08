@@ -10,6 +10,7 @@
 @include mat-core();
 
 @import "theme";
+@import "cchmc";
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -51,20 +52,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   display: flex;
   flex-direction: column;
   margin: 15px 0;
-}
-
-.preventability {
-  color: #ca5699;
-}
-
-.treatability {
-  color: #73b44a;
-}
-
-.adult-onset {
-  color: #00aac8;
-}
-
-.carrier-status {
-  color: #565a5c;
 }

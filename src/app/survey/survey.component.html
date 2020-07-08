@@ -1,38 +1,17 @@
 <div fxFlex fxLayout="column" fxLayoutGap="15px">
+  <!-- <h1 [ngClass]="stepClass | async">{{stepTitle | async}}</h1> -->
   <mat-card>
-    <mat-drawer-container class="survey-container">
-      <mat-drawer #drawer class="sidenav"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-        [mode]="(isHandset$ | async) ? 'over' : 'side'"
-        [opened]="(isHandset$ | async) === false">
-        <mat-nav-list>
-          <a mat-list-item routerLink="/survey/instructions" routerLinkActive="active-list-item">Introduction</a>
-          <a mat-list-item routerLink="/survey/opt-out" routerLinkActive="active-list-item">Opt Out</a>
-          <a mat-list-item routerLink="/survey/treatability" routerLinkActive="active-list-item">Treatability</a>
-          <a mat-list-item routerLink="/survey/preventability" routerLinkActive="active-list-item">Preventability</a>
-          <a mat-list-item routerLink="/survey/adult-onset" routerLinkActive="active-list-item">Adult Onset</a>
-          <a mat-list-item routerLink="/survey/carrier-status" routerLinkActive="active-list-item">Carrier</a>
-          <a mat-list-item routerLink="/survey/review" routerLinkActive="active-list-item">Final Review</a>
-        </mat-nav-list>
-      </mat-drawer>
 
-      <div class="survey-area">
-        <h1>
-          <button *ngIf="isHandset$ | async" mat-icon-button (click)="drawer.toggle()">
-            <mat-icon>menu</mat-icon>
-          </button><span [ngClass]="stepClass | async">{{stepTitle | async}}</span>
-        </h1>
-        <router-outlet></router-outlet>
-      </div>
-
-    </mat-drawer-container>
-
+    <div class="survey-area">
+      <router-outlet></router-outlet>
+    </div>
   </mat-card>
 
-  <mat-card class="conditions-table">
+  <!-- <mat-card class="conditions-table">
     <h1>Example Conditions List</h1>
     <p>Based on your selections, these are some conditions that would be reported.</p>
     <app-condition-table-review></app-condition-table-review>
-  </mat-card>
+  </mat-card> -->
 
 </div>
+<!-- </mat-sidenav-container> -->

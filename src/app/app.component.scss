@@ -1,4 +1,38 @@
 @import "~@angular/material/theming";
+@import "../styles.scss";
+
+.top-background {
+  height: 200px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: $cchmc-blue;
+  z-index: -1;
+}
+
+.top-toolbar {
+  position: relative;
+  left: 0;
+  top: 0;
+  color: white;
+}
+
+#menu-button {
+  position: absolute;
+}
+
+.title-text {
+  margin: 30px 60px;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  min-width: 200px;
+}
 
 .app-body {
   // background-color: mat-color($mat-blue-gray);
@@ -11,8 +45,8 @@
 }
 
 .app-container {
-  margin: 15px auto;
-  width: 100%;
+  margin: 100px 15px 50px 15px;
+  // width: 100%;
   max-width: 1280px;
 }
 
@@ -26,3 +60,7 @@
   z-index: 100;
 }
 
+.active-list-item {
+  background-color: lightslategray !important;
+  color: white !important;
+}
