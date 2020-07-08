@@ -19,15 +19,11 @@
       <button id="menu-button" *ngIf="isHandset$ | async" mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span fxFlex></span>
-      <h1 class="title-text">Introduction</h1>
-      <span fxFlex></span>
     </div>
 
   </div>
 
   <div class="app-container">
-
     <router-outlet></router-outlet>
   </div>
 </mat-sidenav-container>

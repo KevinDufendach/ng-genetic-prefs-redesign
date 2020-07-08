@@ -1,18 +1,25 @@
 <div fxLayoutGap="15px" fxLayout="column">
+  <h1 class="title-text">Introduction</h1>
 
-  <mat-card>
+  <mat-card class="content-card">
     <div class="step-container">
-      <div [@stepTransition]="getDirection(0)" class="step-content" role="tabpanel" [attr.aria-expanded]="selectedStep === 0">
+      <div [@stepTransition]="getDirection(0)"
+          class="step-content"
+          role="tabpanel"
+          [attr.aria-expanded]="selectedStep === 0"
+          fxLayout="column" fxLayout.gt-sm="row">
         <img src="/assets/img/noun_genetic_test_3134143.svg" class="main-card-image">
-        <p>We are doing a study that includes genetic testing of DNA. Genetic testing could tell us about a disease a person has. It could tell us if a person might develop a disease during their lifetime.</p>
+        <p fxFlex>We are doing a study that includes genetic testing of DNA. Genetic testing could tell us about a disease a person has. It could tell us if a person might develop a disease during their lifetime.</p>
       </div>
-      <div [@stepTransition]="getDirection(1)" class="step-content" role="tabpanel"  [attr.aria-expanded]="selectedStep === 1">
+      <div [@stepTransition]="getDirection(1)" class="step-content" role="tabpanel"  [attr.aria-expanded]="selectedStep === 1"
+          fxLayout="column" fxLayout.gt-sm="row">
         <img src="/assets/img/noun_genetic_test_3134143.svg" class="main-card-image">
-        <p>We are giving you the option to learn genetic results. The following questions will help you decide what types of results you would or would not like to learn.You can change your answers to the questions at any time.</p>
+        <p fxFlex>We are giving you the option to learn genetic results. The following questions will help you decide what types of results you would or would not like to learn.You can change your answers to the questions at any time.</p>
       </div>
-      <div [@stepTransition]="getDirection(2)" class="step-content" role="tabpanel"  [attr.aria-expanded]="selectedStep === 2">
+      <div [@stepTransition]="getDirection(2)" class="step-content" role="tabpanel"  [attr.aria-expanded]="selectedStep === 2"
+          fxLayout="column" fxLayout.gt-sm="row">
         <img src="/assets/img/noun_genetic_test_3134143.svg" class="main-card-image">
-        <p>After you answer questions, you will see a list of diseases you will learn about. Some diseases in the final list may be crossed out. You can always add a disease back in. You can also learn more about a disease by selecting it in the list.</p>
+        <p fxFlex>After you answer questions, you will see a list of diseases you will learn about. Some diseases in the final list may be crossed out. You can always add a disease back in. You can also learn more about a disease by selecting it in the list.</p>
       </div>
     </div>
 

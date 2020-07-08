@@ -1,5 +1,4 @@
-@import "~@angular/material/theming";
-@import "../styles.scss";
+@import "../cchmc";
 
 .top-background {
   height: 200px;
@@ -22,10 +21,6 @@
   position: absolute;
 }
 
-.title-text {
-  margin: 30px 60px;
-}
-
 .sidenav-container {
   height: 100%;
 }
@@ -36,7 +31,7 @@
 
 .app-body {
   // background-color: mat-color($mat-blue-gray);
-  background-color: rgb(241, 245, 248);
+  background-color: #cfcfcf;
   //margin-bottom: 40px
 
   // display: flex;
@@ -45,9 +40,10 @@
 }
 
 .app-container {
-  margin: 100px 15px 50px 15px;
+  margin: 0 auto 40px auto;
+  // padding: 15px;
   // width: 100%;
-  max-width: 1280px;
+  max-width: 900px;
 }
 
 .footer {
@@ -61,6 +57,6 @@
 }
 
 .active-list-item {
-  background-color: lightslategray !important;
+  background-color: $cchmc-green !important;
   color: white !important;
 }

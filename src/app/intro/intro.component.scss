@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.title-text {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  color: white;
+}
+
 .step-container {
   overflow: hidden;
   padding: 0;
@@ -24,4 +31,9 @@
     min-height: 50px;
     margin: 15px;
   }
+}
+
+.content-card {
+  margin-left: 20px;
+  margin-right: 20px;
 }
