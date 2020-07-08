@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "genetic-prefs-staging-b",
+    "site": "genetic-prefs-staging-xd",
     "public": "dist/ng-gen-prefs-redesign",
     "ignore": [
       "firebase.json",
