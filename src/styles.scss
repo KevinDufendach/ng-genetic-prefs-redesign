@@ -53,3 +53,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   flex-direction: column;
   margin: 15px 0;
 }
+
+.main-card-image {
+  width: 60%;
+  height: auto;
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
