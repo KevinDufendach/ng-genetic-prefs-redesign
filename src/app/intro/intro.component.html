@@ -4,25 +4,21 @@
     <div class="step-container">
       <div [@stepTransition]="getDirection(0)" class="step-content" role="tabpanel" [attr.aria-expanded]="selectedStep === 0">
         <img src="/assets/img/noun_genetic_test_3134143.svg" class="main-card-image">
-        <p>We are doing a study that includes genetic testing of DNA. Genetic testing could tell us about a disease a person
-          has. It could tell us if a person might develop a disease during their lifetime.</p>
+        <p>We are doing a study that includes genetic testing of DNA. Genetic testing could tell us about a disease a person has. It could tell us if a person might develop a disease during their lifetime.</p>
       </div>
       <div [@stepTransition]="getDirection(1)" class="step-content" role="tabpanel"  [attr.aria-expanded]="selectedStep === 1">
         <img src="/assets/img/noun_genetic_test_3134143.svg" class="main-card-image">
-        <p>Some studies may give you the option to learn genetic results. The following questions will help you decide what
-          types of results you would like to learn. You can also choose which results you don’t want to learn.</p>
+        <p>We are giving you the option to learn genetic results. The following questions will help you decide what types of results you would or would not like to learn.You can change your answers to the questions at any time.</p>
       </div>
       <div [@stepTransition]="getDirection(2)" class="step-content" role="tabpanel"  [attr.aria-expanded]="selectedStep === 2">
         <img src="/assets/img/noun_genetic_test_3134143.svg" class="main-card-image">
-        <p>Please answer the following questions. You can change your answers to the questions. As you answer questions,
-          some diseases in the list may be crossed out. You can always add a disease back in. You can also click on a
-          disease to learn more about it.</p>
+        <p>After you answer questions, you will see a list of diseases you will learn about. Some diseases in the final list may be crossed out. You can always add a disease back in. You can also learn more about a disease by selecting it in the list.</p>
       </div>
     </div>
 
   </mat-card>
 
-  <app-circle-step-indicator [count]="stepCount" [(step)]="selectedStep" class="mat-primary center-horizontally"></app-circle-step-indicator>
+  <app-circle-step-indicator [count]="stepCount" [(step)]="selectedStep" class="cchmc-gray center-horizontally"></app-circle-step-indicator>
 
   <button mat-raised-button class="mat-primary" (click)="cycleStep()">Next</button>
 </div>
