@@ -1,14 +1,19 @@
+.circle-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 0%;
+  box-sizing: border-box;
+}
+
 .circle {
   cursor: pointer;
 
   opacity: 0.4;
   transition: opacity 0.3s ease-in-out;
 
-  svg {
-    margin: 5px;
-  }
+  padding: 9px;
 }
 
 .selected {
-  opacity: 0.9;
+  opacity: 1;
 }

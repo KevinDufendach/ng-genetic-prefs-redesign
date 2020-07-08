@@ -25,8 +25,9 @@ export class IntroComponent implements OnInit {
     return (stepIndex < this.selectedStep ? 'previous' : 'next');
   }
 
-  cycleStep() {
-    this.selectedStep++;
+  cycleStep(direction = 1) {
+    this.selectedStep = this.selectedStep + direction;
+    if (this.selectedStep < 0) { this.selectedStep = this.stepCount - 1; }
     if (this.selectedStep >= this.stepCount) { this.selectedStep = 0; }
   }
 }
