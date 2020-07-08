@@ -21,7 +21,7 @@
   <app-circle-step-indicator [count]="stepCount" [(step)]="selectedStep" class="cchmc-gray center-horizontally"></app-circle-step-indicator>
 
   <div fxLayout="row" fxFlex class="actions-row">
-    <button mat-flat-button (click)="cycleStep(-1)" fxFlex [disabled]="selectedStep === 0">BACK</button>
-    <button mat-flat-button (click)="cycleStep()" class="mat-primary" fxFlex [disabled]="selectedStep + 1 === stepCount">NEXT</button>
+    <button mat-raised-button (click)="cycleStep(-1)" fxFlex [disabled]="selectedStep === 0">BACK</button>
+    <button mat-raised-button (click)="cycleStep()" class="mat-primary" fxFlex [disabled]="selectedStep + 1 === stepCount">NEXT</button>
   </div>
 </div>

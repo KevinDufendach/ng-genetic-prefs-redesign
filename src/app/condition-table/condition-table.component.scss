@@ -1,19 +1,8 @@
 @import '~@angular/material/theming';
-@import '../../theme';
 
 // https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1
 // Note: May want to move these to separate file and import into a master theme file as per
 // https://github.com/angular/components/blob/master/src/material/core/theming/_all-theme.scss
-
-$primary: map-get($app-theme, primary);
-//$accent: map-get($app-theme, accent);
-$warn: map-get($app-theme, warn);
-$foreground: map-get($app-theme, foreground);
-$background: map-get($app-theme, background);
-
-.mat-header-cell {
-  background-color: mat-color($primary, 50);
-}
 
 .table-buttons {
   padding: 15px;
@@ -22,7 +11,6 @@ $background: map-get($app-theme, background);
 .condition-not-displayed {
   text-decoration: line-through;
   opacity: 0.7;
-  color: mat-color($warn);
 }
 
 .fixed-height-container {
@@ -38,18 +26,9 @@ $background: map-get($app-theme, background);
 
 .condition-attribute-icon {
   vertical-align: middle;
-  color: mat-color($foreground, secondary-text);
   opacity: 0.2;
 }
 
 .attribute-present {
   opacity: 1;
-}
-
-.attribute-active {
-  color: mat-color($primary);
-}
-
-.attribute-blocking {
-  color: mat-color($warn);
 }
