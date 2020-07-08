@@ -1,0 +1,7 @@
+<ng-container *ngFor="let item of [].constructor(count); let i = index">
+  <span class="circle" [ngClass]="{'selected': i === step}">
+    <svg height="24px" width="24px">
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+  </span>
+</ng-container>

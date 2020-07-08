@@ -48,6 +48,7 @@ import { SurveyNavComponent } from './survey-nav/survey-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SurveyActionsBarComponent } from './survey-actions-bar/survey-actions-bar.component';
+import { CircleStepIndicatorComponent } from './circle-step-indicator/circle-step-indicator.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { SurveyActionsBarComponent } from './survey-actions-bar/survey-actions-b
     ConditionBlockComponent,
     SurveyNavComponent,
     SurveyActionsBarComponent,
+    CircleStepIndicatorComponent,
   ],
     imports: [
         BrowserModule,
