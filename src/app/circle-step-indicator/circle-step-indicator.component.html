@@ -1,5 +1,5 @@
 <ng-container *ngFor="let item of [].constructor(count); let i = index">
-  <span class="circle" [ngClass]="{'selected': i === step}">
+  <span class="circle" [ngClass]="{'selected': i === step}" (click)="selectStep(i)">
     <svg height="24px" width="24px">
       <circle cx="12" cy="12" r="10"/>
     </svg>
