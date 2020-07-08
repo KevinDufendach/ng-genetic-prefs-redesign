@@ -16,24 +16,16 @@ import { FinalReviewComponent } from './final-review/final-review.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'instructions',
+    redirectTo: 'intro',
     pathMatch: 'full'
   },
-  {path: 'instructions', component: IntroComponent},
+  {path: 'intro', component: IntroComponent},
   {path: 'opt-out', component: OptOutComponent},
   {path: 'treatability', component: TreatabilityComponent},
   {path: 'preventability', component: PreventabilityComponent},
   {path: 'adult-onset', component: AdultOnsetComponent},
   {path: 'carrier-status', component: CarrierStatusComponent},
   {path: 'review', component: FinalReviewComponent},
-  {
-    path: 'instructions',
-    component: InstructionsComponent
-  },
-  {
-    path: 'survey',
-    component: SurveyComponent,
-  },
   {
     path: 'moderator',
     component: ModeratorDashboardComponent

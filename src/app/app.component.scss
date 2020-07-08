@@ -11,14 +11,18 @@
 }
 
 .top-toolbar {
-  position: relative;
+  position: fixed;
   left: 0;
   top: 0;
   color: white;
+
+  z-index: 50;
 }
 
 #menu-button {
   position: absolute;
+
+  z-index: 50;
 }
 
 .sidenav-container {
