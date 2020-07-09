@@ -1,17 +1,31 @@
-<p>Some people do not want to learn results from genetic studies.</p>
-<h3>Would you like to learn your (or your child's) genetic results?</h3>
-<mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="value">
-  <mat-radio-button [value]="1">Yes, I want the chance to learn my/my child's genetic results
-  </mat-radio-button>
-  <mat-radio-button [value]="0">No, I do NOT want to receive any genetic results</mat-radio-button>
-  <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span></mat-radio-button>
-</mat-radio-group>
+<div fxLayoutGap="15px" fxLayout="column" class="section-content">
+  <h1 class="title-text">Opt In/Out</h1>
 
-<mat-expansion-panel class="more-info-box">
-  <mat-expansion-panel-header (click)="notSureAllowed = true">More Information</mat-expansion-panel-header>
-  <div>Using this tool may help you decide if you want to learn any genetic results. If you answer, “Yes, I want the
-    chance to learn my/my child’s genetic results,” you will be asked 4 more questions. You will be able to see the
-    type of diseases you could learn about based on your answers to the 4 questions. If you do not want to learn any
-    results, you can come back to this question and answer, “No, I do not want to receive any genetic results.”</div>
-</mat-expansion-panel>
-<app-survey-actions-bar backwardLink="instructions" forwardLink="treatability"></app-survey-actions-bar>
+  <mat-card>
+    <h3>Would you like to learn your (or your child's) genetic results?</h3>
+    <p>Some people do not want to learn results from genetic studies.</p>
+
+    <mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="value">
+      <mat-radio-button [value]="1">Yes, I want the chance to learn my/my child's genetic results
+      </mat-radio-button>
+      <mat-radio-button [value]="0">No, I do NOT want to receive any genetic results</mat-radio-button>
+      <mat-radio-button [value]="2" [disabled]="!notSureAllowed">I'm not sure<span *ngIf="!notSureAllowed"> (Click below for more info)</span></mat-radio-button>
+    </mat-radio-group>
+  </mat-card>
+
+
+  <mat-expansion-panel class="more-info-box">
+    <mat-expansion-panel-header (click)="notSureAllowed = true">More Information</mat-expansion-panel-header>
+    <div>Using this tool may help you decide if you want to learn any genetic results. If you answer, “Yes, I want the
+      chance to learn my/my child’s genetic results,” you will be asked 4 more questions. You will be able to see the
+      type of diseases you could learn about based on your answers to the 4 questions. If you do not want to learn any
+      results, you can come back to this question and answer, “No, I do not want to receive any genetic results.”</div>
+  </mat-expansion-panel>
+
+  <app-circle-step-indicator [selectionEnabled]="false" [count]="5" [step]="0" class="cchmc-gray center-horizontally"></app-circle-step-indicator>
+
+  <div fxLayout="row" fxFlex class="actions-row">
+    <button mat-raised-button fxFlex routerLink="/intro">BACK</button>
+    <button mat-raised-button class="mat-primary" fxFlex routerLink="/treatability">NEXT</button>
+  </div>
+</div>

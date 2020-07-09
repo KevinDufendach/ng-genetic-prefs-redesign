@@ -7,12 +7,15 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CircleStepIndicatorComponent {
   @Input() step = 0;
+  @Input() selectionEnabled = true;
   @Output() stepChange = new EventEmitter<number>();
 
   @Input() count = 1;
 
   selectStep(newStep: number) {
-    this.step = newStep;
-    this.stepChange.emit(this.step);
+    if (this.selectionEnabled) {
+      this.step = newStep;
+      this.stepChange.emit(this.step);
+    }
   }
 }

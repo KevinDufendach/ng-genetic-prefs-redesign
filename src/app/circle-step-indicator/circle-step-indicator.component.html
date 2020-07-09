@@ -1,5 +1,5 @@
 <div *ngFor="let item of [].constructor(count); let i = index" fxLayout="row" fxFlex>
-  <div class="circle" [ngClass]="{'selected': i === step}" (click)="selectStep(i)">
+  <div class="circle" [ngClass]="{'selected': i === step, 'selectable': selectionEnabled}" (click)="selectStep(i)">
     <svg height="24px" width="24px" fill="currentColor">
       <circle cx="12" cy="12" r="12"/>
     </svg>

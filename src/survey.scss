@@ -1,0 +1,34 @@
+.section-content {
+  padding: 20px;
+}
+
+.title-text {
+  margin: 0 auto 20px auto;
+  display: block;
+  color: white;
+}
+
+.step-container {
+  overflow: hidden;
+  padding: 0;
+}
+
+.step-content {
+  outline: 0;
+
+  &[aria-expanded='false'] {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.actions-row {
+  padding-left: 30px;
+  padding-right: 30px;
+
+  button {
+    min-height: 50px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}

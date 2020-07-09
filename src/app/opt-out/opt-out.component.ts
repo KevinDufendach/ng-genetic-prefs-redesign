@@ -4,7 +4,7 @@ import { SurveyService } from '../survey.service';
 @Component({
   selector: 'app-opt-out',
   templateUrl: './opt-out.component.html',
-  styleUrls: ['./opt-out.component.scss']
+  styleUrls: ['./opt-out.component.scss', '../../survey.scss']
 })
 export class OptOutComponent implements OnInit {
   notSureAllowed = false;
@@ -20,6 +20,14 @@ export class OptOutComponent implements OnInit {
 
   set value(val: number) {
     this.survey.setPreventability(val, {context: 'Preventability Step'});
+  }
+
+  get currentStep() {
+    return 0;
+  }
+
+  set currentStep(val: number) {
+    console.log('going to step' + val);
   }
 
 }
