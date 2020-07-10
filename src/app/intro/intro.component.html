@@ -2,33 +2,33 @@
   <h1 class="title-text">Introduction</h1>
 
   <mat-card>
-    <div class="step-container">
+    <mat-card-content class="step-container">
       <div [@stepTransition]="getDirection(0)"
           class="step-content"
           role="tabpanel"
-          [attr.aria-expanded]="selectedStep === 0"
+          [attr.aria-expanded]="page === 0"
           fxLayout="column" fxLayout.gt-sm="row">
         <img src="/assets/img/noun_genetic_test_3134143.svg" class="main-card-image">
         <p fxFlex>We are doing a study that includes genetic testing of DNA. Genetic testing could tell us about a disease a person has. It could tell us if a person might develop a disease during their lifetime.</p>
       </div>
-      <div [@stepTransition]="getDirection(1)" class="step-content" role="tabpanel"  [attr.aria-expanded]="selectedStep === 1"
+      <div [@stepTransition]="getDirection(1)" class="step-content" role="tabpanel"  [attr.aria-expanded]="page === 1"
           fxLayout="column" fxLayout.gt-sm="row">
-        <img src="/assets/img/noun_genetic_test_3134143.svg" class="main-card-image">
-        <p fxFlex>We are giving you the option to learn genetic results. The following questions will help you decide what types of results you would or would not like to learn.You can change your answers to the questions at any time.</p>
+        <img src="/assets/icons/clipboard.png" class="main-card-image">
+        <p fxFlex>This study gives you the option to learn genetic results. The following questions will help you decide what types of results you would or would not like to learn.You can change your answers to the questions at any time.</p>
       </div>
-      <div [@stepTransition]="getDirection(2)" class="step-content" role="tabpanel"  [attr.aria-expanded]="selectedStep === 2"
+      <div [@stepTransition]="getDirection(2)" class="step-content" role="tabpanel"  [attr.aria-expanded]="page === 2"
           fxLayout="column" fxLayout.gt-sm="row">
-        <img src="/assets/img/noun_genetic_test_3134143.svg" class="main-card-image">
+        <img src="/assets/icons/question-signs.png" class="main-card-image">
         <p fxFlex>After you answer questions, you will see a list of diseases you will learn about. Some diseases in the final list may be crossed out. You can always add a disease back in. You can also learn more about a disease by selecting it in the list.</p>
       </div>
-    </div>
+    </mat-card-content>
 
   </mat-card>
 
-  <app-circle-step-indicator [count]="stepCount" [(step)]="selectedStep" class="cchmc-gray center-horizontally"></app-circle-step-indicator>
+  <app-circle-step-indicator [count]="stepCount" [(step)]="page" class="cchmc-gray center-horizontally"></app-circle-step-indicator>
 
   <div fxLayout="row" fxFlex class="actions-row">
-    <button mat-raised-button (click)="advance(-1)" fxFlex [disabled]="selectedStep === 0">BACK</button>
-    <button mat-raised-button (click)="advance()" class="mat-primary" fxFlex>{{isLastStep() ? 'LET\'S GO!' : 'NEXT'}}</button>
+    <button mat-raised-button (click)="navigate(-1)" fxFlex [disabled]="page === 0">BACK</button>
+    <button mat-raised-button (click)="navigate()" class="mat-primary" fxFlex>{{isLastStep() ? 'LET\'S GO!' : 'NEXT'}}</button>
   </div>
 </div>
