@@ -6,13 +6,10 @@ import { SurveyService } from '../survey.service';
   templateUrl: './opt-out.component.html',
   styleUrls: ['./opt-out.component.scss', '../../survey.scss']
 })
-export class OptOutComponent implements OnInit {
+export class OptOutComponent {
   notSureAllowed = false;
 
   constructor(private survey: SurveyService) { }
-
-  ngOnInit(): void {
-  }
 
   get value(): number {
     return this.survey.getPreventability();

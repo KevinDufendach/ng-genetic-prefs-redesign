@@ -2,8 +2,8 @@
   <h1 class="title-text">Opt In/Out</h1>
 
   <mat-card>
-    <h3>Would you like to learn your (or your child's) genetic results?</h3>
     <p>Some people do not want to learn results from genetic studies.</p>
+    <h3>Would you like to learn your (or your child's) genetic results?</h3>
 
     <mat-radio-group fxLayout="column" class="survey-radio-group app-wrap" [(ngModel)]="value">
       <mat-radio-button [value]="1">Yes, I want the chance to learn my/my child's genetic results
@@ -22,7 +22,9 @@
       results, you can come back to this question and answer, “No, I do not want to receive any genetic results.”</div>
   </mat-expansion-panel>
 
-  <app-circle-step-indicator [selectionEnabled]="false" [count]="5" [step]="0" class="cchmc-gray center-horizontally"></app-circle-step-indicator>
+  <!-- <app-circle-step-indicator [selectionEnabled]="false" [count]="5" [step]="0" class="cchmc-gray center-horizontally"></app-circle-step-indicator> -->
+
+  <mat-divider></mat-divider>
 
   <div fxLayout="row" fxFlex class="actions-row">
     <button mat-raised-button fxFlex routerLink="/intro">BACK</button>

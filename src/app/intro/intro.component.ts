@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { stepAnimations } from './step-animations';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-intro',
@@ -13,10 +14,15 @@ export class IntroComponent implements OnInit {
   selectedStep = 0;
   stepCount = 3;
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.selectedStep = +params.step || 0;
+    });
+
+    this.updateRouteQueryParameters();
   }
 
   getDirection(stepIndex: number) {
@@ -25,9 +31,31 @@ export class IntroComponent implements OnInit {
     return (stepIndex < this.selectedStep ? 'previous' : 'next');
   }
 
-  cycleStep(direction = 1) {
+  advance(direction = 1) {
     this.selectedStep = this.selectedStep + direction;
-    if (this.selectedStep < 0) { this.selectedStep = this.stepCount - 1; }
-    if (this.selectedStep >= this.stepCount) { this.selectedStep = 0; }
+    if (this.selectedStep < 0) {
+      this.selectedStep = 0;
+    }
+
+    if (this.selectedStep >= this.stepCount) {
+      this.router.navigate(['/opt-out']);
+    } else {
+      this.updateRouteQueryParameters();
+    }
+  }
+
+  updateRouteQueryParameters() {
+    this.router.navigate(
+      [],
+      {
+        relativeTo: this.route,
+        queryParams: {step: this.selectedStep},
+        queryParamsHandling: 'merge'
+      }
+    );
+  }
+
+  isLastStep(): boolean {
+    return (this.selectedStep + 1 >= this.stepCount);
   }
 }
