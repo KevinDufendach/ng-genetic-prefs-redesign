@@ -14,7 +14,7 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <div class="top-background"></div>
+  <div class="top-background" [ngStyle]="{'background-color': stepColor | async}"></div>
   <div class="top-toolbar">
     <button id="menu-button" *ngIf="isHandset$ | async" mat-icon-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>

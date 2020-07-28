@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from './auth.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+import { cchmcGray, cchmcGreen, cchmcPink, cchmcBlue } from 'src/cchmc-constants';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  stepTitle: Observable<string>;
-  stepClass: Observable<string>;
+  // stepTitle: Observable<string>;
+  // stepClass: Observable<string>;
+  stepColor: Observable<string> = of(cchmcGray);
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -21,35 +23,45 @@ export class AppComponent implements OnInit {
     );
 
   constructor(
-    public auth: AuthService,
-    private route: ActivatedRoute,
-    private breakpointObserver: BreakpointObserver) {
-  }
+      // public auth: AuthService,
+      private route: ActivatedRoute,
+      private router: Router,
+      private breakpointObserver: BreakpointObserver) {  }
 
   ngOnInit(): void {
-    this.stepClass = this.route.url.pipe(map(() => this.route.snapshot.firstChild.routeConfig.path));
-    this.stepTitle = this.stepClass.pipe(map(sc => this.getStepTitle(sc)));
+    this.stepColor = this.router.events.pipe(map(() => {
+      if (this.route.snapshot.firstChild) {
+        return this.getStepColor(this.route.snapshot.firstChild.routeConfig.path);
+      } else {
+        return cchmcGray;
+      }
+    }));
+
+    // this.stepColor
+
+    // = this.route.url.pipe(map(() => this.route.snapshot.firstChild.routeConfig.path));
+    // this.stepTitle = this.stepClass.pipe(map(sc => this.getStepColor(sc)));
   }
 
-  private getStepTitle(path: string | null) {
+  private getStepColor(path: string | null) {
     if (path) {
       switch (path) {
-        case 'instructions':
-          return 'Introduction';
+        case 'intro':
+          return cchmcGray;
         case 'opt-out':
-          return 'Opt Out';
+          return cchmcGray;
         case 'treatability':
-          return 'Treatability';
+          return cchmcGreen;
         case 'preventability':
-          return 'Preventability';
+          return cchmcPink;
         case 'adult-onset':
-          return 'Adult Onset';
+          return cchmcBlue;
         case 'carrier-status':
-          return 'Carrier Status';
+          return cchmcGray;
         case 'review':
-          return 'Final Review';
+          return cchmcBlue;
         default:
-          return '';
+          return 'cchmcGray';
       }
     }
   }
