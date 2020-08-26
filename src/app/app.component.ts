@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from './auth.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, of } from 'rxjs';
-import { map, shareReplay, switchMap } from 'rxjs/operators';
+import { map, shareReplay} from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { cchmcGray, cchmcGreen, cchmcPink, cchmcBlue } from 'src/cchmc-constants';
 
