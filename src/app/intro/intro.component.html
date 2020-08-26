@@ -3,20 +3,40 @@
 
   <mat-card>
     <mat-card-content class="step-container">
-      <div [@stepTransition]="getDirection(0)"
-          class="step-content"
-          role="tabpanel"
-          [attr.aria-expanded]="page === 0"
+      <div [@stepTransition]="getDirection([0, 1])" class="step-content" role="tabpanel" [attr.aria-expanded]="page === 0 || page === 1"
+          fxLayout="column" fxLayout.gt-sm="row">
+        <h2>Welcome!</h2>
+        <p fxFlex>Before getting started, please watch two introductory videos.</p>
+      </div>
+      <div [@stepTransition]="getDirection(0)" class="step-content" role="tabpanel" [attr.aria-expanded]="page === 0"
+          fxLayout="column" fxLayout.gt-sm="row">
+        <h3>Genome Testing: Expectations & Results</h3>
+        <div class="youtube-container">
+          <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/sd53l5QgUJ4" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+      <div [@stepTransition]="getDirection(1)" class="step-content" role="tabpanel" [attr.aria-expanded]="page === 1"
+          fxLayout="column" fxLayout.gt-sm="row">
+        <h3>Teens Consider Getting Genomic Test Results</h3>
+        <div class="youtube-container">
+          <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/yw60Elf_96A" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+      <div [@stepTransition]="getDirection(2)" class="step-content" role="tabpanel" [attr.aria-expanded]="page === 2"
           fxLayout="column" fxLayout.gt-sm="row">
         <img src="/assets/img/noun_genetic_test_3134143.svg" class="main-card-image">
         <p fxFlex>We are doing a study that includes genetic testing of DNA. Genetic testing could tell us about a disease a person has. It could tell us if a person might develop a disease during their lifetime.</p>
       </div>
-      <div [@stepTransition]="getDirection(1)" class="step-content" role="tabpanel"  [attr.aria-expanded]="page === 1"
+      <div [@stepTransition]="getDirection(3)" class="step-content" role="tabpanel" [attr.aria-expanded]="page === 3"
           fxLayout="column" fxLayout.gt-sm="row">
         <img src="/assets/icons/clipboard.png" class="main-card-image">
         <p fxFlex>This study gives you the option to learn genetic results. The following questions will help you decide what types of results you would or would not like to learn.You can change your answers to the questions at any time.</p>
       </div>
-      <div [@stepTransition]="getDirection(2)" class="step-content" role="tabpanel"  [attr.aria-expanded]="page === 2"
+      <div [@stepTransition]="getDirection(4)" class="step-content" role="tabpanel" [attr.aria-expanded]="page === 4"
           fxLayout="column" fxLayout.gt-sm="row">
         <img src="/assets/icons/question-signs.png" class="main-card-image">
         <p fxFlex>After you answer questions, you will see a list of diseases you will learn about. Some diseases in the final list may be crossed out. You can always add a disease back in. You can also learn more about a disease by selecting it in the list.</p>

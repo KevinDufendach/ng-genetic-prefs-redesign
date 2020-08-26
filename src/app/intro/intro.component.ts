@@ -12,7 +12,7 @@ export class IntroComponent implements OnInit {
   preventabilitySelection = -1;
   notSureAllowed = false;
   page = 0;
-  stepCount = 3;
+  stepCount = 5;
 
   constructor(private router: Router, private route: ActivatedRoute) {
   }
@@ -53,7 +53,12 @@ export class IntroComponent implements OnInit {
     return (this.page + 1 >= this.stepCount);
   }
 
-  getDirection(stepIndex: number) {
+  getDirection(stepIndex: number | number[]) {
+    if (Array.isArray(stepIndex)) {
+      if (stepIndex.indexOf(this.page) > -1) { return 'current'; }
+      return (Math.max.apply(stepIndex) < this.page ? 'previous' : 'next' );
+    }
+
     if (stepIndex === this.page) { return 'current'; }
 
     return (stepIndex < this.page ? 'previous' : 'next');
