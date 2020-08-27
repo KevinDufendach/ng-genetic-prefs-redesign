@@ -3,7 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, of } from 'rxjs';
 import { map, shareReplay} from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
-import { cchmcGray, cchmcGreen, cchmcPink, cchmcBlue } from 'src/cchmc-constants';
+import { cchmcGray, cchmcGreen, cchmcPink, cchmcBlue, cchmcPurple } from 'src/cchmc-constants';
 
 @Component({
   selector: 'app-root',
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
         case 'adult-onset':
           return cchmcBlue;
         case 'carrier-status':
-          return cchmcGray;
+          return cchmcPurple;
         case 'review':
           return cchmcBlue;
         default:

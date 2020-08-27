@@ -2,6 +2,7 @@ $cchmc-pink: #ca5699;
 $cchmc-green: #73b44a;
 $cchmc-blue: #00aac8;
 $cchmc-gray: #565a5c;
+$cchmc-purple: #611f45;
 
 .cchmc-pink {
   color: $cchmc-pink;
@@ -19,3 +20,22 @@ $cchmc-gray: #565a5c;
   color: $cchmc-gray;
 }
 
+.cchmc-purple {
+  color: $cchmc-purple;
+}
+
+.treatability {
+  color: $cchmc-green;
+}
+
+.preventability {
+  color: $cchmc-pink;
+}
+
+.adult-onset {
+  color: $cchmc-blue;
+}
+
+.carrier-status {
+  color: $cchmc-purple;
+}
