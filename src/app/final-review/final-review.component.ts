@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {SurveyService} from '../survey.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-final-review',
   templateUrl: './final-review.component.html',
-  styleUrls: ['./final-review.component.scss']
+  styleUrls: ['./final-review.component.scss', '../../survey.scss']
 })
 export class FinalReviewComponent implements OnInit {
 
-  constructor(private survey: SurveyService) { }
+  constructor(
+    public survey: SurveyService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
