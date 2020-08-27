@@ -62,6 +62,26 @@
 }
 
 .active-list-item {
+  background-color: $cchmc-gray !important;
+  color: white !important;
+}
+
+.treatability-active {
   background-color: $cchmc-green !important;
+  color: white !important;
+}
+
+.preventability-active {
+  background-color: $cchmc-pink !important;
+  color: white !important;
+}
+
+.adult-onset-active {
+  background-color: $cchmc-blue !important;
+  color: white !important;
+}
+
+.carrier-status-active {
+  background-color: $cchmc-purple !important;
   color: white !important;
 }

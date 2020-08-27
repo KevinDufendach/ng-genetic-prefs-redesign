@@ -6,10 +6,10 @@
     <mat-nav-list>
       <a mat-list-item routerLink="/intro" routerLinkActive="active-list-item">Introduction</a>
       <a mat-list-item routerLink="/opt-out" routerLinkActive="active-list-item">Opt In/Out</a>
-      <a mat-list-item routerLink="/treatability" routerLinkActive="active-list-item">Treatability</a>
-      <a mat-list-item routerLink="/preventability" routerLinkActive="active-list-item">Preventability</a>
-      <a mat-list-item routerLink="/adult-onset" routerLinkActive="active-list-item">Adult Onset</a>
-      <a mat-list-item routerLink="/carrier-status" routerLinkActive="active-list-item">Carrier</a>
+      <a mat-list-item routerLink="/treatability" routerLinkActive="treatability-active">Treatability</a>
+      <a mat-list-item routerLink="/preventability" routerLinkActive="preventability-active">Preventability</a>
+      <a mat-list-item routerLink="/adult-onset" routerLinkActive="adult-onset-active">Adult Onset</a>
+      <a mat-list-item routerLink="/carrier-status" routerLinkActive="carrier-status-active">Carrier Status</a>
       <a mat-list-item routerLink="/review" routerLinkActive="active-list-item">Final Review</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -27,27 +27,5 @@
 </mat-sidenav-container>
 
 <div class="footer">
-  <p>Version 2020-07-08-1530</p>
+  <p>Version 2020-08-27-1415</p>
 </div>
-
-<!-- <div fxLayout="column" style="min-height: 100%">
-  <!~~ <mat-toolbar color="primary">
-
-    <button mat-button routerLink="/instructions">Genetic Preferences</button>
-    <span fxFlex></span>
-    <div fxHide fxShow.gt-sm *ngIf="auth.user | async as user">
-      <span *ngIf="user.isAnonymous">Logged in as {{user.uid}}</span>
-      <span *ngIf="!user.isAnonymous">{{user.email}}</span>
-    </div>
-    <button mat-button (click)="auth.changeAnonymousUser()">Change User</button>
-  </mat-toolbar> ~~>
-
-  <!~~ <div fxLayout="row" fxFlex class="app-body"> ~~>
-  <div fxFlex fxLayout="column" class="app-body">
-    <div class="app-container" fxFlex>
-
-    </div>
-  </div>
-
-</div>
- -->

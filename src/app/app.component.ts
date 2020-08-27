@@ -45,10 +45,6 @@ export class AppComponent implements OnInit {
   private getStepColor(path: string | null) {
     if (path) {
       switch (path) {
-        case 'intro':
-          return cchmcGray;
-        case 'opt-out':
-          return cchmcGray;
         case 'treatability':
           return cchmcGreen;
         case 'preventability':
@@ -57,10 +53,11 @@ export class AppComponent implements OnInit {
           return cchmcBlue;
         case 'carrier-status':
           return cchmcPurple;
+        case 'intro':
+        case 'opt-out':
         case 'review':
-          return cchmcBlue;
         default:
-          return 'cchmcGray';
+          return cchmcGray;
       }
     }
   }
