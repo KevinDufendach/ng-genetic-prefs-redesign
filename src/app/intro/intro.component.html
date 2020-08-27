@@ -4,12 +4,12 @@
   <mat-card>
     <mat-card-content class="step-container">
       <div [@stepTransition]="getDirection([0, 1])" class="step-content" role="tabpanel" [attr.aria-expanded]="page === 0 || page === 1"
-          fxLayout="column" fxLayout.gt-sm="row">
+          fxLayout="column">
         <h2>Welcome!</h2>
         <p fxFlex>Before getting started, please watch two introductory videos.</p>
       </div>
       <div [@stepTransition]="getDirection(0)" class="step-content" role="tabpanel" [attr.aria-expanded]="page === 0"
-          fxLayout="column" fxLayout.gt-sm="row">
+          fxLayout="column">
         <h3>Genome Testing: Expectations & Results</h3>
         <div class="youtube-container">
           <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/sd53l5QgUJ4" frameborder="0"
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div [@stepTransition]="getDirection(1)" class="step-content" role="tabpanel" [attr.aria-expanded]="page === 1"
-          fxLayout="column" fxLayout.gt-sm="row">
+          fxLayout="column">
         <h3>Teens Consider Getting Genomic Test Results</h3>
         <div class="youtube-container">
           <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/yw60Elf_96A" frameborder="0"
