@@ -7,10 +7,10 @@
         <div fxFlex></div>
         <div fxLayout="row" *ngIf="isHandset$ | async">
           <div class="attribute-info" [ngClass]="{'inapplicable': c.override === Override.Default}">{{c.override === Override.Include ? 'I' : 'E'}}</div>
-          <div class="treatability attribute-info" [ngClass]="{'inapplicable': !c.treatable}">T</div>
-          <div class="preventability attribute-info" [ngClass]="{'inapplicable': !c.preventable}">P</div>
-          <div class="adult-onset attribute-info" [ngClass]="{'inapplicable': !c.adultOnset}">A</div>
-          <div class="carrier-status attribute-info" [ngClass]="{'inapplicable': !c.carrier, 'condition-hidden': !c.carrier}">C</div>
+          <div class="treatability attribute-info" [ngClass]="{'inapplicable': !c.treatable}"><mat-icon>circle</mat-icon></div>
+          <div class="preventability attribute-info" [ngClass]="{'inapplicable': !c.preventable}"><mat-icon>circle</mat-icon></div>
+          <div class="adult-onset attribute-info" [ngClass]="{'inapplicable': !c.adultOnset}"><mat-icon>circle</mat-icon></div>
+          <div class="carrier-status attribute-info" [ngClass]="{'inapplicable': !c.carrier, 'condition-hidden': !c.carrier}"><mat-icon>circle</mat-icon></div>
         </div>
         <div fxLayout="row" *ngIf="!(isHandset$ | async)">
           <div class="attribute-info" [ngClass]="{'inapplicable': c.override === Override.Default}">{{c.override === Override.Include ? 'Always' : 'Never'}} Report</div>

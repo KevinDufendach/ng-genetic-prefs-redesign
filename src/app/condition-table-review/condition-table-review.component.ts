@@ -6,6 +6,8 @@ import {Condition2, Override} from '../model/condition2';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-condition-table-review',
@@ -26,7 +28,11 @@ export class ConditionTableReviewComponent implements OnInit {
   constructor(
     public survey: SurveyService,
     private conditionManager: ConditionManagerService,
-    private breakpointObserver: BreakpointObserver) {
+    private breakpointObserver: BreakpointObserver,
+    private iconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer,
+  ) {
+    iconRegistry.addSvgIcon('circle', sanitizer.bypassSecurityTrustResourceUrl('assets/img/circle.svg'));
   }
 
   ngOnInit(): void {
