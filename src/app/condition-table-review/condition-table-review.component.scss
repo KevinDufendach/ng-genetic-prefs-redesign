@@ -15,8 +15,8 @@
 }
 
 .inapplicable {
-  opacity: 0.2;
-  text-decoration: line-through;
+  // opacity: 0.2;
+  // text-decoration: line-through;
   visibility: hidden;
 }
 
@@ -27,12 +27,13 @@
 }
 
 .notShown {
-  //opacity: 50%;
-  background-color: rgba(86,90,92,0.1);
+  opacity: 50%;
+  color: gray;
+  // background-color: rgba(86,90,92,0.1);
 }
 
 .notShown mat-panel-title {
-  color: maroon;
+  // color: maroon;
   text-decoration: line-through;
 }
 

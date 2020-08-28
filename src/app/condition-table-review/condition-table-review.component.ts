@@ -19,6 +19,8 @@ export class ConditionTableReviewComponent implements OnInit {
   Parameter = Parameter;
   Override = Override;
 
+  displayedColumns = ['treatability', 'preventability', 'adult-onset', 'carrier-status', 'condition-label'];
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
