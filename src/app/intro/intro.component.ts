@@ -11,8 +11,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class IntroComponent implements OnInit {
   preventabilitySelection = -1;
   notSureAllowed = false;
-  page = 0;
   stepCount = 5;
+  _page = 0;
 
   constructor(private router: Router, private route: ActivatedRoute) {
   }
@@ -21,32 +21,36 @@ export class IntroComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.page = +params.page || 0;
     });
+  }
 
+  set page(val: number) {
+    this._page = val;
     this.updateRouteQueryParameters();
+  }
+
+  get page(): number {
+    return this._page;
   }
 
   navigate(direction = 1) {
     this.page = this.page + direction;
-    if (this.page < 0) {
-      this.page = 0;
-    }
-
-    if (this.page >= this.stepCount) {
-      this.router.navigate(['/opt-out']);
-    } else {
-      this.updateRouteQueryParameters();
-    }
   }
 
   updateRouteQueryParameters() {
-    this.router.navigate(
-      [],
-      {
-        relativeTo: this.route,
-        queryParams: {page: this.page},
-        queryParamsHandling: 'merge'
-      }
-    );
+    if (this.page < 0) {
+      this.page = 0;
+    } else if (this.page >= this.stepCount) {
+      this.router.navigate(['/opt-out']);
+    } else {
+      this.router.navigate(
+        [],
+        {
+          relativeTo: this.route,
+          queryParams: {page: this.page},
+          queryParamsHandling: 'merge'
+        }
+      );
+    }
   }
 
   isLastStep(): boolean {
