@@ -49,6 +49,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SurveyActionsBarComponent } from './survey-actions-bar/survey-actions-bar.component';
 import { CircleStepIndicatorComponent } from './circle-step-indicator/circle-step-indicator.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -97,14 +98,15 @@ import { CircleStepIndicatorComponent } from './circle-step-indicator/circle-ste
         MatDividerModule,
         MatFormFieldModule,
         MatListModule,
-
-        AngularFireModule.initializeApp(environment.firebaseConfig),
-        AngularFireAuthModule,
+        MatSelectModule,
         MatInputModule,
         MatSortModule,
         MatCheckboxModule,
+        MatSidenavModule,
+
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,
         LayoutModule,
-        MatSidenavModule
     ],
   providers: [],
   bootstrap: [AppComponent]
