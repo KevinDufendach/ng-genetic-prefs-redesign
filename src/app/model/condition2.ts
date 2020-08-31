@@ -4,6 +4,33 @@ export enum Override {
   Exclude = 2
 }
 
+export enum Organ {
+  ADRENAL,
+  VESSEL,
+  JOINT,
+  BONE,
+  BRAIN,
+  NERVE,
+  CANCER,
+  GI,
+  COLON,
+  EYE,
+  HEART,
+  KIDNEY,
+  IMMUNE,
+  PAIN,
+  PANCREAS,
+  LUNG,
+  LIVER,
+  MUSCLE,
+  STOMACH,
+  TUMOR,
+  MEDICINE,
+  VASDEFERENS,
+  METABOLIC,
+  MULTIPLE
+}
+
 export interface Condition2 {
   id: string;
   genes: string | null;

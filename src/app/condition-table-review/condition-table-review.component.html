@@ -55,8 +55,9 @@
     <td mat-cell *matCellDef="let c" [attr.colspan]="displayedColumns.length">
       <div class="condition-detail" [@detailExpand]="c == expandedCondition ? 'selected' : 'deselected'" fxLayout="column">
         <p>{{c.description}}</p>
+        <a mat-button href="{{c.resource_link}}" target="_blank">LEARN MORE <mat-icon>launch</mat-icon></a>
         <mat-form-field>
-          <mat-label>Condition Display Override</mat-label>
+          <mat-label>Override Condition Display</mat-label>
           <mat-select>
             <mat-option value="option1">Use Selections (default)</mat-option>
             <mat-option value="option2">Always Show Condition</mat-option>
