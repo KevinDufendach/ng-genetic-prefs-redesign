@@ -112,6 +112,11 @@ tr.condition-row:not(.condition-expanded-row):active {
   border-bottom-width: 0;
 }
 
+.attribute-cell {
+  vertical-align: middle;
+  padding-left: 0 !important;
+}
+
 .condition-detail {
   overflow: hidden;
   display: flex;

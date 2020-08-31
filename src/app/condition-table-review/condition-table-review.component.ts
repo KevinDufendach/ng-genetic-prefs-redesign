@@ -16,9 +16,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   styleUrls: ['./condition-table-review.component.scss'],
   animations: [
     trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+      state('deselected', style({height: '0px', minHeight: '0'})),
+      state('selected', style({height: '*'})),
+      transition('selected <=> deselected', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+    trigger('detailRotate', [
+      state('deselected', style({transform: 'rotate(-90deg)' })),
+      state('selected', style({transform: 'rotate(0)'})),
+      transition('selected <=> deselected', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
 })
@@ -29,7 +34,7 @@ export class ConditionTableReviewComponent implements OnInit {
 
   expandedCondition: Condition2 | null;
 
-  displayedColumns = ['treatability', 'preventability', 'adult-onset', 'carrier-status', 'condition-label'];
+  displayedColumns = ['treatability', 'preventability', 'adult-onset', 'carrier-status', 'expand-icon', 'condition-label'];
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -41,8 +46,8 @@ export class ConditionTableReviewComponent implements OnInit {
     public survey: SurveyService,
     private conditionManager: ConditionManagerService,
     private breakpointObserver: BreakpointObserver,
-    private iconRegistry: MatIconRegistry,
-    private sanitizer: DomSanitizer,
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer,
   ) {
     iconRegistry.addSvgIcon('circle', sanitizer.bypassSecurityTrustResourceUrl('assets/img/circle.svg'));
   }
