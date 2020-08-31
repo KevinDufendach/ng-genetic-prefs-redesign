@@ -8,16 +8,26 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-condition-table-review',
   templateUrl: './condition-table-review.component.html',
-  styleUrls: ['./condition-table-review.component.scss']
+  styleUrls: ['./condition-table-review.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class ConditionTableReviewComponent implements OnInit {
   conditions: Condition2[];
   Parameter = Parameter;
   Override = Override;
+
+  expandedCondition: Condition2 | null;
 
   displayedColumns = ['treatability', 'preventability', 'adult-onset', 'carrier-status', 'condition-label'];
 

@@ -94,3 +94,25 @@
 .condition-hidden {
   visibility: hidden;
 }
+
+// Condition detail
+tr.condition-detail-row {
+  height: 0;
+}
+
+tr.condition-row:not(.condition-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.condition-row:not(.condition-expanded-row):active {
+  background: #efefef;
+}
+
+.condition-row td {
+  border-bottom-width: 0;
+}
+
+.condition-detail {
+  overflow: hidden;
+  display: flex;
+}
