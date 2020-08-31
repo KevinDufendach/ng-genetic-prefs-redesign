@@ -116,3 +116,7 @@ tr.condition-row:not(.condition-expanded-row):active {
   overflow: hidden;
   display: flex;
 }
+
+td.label-cell {
+  width: 100%
+}

@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="conditions" class="mat-elevation-z8">
+<table mat-table [dataSource]="conditions" multiTemplateDataRows class="mat-elevation-z8">
   <!-- Treatability -->
   <ng-container matColumnDef="treatability">
     <th mat-header-cell *matHeaderCellDef>T</th>
@@ -34,7 +34,7 @@
   <!-- Condition Label -->
   <ng-container matColumnDef="condition-label">
     <th mat-header-cell *matHeaderCellDef>Condition Name</th>
-    <td mat-cell *matCellDef="let c">
+    <td mat-cell *matCellDef="let c" class="label-cell">
       <div [ngClass]="{'notShown': !wouldReturnCondition(c)}">{{c.condition}}</div>
     </td>
   </ng-container>
@@ -43,7 +43,7 @@
   <ng-container matColumnDef="expandedDetail">
     <td mat-cell *matCellDef="let c" [attr.colspan]="displayedColumns.length">
       <div class="condition-detail" [@detailExpand]="c == expandedCondition ? 'expanded' : 'collapsed'">
-        <h1>Here is my description</h1>
+        <p>{{c.description}}</p>
       </div>
     </td>
   </ng-container>>
